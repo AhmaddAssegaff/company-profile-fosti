@@ -3,7 +3,6 @@ import React from "react";
 import Image from "next/image";
 import { ThemeToggle } from "./ThemeToggle";
 import Link from "next/link";
-import logoDark from "../../public/LOGO FOSTI PUTIH.png";
 import { useTheme } from "next-themes";
 import { FaCubes } from "react-icons/fa";
 import { AiOutlineQuestionCircle } from "react-icons/ai";
@@ -11,12 +10,10 @@ import { GrCube } from "react-icons/gr";
 import {
   NavigationMenu,
   NavigationMenuContent,
-  NavigationMenuIndicator,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-  NavigationMenuViewport,
 } from "@/components/ui/navigation-menu";
 import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
@@ -52,8 +49,8 @@ const Navbar = () => {
             <Image
               src={
                 theme === "dark"
-                  ? logoDark
-                  : "https://blog.fostiums.org/wp-content/uploads/2021/04/logo.png"
+                  ? "https://res.cloudinary.com/airlanggapradana/image/upload/v1755442684/LOGO_FOSTI_PUTIH_imvkxw.png"
+                  : "https://res.cloudinary.com/airlanggapradana/image/upload/v1755442684/logo_ch57ma.png"
               }
               alt="Logo"
               width={70}

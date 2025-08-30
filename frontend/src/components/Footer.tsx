@@ -3,7 +3,6 @@ import Link from "next/link";
 import React from "react";
 import { Separator } from "./ui/separator";
 import { Github, Instagram, Youtube } from "lucide-react";
-import logoputih from "../../public/LOGO FOSTI PUTIH.png";
 import Image from "next/image";
 import { useTheme } from "next-themes";
 import { FaWhatsapp } from "react-icons/fa";
@@ -19,8 +18,8 @@ const Footer = () => {
               <Image
                 src={
                   theme === "dark"
-                    ? logoputih
-                    : "https://blog.fostiums.org/wp-content/uploads/2021/04/logo.png"
+                    ? "https://res.cloudinary.com/airlanggapradana/image/upload/v1755442684/LOGO_FOSTI_PUTIH_imvkxw.png"
+                    : "https://res.cloudinary.com/airlanggapradana/image/upload/v1755442684/logo_ch57ma.png"
                 }
                 alt="Logo"
                 width={120}
