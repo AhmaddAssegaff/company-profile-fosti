@@ -83,39 +83,31 @@ const Navbar = () => {
             </NavigationMenuItem>
 
             <NavigationMenuItem>
-              <Link
-                href="#about"
-                legacyBehavior
-                passHref
-                className="flex items-center gap-1 rounded-lg p-2 transition-colors duration-200 hover:bg-muted-foreground/10"
-              >
-                <NavigationMenuLink
-                  className={`${navigationMenuTriggerStyle()} flex items-center gap-1`}
+              <NavigationMenuLink asChild>
+                <Link
+                  href="#about"
+                  className={`${navigationMenuTriggerStyle()} flex items-center gap-1 rounded-lg p-2 transition-colors duration-200 hover:bg-muted-foreground/10`}
                 >
                   <AiOutlineQuestionCircle />
                   <span className="text-sm font-semibold hover:text-primary/80">
                     About Us
                   </span>
-                </NavigationMenuLink>
-              </Link>
+                </Link>
+              </NavigationMenuLink>
             </NavigationMenuItem>
 
             <NavigationMenuItem>
-              <Link
-                href="#proker"
-                legacyBehavior
-                passHref
-                className="flex items-center gap-1 rounded-lg p-2 transition-colors duration-200 hover:bg-muted-foreground/10"
-              >
-                <NavigationMenuLink
-                  className={`${navigationMenuTriggerStyle()} flex items-center gap-1`}
+              <NavigationMenuLink asChild>
+                <Link
+                  href="#proker"
+                  className={`${navigationMenuTriggerStyle()} flex items-center gap-1 rounded-lg p-2 transition-colors duration-200 hover:bg-muted-foreground/10`}
                 >
                   <GrCube />
                   <span className="text-sm font-semibold hover:text-primary/80">
                     Our Programs
                   </span>
-                </NavigationMenuLink>
-              </Link>
+                </Link>
+              </NavigationMenuLink>
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
