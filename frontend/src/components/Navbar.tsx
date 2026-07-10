@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, {useState, useEffect} from "react";
 import Image from "next/image";
 import { ThemeToggle } from "./ThemeToggle";
 import Link from "next/link";
@@ -41,21 +41,31 @@ const divisions = [
 
 const Navbar = () => {
   const { theme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+ 
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background py-3 backdrop-blur-xl">
       <div className="mx-auto flex h-12 max-w-screen-2xl items-center justify-between px-5">
         <div className="flex items-center gap-2">
           <Link href={"/"}>
-            <Image
-              src={
-                theme === "dark"
-                  ? "https://res.cloudinary.com/airlanggapradana/image/upload/v1755442684/LOGO_FOSTI_PUTIH_imvkxw.png"
-                  : "https://res.cloudinary.com/airlanggapradana/image/upload/v1755442684/logo_ch57ma.png"
-              }
-              alt="Logo"
-              width={70}
-              height={70}
-            />
+            {mounted ? (
+              <Image
+                src={
+                  theme === "dark"
+                    ? "https://res.cloudinary.com/airlanggapradana/image/upload/v1755442684/LOGO_FOSTI_PUTIH_imvkxw.png"
+                    : "https://res.cloudinary.com/airlanggapradana/image/upload/v1755442684/logo_ch57ma.png"
+                }
+                alt="Logo"
+                width={70}
+                height={70}
+              />
+            ) : (
+              <div className="h-[70px] w-[70px]" />
+            )}
           </Link>
         </div>
         <NavigationMenu className="hidden items-center gap-5 md:flex">

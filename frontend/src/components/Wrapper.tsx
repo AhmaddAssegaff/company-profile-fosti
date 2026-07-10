@@ -9,7 +9,6 @@ const Wrapper = () => {
   return (
     <div className="space-y-12">
       <Hero />
-      <Stats />
       <About />
       <Divisi />
       <Partners />
