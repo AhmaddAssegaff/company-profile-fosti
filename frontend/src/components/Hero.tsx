@@ -25,7 +25,7 @@ const stats = [
 const Hero = () => {
   return (
     <section
-      className="mx-auto max-w-screen-2xl pb-28 pt-11 md:pt-20"
+      className="mx-auto max-w-screen-2xl pb-6 md:pb-20 pt-11 md:pt-20"
       id="home"
     >
       <div className="flex flex-col items-center justify-center gap-12 px-5 md:flex-row md:px-0">
@@ -60,7 +60,23 @@ const Hero = () => {
             organizations in the town.
           </TextAnimate>
 
-          <div className="w-full">
+          
+
+          <div className="flex flex-col gap-4 sm:flex-row mt-5">
+            <Link
+              href={env.NEXT_PUBLIC_OPREC_URL}
+              className="group flex w-full sm:w-auto items-center justify-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-semibold text-white shadow-md transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-primary/50 dark:bg-gradient-to-tr dark:from-red-500 dark:to-orange-500 dark:shadow-red-500/20 dark:hover:shadow-red-500/50"
+              target="_blank"
+            >
+              <span>Join Now!</span>
+              <ArrowRight 
+                className="h-4 w-4 transition-transform duration-300 ease-in-out group-hover:translate-x-1" 
+                color="#ffffff" 
+              />
+            </Link>
+          </div>
+
+          <div className="w-full mt-10 md:mt-16">
             <div className="grid grid-cols-3 divide-x divide-border/40 rounded-2xl border border-border/40 bg-muted/20">
               {stats.map((stat, index) => (
                 <div
@@ -84,19 +100,6 @@ const Hero = () => {
             </div>
           </div>
 
-          <div className="flex flex-col gap-4 sm:flex-row mt-5">
-            <Link
-              href={env.NEXT_PUBLIC_OPREC_URL}
-              className="group flex w-full sm:w-auto items-center justify-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-semibold text-white shadow-md transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-primary/50 dark:bg-gradient-to-tr dark:from-red-500 dark:to-orange-500 dark:shadow-red-500/20 dark:hover:shadow-red-500/50"
-              target="_blank"
-            >
-              <span>Join Now!</span>
-              <ArrowRight 
-                className="h-4 w-4 transition-transform duration-300 ease-in-out group-hover:translate-x-1" 
-                color="#ffffff" 
-              />
-            </Link>
-          </div>
         </div>
         <div className="flex w-full flex-col items-center justify-center md:w-1/2">
           <ImageCollage />
