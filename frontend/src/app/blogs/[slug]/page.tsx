@@ -28,7 +28,6 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
 
   const mdx = await renderMDX(blog.content);
 
-  console.log(mdx);
   const formattedDate = new Date(blog.datePublish).toLocaleDateString("id-ID", {
     year: "numeric",
     month: "long",
