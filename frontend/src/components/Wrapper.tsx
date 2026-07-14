@@ -5,6 +5,7 @@ import Divisi from "./Divisi";
 import About from "./About";
 import Partners from "./Partners";
 import Achievements from "./Achievement";
+import CallToAction from "./CallToAction";
 
 const Wrapper = () => {
   return (
@@ -14,6 +15,7 @@ const Wrapper = () => {
       <Achievements />
       <Divisi />
       <Partners />
+      <CallToAction />
     </div>
   );
 };
