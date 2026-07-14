@@ -30,7 +30,10 @@ export function getAllBlogs(): Blog[] {
   return files
     .map(readBlog)
     .filter((blog) => blog.published)
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+    .sort(
+      (a, b) =>
+        new Date(b.datePublish).getTime() - new Date(a.datePublish).getTime(),
+    );
 }
 
 export function getBlogsByTags(tags: string[]): Blog[] {
