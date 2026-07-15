@@ -6,18 +6,22 @@ mkdir -p optimized
 
 shopt -s nullglob
 
-for img in *.webp; do
-  output="optimized/$img"
+for img in *.jpg *.jpeg *.png *.webp; do
+  [[ -f "$img" ]] || continue
 
-  if [[ -f "$output" ]]; then
-    echo "Skipping: $img (already optimized)"
+  filename="${img%.*}"
+  output="optimized/${filename}.webp"
+
+  if [[ -f "$output" && "$output" -nt "$img" ]]; then
+    echo "Skipping: $img"
     continue
   fi
 
-  echo "Optimizing: $img"
+  echo "Optimizing: $img -> ${filename}.webp"
 
-  magick "$img" \
-    -resize 1920x1920\> \
+  magick "$img"
+  -resize 1920x1920\> \
+    -strip \
     -quality 80 \
     "$output"
 done
