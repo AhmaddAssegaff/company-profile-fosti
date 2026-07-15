@@ -1,5 +1,5 @@
 "use client";
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { ThemeToggle } from "./ThemeToggle";
 import Link from "next/link";
@@ -17,6 +17,8 @@ import {
 } from "@/components/ui/navigation-menu";
 import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
+import { MdOutlineArticle } from "react-icons/md";
+import { useRouter } from "next/navigation";
 
 const divisions = [
   {
@@ -40,15 +42,16 @@ const divisions = [
 ];
 
 const Navbar = () => {
+  const router = useRouter();
   const { theme } = useTheme();
   const [mounted, setMounted] = useState(false);
- 
+
   useEffect(() => {
     setMounted(true);
   }, []);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background py-3 backdrop-blur-xl drop-shadow-lg">
+    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background py-3 drop-shadow-lg backdrop-blur-xl">
       <div className="mx-auto flex h-12 max-w-screen-2xl items-center justify-between px-5">
         <div className="flex items-center gap-2">
           <Link href={"/"}>
@@ -95,7 +98,8 @@ const Navbar = () => {
             <NavigationMenuItem>
               <NavigationMenuLink asChild>
                 <Link
-                  href="#about"
+                  href="/#about"
+                  onClick={() => router.push("/#about")}
                   className={`${navigationMenuTriggerStyle()} flex items-center gap-1 rounded-lg p-2 transition-colors duration-200 hover:bg-muted-foreground/10`}
                 >
                   <AiOutlineQuestionCircle />
@@ -109,12 +113,27 @@ const Navbar = () => {
             <NavigationMenuItem>
               <NavigationMenuLink asChild>
                 <Link
-                  href="#proker"
+                  href="/#proker"
+                  onClick={() => router.push("/#proker")}
                   className={`${navigationMenuTriggerStyle()} flex items-center gap-1 rounded-lg p-2 transition-colors duration-200 hover:bg-muted-foreground/10`}
                 >
                   <GrCube />
                   <span className="text-sm font-semibold hover:text-primary/80">
                     Our Programs
+                  </span>
+                </Link>
+              </NavigationMenuLink>
+            </NavigationMenuItem>
+
+            <NavigationMenuItem>
+              <NavigationMenuLink asChild>
+                <Link
+                  href="/blogs"
+                  className={`${navigationMenuTriggerStyle()} flex items-center gap-1 rounded-lg p-2 transition-colors duration-200 hover:bg-muted-foreground/10`}
+                >
+                  <MdOutlineArticle />
+                  <span className="text-sm font-semibold hover:text-primary/80">
+                    Blogs
                   </span>
                 </Link>
               </NavigationMenuLink>
