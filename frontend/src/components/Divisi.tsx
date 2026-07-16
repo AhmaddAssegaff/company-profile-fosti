@@ -49,7 +49,7 @@ const divisi = [
 
 const Divisi = () => {
   return (
-    <section id="divisi" className="mx-auto max-w-screen-2xl px-5 py-28">
+    <section id="divisi" className="mx-auto max-w-screen-2xl px-5 py-20">
       <div className="mb-12 space-y-3 text-center">
         <h2 className="mb-4 bg-gradient-to-br from-red-500 to-orange-400 bg-clip-text text-2xl font-bold text-transparent sm:text-3xl">
           Meet Our Executives
@@ -78,29 +78,17 @@ const Divisi = () => {
         <h1 className="mb-4 bg-gradient-to-br from-red-500 to-orange-400 bg-clip-text text-3xl font-bold text-transparent md:text-4xl">
           Divisions
         </h1>
-        <TextAnimate
+        Our members are a part of diverse divisions that work together as one.
+        {/* <TextAnimate
           animation="slideUp"
           by="word"
           once
           className="mx-auto max-w-2xl text-base font-medium text-muted-foreground md:text-lg"
         >
-          Our members are a part of diverse divisions that work together as one.
-        </TextAnimate>
+        </TextAnimate> */}
       </div>
       <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
         {divisi.map((feature, index) => (
-          <AnimatedContent
-            delay={feature.delay}
-            distance={250}
-            direction="vertical"
-            reverse={false}
-            config={{ tension: 80, friction: 20 }}
-            initialOpacity={0}
-            animateOpacity
-            scale={1}
-            threshold={0.2}
-            key={index}
-          >
             <Link key={index} href={feature.href}>
               <Card className="gradient-card h-full border-2 border-border/40 transition-colors hover:border-red-500">
                 <CardContent className="pt-6">
@@ -114,7 +102,19 @@ const Divisi = () => {
                 </CardContent>
               </Card>
             </Link>
-          </AnimatedContent>
+          // <AnimatedContent
+          //   delay={feature.delay}
+          //   distance={250}
+          //   direction="vertical"
+          //   reverse={false}
+          //   config={{ tension: 80, friction: 20 }}
+          //   initialOpacity={0}
+          //   animateOpacity
+          //   scale={1}
+          //   threshold={0.2}
+          //   key={index}
+          // >
+          // </AnimatedContent>
         ))}
       </div>
     </section>
