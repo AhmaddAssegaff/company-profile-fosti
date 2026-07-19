@@ -54,3 +54,18 @@ export function getBlogBySlug(slug: string): Blog | null {
 
   return readBlog(file);
 }
+
+export function getAllTags(): string[] {
+  const blogs = getAllBlogs();
+  const tagsSet = new Set<string>();
+
+  blogs.forEach((blog) => {
+    if (blog.tags && Array.isArray(blog.tags)) {
+      blog.tags.forEach((tag) => {
+        tagsSet.add(tag.toLowerCase());
+      });
+    }
+  });
+
+  return Array.from(tagsSet).sort();
+}
