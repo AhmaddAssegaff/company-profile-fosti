@@ -59,7 +59,7 @@ const HubpubTeam = () => {
                   {member.name}
                 </h4>
                 <p className="text-center text-xs font-medium text-muted-foreground sm:text-sm">
-                  {member.role === "Hubungan Publik"
+                  {member.divisi === "Hubpub"
                     ? "Member of Public Relations"
                     : member.role}
                 </p>
@@ -69,11 +69,10 @@ const HubpubTeam = () => {
                       ? member.linkedin
                       : "#"
                   }
-                  className={`mt-1 transition-colors ${
-                    member.linkedin && member.linkedin !== "-"
-                      ? "hover:text-blue-600"
-                      : "cursor-not-allowed text-gray-400"
-                  } xs:mt-2 sm:mt-3`}
+                  className={`mt-1 transition-colors ${member.linkedin && member.linkedin !== "-"
+                    ? "hover:text-blue-600"
+                    : "cursor-not-allowed text-gray-400"
+                    } xs:mt-2 sm:mt-3`}
                   target={
                     member.linkedin && member.linkedin !== "-"
                       ? "_blank"

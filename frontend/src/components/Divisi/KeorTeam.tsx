@@ -59,7 +59,7 @@ const KeorTeam = () => {
                   {member.name}
                 </h4>
                 <p className="text-center text-xs font-medium text-muted-foreground sm:text-sm">
-                  {member.role === "Keorganisasian"
+                  {member.divisi === "Keor"
                     ? "Member of Organizational"
                     : member.role}
                 </p>
@@ -69,11 +69,10 @@ const KeorTeam = () => {
                       ? member.linkedin
                       : "#"
                   }
-                  className={`mt-1 transition-colors ${
-                    member.linkedin && member.linkedin !== "-"
-                      ? "hover:text-blue-600"
-                      : "cursor-not-allowed text-gray-400"
-                  } xs:mt-2 sm:mt-3`}
+                  className={`mt-1 transition-colors ${member.linkedin && member.linkedin !== "-"
+                    ? "hover:text-blue-600"
+                    : "cursor-not-allowed text-gray-400"
+                    } xs:mt-2 sm:mt-3`}
                   target={
                     member.linkedin && member.linkedin !== "-"
                       ? "_blank"

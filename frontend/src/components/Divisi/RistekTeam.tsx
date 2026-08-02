@@ -9,6 +9,7 @@ import { AiFillLinkedin } from "react-icons/ai";
 import Link from "next/link";
 
 const RistekTeam = () => {
+  console.log(ristekTeam);
   return (
     <TabsContent className="flex flex-col gap-4 sm:gap-5 md:gap-6" value="team">
       <h3 className="max-w-2xl text-center text-lg font-bold tracking-tight text-red-500 sm:text-xl md:text-start md:text-3xl">
@@ -59,7 +60,7 @@ const RistekTeam = () => {
                   {member.name}
                 </h4>
                 <p className="text-center text-xs font-medium text-muted-foreground sm:text-sm">
-                  {member.role === "RISTEK"
+                  {member.divisi === "Ristek"
                     ? "Member of Research and Technology"
                     : member.role}
                 </p>
@@ -69,11 +70,10 @@ const RistekTeam = () => {
                       ? member.linkedin
                       : "#"
                   }
-                  className={`mt-1 transition-colors ${
-                    member.linkedin && member.linkedin !== "-"
-                      ? "hover:text-blue-600"
-                      : "cursor-not-allowed text-gray-400"
-                  } xs:mt-2 sm:mt-3`}
+                  className={`mt-1 transition-colors ${member.linkedin && member.linkedin !== "-"
+                    ? "hover:text-blue-600"
+                    : "cursor-not-allowed text-gray-400"
+                    } xs:mt-2 sm:mt-3`}
                   target={
                     member.linkedin && member.linkedin !== "-"
                       ? "_blank"
