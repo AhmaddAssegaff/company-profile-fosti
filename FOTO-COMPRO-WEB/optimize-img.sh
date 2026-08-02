@@ -19,11 +19,13 @@ for img in *.jpg *.jpeg *.png *.webp; do
 
   echo "Optimizing: $img -> ${filename}.webp"
 
-  magick "$img"
-  -resize 1920x1920\> \
+  magick \
+    "$img" \
+    -resize '1920x1920>' \
     -strip \
-    -quality 80 \
+    -quality 100 \
     "$output"
+
 done
 
 echo "Done!"
