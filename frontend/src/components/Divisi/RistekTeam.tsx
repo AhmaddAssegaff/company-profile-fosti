@@ -9,7 +9,6 @@ import { AiFillInstagram, AiFillLinkedin } from "react-icons/ai";
 import Link from "next/link";
 
 const RistekTeam = () => {
-  console.log(ristekTeam);
   return (
     <TabsContent className="flex flex-col gap-4 sm:gap-5 md:gap-6" value="team">
       <h3 className="max-w-2xl text-center text-lg font-bold tracking-tight text-red-500 sm:text-xl md:text-start md:text-3xl">
