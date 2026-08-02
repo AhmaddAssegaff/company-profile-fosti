@@ -6,7 +6,7 @@ import { hubpubTeam } from "@/data/HubpubTeam";
 import AnimatedContent from "../AnimatedContent/AnimatedContent";
 import { ShineBorder } from "../magicui/shine-border";
 import Link from "next/link";
-import { AiFillLinkedin } from "react-icons/ai";
+import { AiFillInstagram, AiFillLinkedin } from "react-icons/ai";
 
 const HubpubTeam = () => {
   return (
@@ -63,25 +63,30 @@ const HubpubTeam = () => {
                     ? "Member of Public Relations"
                     : member.role}
                 </p>
-                <Link
-                  href={
-                    member.linkedin && member.linkedin !== "-"
-                      ? member.linkedin
-                      : "#"
-                  }
-                  className={`mt-1 transition-colors ${member.linkedin && member.linkedin !== "-"
-                    ? "hover:text-blue-600"
-                    : "cursor-not-allowed text-gray-400"
-                    } xs:mt-2 sm:mt-3`}
-                  target={
-                    member.linkedin && member.linkedin !== "-"
-                      ? "_blank"
-                      : "_self"
-                  }
-                  aria-disabled={!member.linkedin || member.linkedin === "-"}
-                >
-                  <AiFillLinkedin className="h-4 w-4 sm:h-5 sm:w-5" />
-                </Link>
+
+                <div className="m-4 flex items-center gap-4">
+                  {member.linkedin && (
+                    <Link
+                      href={member.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="transition-colors hover:text-blue-600"
+                    >
+                      <AiFillLinkedin className="h-5 w-5" />
+                    </Link>
+                  )}
+
+                  {member.instagram && (
+                    <Link
+                      href={member.instagram}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="transition-colors hover:text-pink-500"
+                    >
+                      <AiFillInstagram className="h-5 w-5" />
+                    </Link>
+                  )}
+                </div>
               </CardContent>
             </Card>
           </AnimatedContent>
