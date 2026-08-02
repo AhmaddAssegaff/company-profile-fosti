@@ -63,7 +63,7 @@ const KeorTeam = () => {
                     ? "Member of Organizational"
                     : member.role}
                 </p>
-                <div className="mt-3 flex items-center gap-3">
+                <div className="m-4 flex items-center gap-4">
                   {member.linkedin && (
                     <Link
                       href={member.linkedin}
