@@ -4,22 +4,17 @@ import Image, { type StaticImageData } from "next/image";
 import { Card } from "./ui/card";
 import img from "@/utils/constant";
 import HeroVideoDialog from "./magicui/hero-video-dialog";
-import thumbnail from "../../public/thumbnail compro fosti 2025.webp";
 import { Sparkles, Check, Calendar } from "lucide-react";
+
+const thumbnail = "https://res.cloudinary.com/qjw4yfke/image/upload/v1784116099/cld-sample-4.jpg";
 
 const About = () => {
   const about = img.carouselAbout;
   return (
     <div className="relative overflow-hidden">
       <section id="about" className="mx-auto max-w-screen-2xl px-5 py-16">
-        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-5 lg:gap-10">
-          {/* Text — order-1 di mobile (atas), order-2 di desktop (kanan, 40%) */}
+        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-5 lg:gap-20">
           <div className="order-1 lg:order-2 lg:col-span-2">
-            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-red-500/20 bg-red-500/5 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-red-600 dark:text-red-400">
-              <Sparkles className="h-3.5 w-3.5" />
-              About Us
-            </div>
-
             <h1 className="mb-5 bg-gradient-to-br from-red-500 to-orange-400 bg-clip-text text-3xl font-bold leading-tight text-transparent md:text-4xl lg:text-5xl">
               Who We Are & What We Do
             </h1>
@@ -31,7 +26,6 @@ const About = () => {
               in the fields of science and technology.
             </p>
 
-            {/* Feature checklist */}
             <ul className="space-y-3">
               {[
                 "Student-run, independent, and non-profit",
@@ -49,7 +43,6 @@ const About = () => {
               ))}
             </ul>
 
-            {/* Small footer stat */}
             <div className="mt-8 flex items-center gap-2 border-t border-border/40 pt-6 text-sm text-muted-foreground">
               <Calendar className="h-4 w-4 text-red-500" />
               <span>
@@ -69,14 +62,14 @@ const About = () => {
                 className="block dark:hidden"
                 animationStyle="from-center"
                 videoSrc="https://www.youtube.com/embed/DxwXP8rp5qg?si=xMSnKT1btIczpxoI"
-                thumbnailSrc={thumbnail.src}
+                thumbnailSrc={thumbnail}
                 thumbnailAlt="Hero Video"
               />
               <HeroVideoDialog
                 className="hidden dark:block"
                 animationStyle="from-center"
                 videoSrc="https://www.youtube.com/embed/DxwXP8rp5qg?si=xMSnKT1btIczpxoI"
-                thumbnailSrc={thumbnail.src}
+                thumbnailSrc={thumbnail}
                 thumbnailAlt="Hero Video"
               />
             </div>

@@ -6,7 +6,7 @@ const CallToAction = () => {
   return (
     <section
       id="join"
-      className="relative mx-auto max-w-screen-2xl px-5 pt-28 pb-32"
+      className="relative mx-auto max-w-screen-2xl px-5 pt-6 md:pt-28 pb-32"
     >
       <div className="group/card relative mx-auto flex max-w-8xl flex-col items-center gap-4 overflow-hidden rounded-[1.5em] border-2 border-red-500/50 bg-gradient-to-br from-red-900 via-red-700 to-orange-600 px-6 py-16 text-center font-nunito text-white shadow-xl transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl hover:shadow-red-500/30 sm:px-12 sm:py-20">
         <div className="pointer-events-none absolute inset-0 rounded-[1.5em] bg-gradient-to-br from-red-600/30 via-orange-500/20 to-transparent opacity-0 transition-opacity duration-500 group-hover/card:opacity-100" />
@@ -22,11 +22,6 @@ const CallToAction = () => {
         <div className="pointer-events-none absolute bottom-4 left-4 h-8 w-8 rounded-full bg-gradient-to-br from-orange-400/20 to-transparent blur-sm group-hover/card:animate-pulse" />
 
         <div className="relative z-10 mx-auto max-w-2xl transition-transform duration-300 group-hover/card:-translate-y-0.5">
-          <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-white backdrop-blur-sm">
-            <Sparkles className="h-3.5 w-3.5" />
-            Join FOSTI
-          </div>
-
           <h2 className="mb-4 text-3xl font-bold leading-tight md:text-4xl lg:text-5xl">
             Ready to Boost Your{" "}
             <span className="bg-gradient-to-r from-white via-orange-100 to-orange-200 bg-clip-text text-transparent">

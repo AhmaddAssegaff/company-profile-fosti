@@ -1,14 +1,8 @@
 import { type ImageType } from "@/types/image";
-import foto1 from "../../public/DSC03502.webp";
-import foto2 from "../../public/20250308_124553.webp";
-import foto3 from "../../public/IMG_6051.webp";
-import foto5 from "../../public/DSC00076.webp";
-import foto6 from "../../public/IMG_4585.webp";
-import foto7 from "../../public/IMG_4630.webp";
 
 export const images: ImageType[] = [
   {
-    src: foto3,
+    src: "https://res.cloudinary.com/qjw4yfke/image/upload/v1786202664/Fostisida_q75ixj.webp",
     width: 700,
     height: 700,
     alt: "Large group photo",
@@ -16,7 +10,7 @@ export const images: ImageType[] = [
     description: "Event that brings joyful memories and togetherness",
   },
   {
-    src: foto1,
+    src: "https://res.cloudinary.com/qjw4yfke/image/upload/v1786202663/Foto_Angkatan_Fosti_ppzybc.webp",
     width: 400,
     height: 400,
     alt: "Diverse group",
@@ -24,35 +18,39 @@ export const images: ImageType[] = [
     description: "Diverse group of people at tech event",
   },
   {
-    src: foto6,
+    src: "https://res.cloudinary.com/qjw4yfke/image/upload/v1786202664/Fostech_hcfbmr.webp",
     width: 400,
     height: 400,
     alt: "Small team meeting",
-    title: "FOSTICLASS",
+    title: "Fostech Camp",
     description: "By developers for developers, a journey of growth",
   },
+
+  // Tolong ganti gambarnya
   {
-    src: foto7,
+    src: "https://res.cloudinary.com/qjw4yfke/image/upload/v1784116099/cld-sample-4.jpg",
     width: 400,
     height: 400,
     alt: "Conference presentation",
     title: "Workshop",
     description: "Workshop on various topics with hands-on experience",
   },
+  // Terimakasih
+
   {
-    src: foto2,
+    src: "https://res.cloudinary.com/qjw4yfke/image/upload/v1786202659/Pleno1_qfmsdu.webp",
     width: 1000,
     height: 1000,
     alt: "Group photo",
-    title: "Training of Trainers",
-    description: "Program to train trainers and mentors for future events",
+    title: "Pleno",
+    description: "Reviewing organizational achievements and strategizing our shared path forward.",
   },
   {
-    src: foto5,
+    src: "https://res.cloudinary.com/qjw4yfke/image/upload/v1786202671/Ifosti_ucvapc.webp",
     width: 1000,
     height: 1000,
     alt: "Team celebration",
-    title: "Open Recruitment",
-    description: "Getting to know about the organization and its visions",
+    title: "Ifosti",
+    description: "Bringing members together to share warmth, connection, and Ramadan blessings.",
   },
 ];

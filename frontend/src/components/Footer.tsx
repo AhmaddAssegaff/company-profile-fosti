@@ -10,9 +10,9 @@ const footerLinks = [
     title: "Explore",
     items: [
       { name: "Home", href: "/" },
-      { name: "About Us", href: "#about" },
-      { name: "Achievements", href: "#achievements" },
-      { name: "Executives", href: "#divisi" },
+      { name: "About Us", href: "/#about" },
+      { name: "Achievements", href: "/#achievements" },
+      { name: "Executives", href: "/#divisi" },
     ],
   },
   {
@@ -27,7 +27,7 @@ const footerLinks = [
     title: "Community",
     items: [
       { name: "Blog", href: "/blogs" },
-      { name: "Join Us", href: "#join" },
+      { name: "Join Us", href: "/#join" },
     ],
   },
 ];
@@ -59,7 +59,6 @@ const Footer = () => {
     <footer className="border-t border-border bg-background px-4 pt-14 sm:px-6 md:px-8 lg:px-20">
       <div className="mx-auto max-w-7xl">
         <div className="flex flex-col gap-16 pb-12 lg:flex-row">
-          {/* Brand column */}
           <div className="max-w-full flex-1 lg:max-w-[380px]">
             <Link href="/" className="mb-6 inline-flex items-center">
               <Image
@@ -99,7 +98,6 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Link columns */}
           <div className="flex w-full max-w-3xl flex-1 flex-wrap justify-between gap-8 sm:flex-nowrap">
             {footerLinks.map((group) => (
               <div key={group.title}>
@@ -123,7 +121,6 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Contact row */}
         <div className="flex flex-col md:flex-row gap-6 md:gap-16 py-9 max-w-6xl">
           <div className="flex flex-1 items-start gap-2.5">
             <div className="flex size-8 flex-shrink-0 items-center justify-center rounded-lg border border-border bg-muted/40">
@@ -177,14 +174,13 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Bottom bar */}
         <div className="flex flex-col items-center justify-between gap-4 border-t border-border py-6 md:flex-row">
           <p className="text-sm text-muted-foreground">
             © {new Date().getFullYear()} FOSTI UMS, Org. All rights reserved.
           </p>
           <div className="flex flex-wrap justify-center gap-5 md:gap-9">
             <Link
-              href="#about"
+              href="/#about"
               className="text-sm text-muted-foreground transition-colors hover:text-foreground"
             >
               About Us
@@ -196,7 +192,7 @@ const Footer = () => {
               Blog
             </Link>
             <Link
-              href="#partners"
+              href="/#partners"
               className="text-sm text-muted-foreground transition-colors hover:text-foreground"
             >
               Partners

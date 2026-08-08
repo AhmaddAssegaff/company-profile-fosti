@@ -1,5 +1,6 @@
 import { type ProgramType } from "@/types/image";
-import compro from "../../public/image1_blrfxf.webp";
+const compro = "https://res.cloudinary.com/qjw4yfke/image/upload/v1784116099/cld-sample-4.jpg";
+const stuban = "https://res.cloudinary.com/qjw4yfke/image/upload/v1784116099/cld-sample-4.jpg";
 
 export const hubpubPrograms: ProgramType[] = [
   {
@@ -10,6 +11,17 @@ export const hubpubPrograms: ProgramType[] = [
     title: "Company Profile",
     description:
       "Responsible for creating and maintaining the company profile, ensuring it reflects our values and mission.",
+    date: "24 Mei 2026",
+  },
+  {
+    src: stuban,
+    width: 600,
+    height: 400,
+    alt: "Program 2",
+    title: "Student Affairs",
+    description:
+      "Exchanging insights and exploring best practices through collaborative visits to foster mutual growth.",
+    date: "Coming Soon",
   },
   // {
   //   src: "https://placehold.co/600x400/png",
