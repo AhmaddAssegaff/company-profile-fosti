@@ -1,9 +1,10 @@
 import { type ProgramType } from "@/types/image";
-import program1 from "../../public/20250308_124553.webp";
-import program2 from "../../public/IMG_6051.webp";
-import program3 from "../../public/DSC00076.webp";
-import program4 from "../../public/DSC03390.webp";
-import program5 from "../../public/IMG_0274.png";
+const program1 = "https://res.cloudinary.com/qjw4yfke/image/upload/v1784116099/cld-sample-4.jpg";
+const program2 = "https://res.cloudinary.com/qjw4yfke/image/upload/v1784116099/cld-sample-4.jpg";
+const program3 = "https://res.cloudinary.com/qjw4yfke/image/upload/v1784116099/cld-sample-4.jpg";
+const program4 = "https://res.cloudinary.com/qjw4yfke/image/upload/v1784116099/cld-sample-4.jpg";
+const program5 = "https://res.cloudinary.com/qjw4yfke/image/upload/v1784116099/cld-sample-4.jpg";
+const program6 = "https://res.cloudinary.com/qjw4yfke/image/upload/v1784116099/cld-sample-4.jpg";
 
 export const keorPrograms: ProgramType[] = [
   {
@@ -11,9 +12,10 @@ export const keorPrograms: ProgramType[] = [
     width: 600,
     height: 400,
     alt: "Program 1",
-    title: "Training of Trainers",
+    title: "Open Recruitment",
     description:
-      "An intensive program designed to enhance members' public speaking skills and team management capabilities through practical exercises and expert mentoring.",
+      "Welcoming passionate individuals to join our community, grow together, and make a meaningful impact.",
+    date: "14 September 2025",
   },
   {
     src: program2,
@@ -23,32 +25,46 @@ export const keorPrograms: ProgramType[] = [
     title: "FOSTISIDA",
     description:
       "A collaborative networking event that builds strong bonds among members through interactive activities, knowledge sharing sessions, and team-building exercises.",
+    date: "22-23 November 2025",
   },
   {
     src: program3,
     width: 600,
     height: 400,
     alt: "Program 3",
-    title: "Open Recruitment",
+    title: "Musyawarah Kerja",
     description:
-      "An annual event inviting talented students to join our organization through a selective process featuring interviews, technical assessments, and team compatibility evaluations.",
+      "Formulating strategic work programs and aligning our visions for the upcoming organizational period.",
+    date: "14-15 & 18-22 Desember 2025",
   },
   {
     src: program4,
     width: 600,
     height: 400,
     alt: "Program 4",
-    title: "Musyawarah Kerja",
+    title: "Training of Trainers",
     description:
-      "A strategic planning session where members collaborate to establish organizational goals, develop action plans, and align on key initiatives for the upcoming period.",
+      "Cultivating leadership and teaching capabilities to prepare the next generation of organizational trainers.",
+    date: "14 Februari 2026",
   },
   {
     src: program5,
     width: 600,
     height: 400,
     alt: "Program 5",
-    title: "Fosti Kajian",
+    title: "Ifosti",
     description:
-      "A regular spiritual discussion program aimed at strengthening faith and devotion to God through collaborative study sessions and reflective conversations.",
+      "A special gathering to break the fast together, fostering spiritual connection and organizational kinship.",
+    date: "1 Maret 2026",
+  },
+  {
+    src: program6,
+    width: 600,
+    height: 400,
+    alt: "Program 6",
+    title: "Pleno 1",
+    description:
+      "Evaluating our initial progress and realigning strategies to ensure the successful execution of upcoming programs.",
+    date: "5 Juli 2026",
   },
 ];

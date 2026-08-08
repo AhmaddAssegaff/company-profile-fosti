@@ -35,7 +35,7 @@ const Achievements = () => {
           </p>
         </div>
       ) : (
-        <div className="relative mx-auto max-w-4xl">
+        <div className="relative mx-6 max-w-4xl md:mx-auto">
           {/* decorative glow, matches the About Us video treatment */}
           <div className="absolute -inset-4 -z-10 rounded-3xl bg-gradient-to-br from-red-500/50 to-orange-400/50 blur-2xl" />
 
@@ -81,7 +81,7 @@ const Achievements = () => {
                         {year}
                       </span>
                     </div>
-                    <p className="mt-1 line-clamp-2 text-xs leading-relaxed text-muted-foreground sm:text-sm">
+                    <p className="mt-1 hidden text-xs leading-relaxed text-muted-foreground sm:line-clamp-2 sm:text-sm">
                       {blog.description}
                     </p>
                   </div>

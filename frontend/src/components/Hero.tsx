@@ -60,8 +60,6 @@ const Hero = () => {
             organizations in the town.
           </TextAnimate>
 
-          
-
           <div className="flex flex-col gap-4 sm:flex-row mt-5">
             <Link
               href={env.NEXT_PUBLIC_OPREC_URL}

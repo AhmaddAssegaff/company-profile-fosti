@@ -1,27 +1,28 @@
 import { type ProgramType } from "@/types/image";
-import fosclass from "../../public/IMG_4585.webp";
-import ost from "../../public/IMG_2402.png";
-import femaleintech from "../../public/femaleintech-hero.png";
-import sandbox from "../../public/WhatsApp Image 2025-08-14 at 20.30.42_7671f735.png";
+const fostech = "https://res.cloudinary.com/qjw4yfke/image/upload/v1784116099/cld-sample-4.jpg";
+const fostech_uiux = "https://res.cloudinary.com/qjw4yfke/image/upload/v1784116099/cld-sample-4.jpg";
+const sandbox = "https://res.cloudinary.com/qjw4yfke/image/upload/v1784116099/cld-sample-4.jpg";
 
 export const ristekPrograms: ProgramType[] = [
   {
-    src: fosclass,
+    src: fostech,
     width: 600,
     height: 400,
     alt: "Program 1",
-    title: "FOSCLASS",
+    title: "FOSTECH CAMP PROGRAMING",
     description:
-      "A program designed to elevate members' technical skills by providing hands-on experience with open-source projects and fostering collaboration.",
+      "An intensive training program designed to equip tech enthusiasts with practical web development skills through hands-on experience.",
+    date: "Sabtu (30 Apr, 2, 9, 16, 23 Mei, 6 Jun 2026)",
   },
   {
-    src: ost,
+    src: fostech_uiux,
     width: 600,
     height: 400,
     alt: "Program 2",
-    title: "Open Source Training",
+    title: "FOSTECH CAMP UI/UX",
     description:
-      "An immersive training initiative that guides participants through the entire open-source contribution workflow, from repository forking to submitting pull requests.",
+      "An intensive training program designed to equip participants with practical UI/UX design skills through hands-on experience.",
+    date: "Coming Soon",
   },
   {
     src: sandbox,
@@ -40,14 +41,6 @@ export const ristekPrograms: ProgramType[] = [
     title: "FOSTIFEST",
     description:
       "An annual flagship event organized by FOSTI that combines intensive workshops with exciting competitions to showcase and develop technological talents across various domains.",
-  },
-  {
-    src: femaleintech,
-    width: 600,
-    height: 400,
-    alt: "Program 5",
-    title: "Female In Tech",
-    description:
-      "An empowering initiative designed exclusively for women to develop technical skills, build confidence, and create a supportive network in the technology industry.",
+    date: "07 Desember 2025",
   },
 ];
