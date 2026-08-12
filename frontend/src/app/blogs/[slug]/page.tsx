@@ -10,7 +10,7 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
-import { renderMDX } from "@/lib/mdx";
+import { renderMarkdown } from "@/lib/markdown";
 
 interface BlogDetailPageProps {
   params: Promise<{
@@ -26,7 +26,7 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
     notFound();
   }
 
-  const mdx = await renderMDX(blog.content);
+  const mdx = await renderMarkdown(blog.content);
   const formattedDate = new Date(blog.datePublish).toLocaleDateString("id-ID", {
     year: "numeric",
     month: "long",
