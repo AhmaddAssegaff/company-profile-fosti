@@ -1,22 +1,30 @@
 import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
+
 import { BlogSchema, type BlogFrontmatter } from "./blogs.shema";
 
+const BLOG_EXTENSIONS = [".md", ".mdx"] as const;
 const BLOG_PATH = path.join(process.cwd(), "src/content/blogs");
+
 export interface Blog extends BlogFrontmatter {
   slug: string;
   content: string;
 }
 
+function getSlug(fileName: string): string {
+  return fileName.replace(/\.(md|mdx)$/, "");
+}
+
 function readBlog(fileName: string): Blog {
-  const slug = fileName.replace(/\.mdx$/, "");
-  const source = fs.readFileSync(path.join(BLOG_PATH, fileName), "utf8");
+  const filePath = path.join(BLOG_PATH, fileName);
+  const source = fs.readFileSync(filePath, "utf8");
+
   const { data, content } = matter(source);
   const frontmatter = BlogSchema.parse(data);
 
   return {
-    slug,
+    slug: getSlug(fileName),
     content,
     ...frontmatter,
   };
@@ -25,7 +33,9 @@ function readBlog(fileName: string): Blog {
 export function getAllBlogs(): Blog[] {
   const files = fs
     .readdirSync(BLOG_PATH)
-    .filter((file) => file.endsWith(".mdx"));
+    .filter((file) =>
+      BLOG_EXTENSIONS.some((extension) => file.endsWith(extension)),
+    );
 
   return files
     .map(readBlog)
@@ -45,27 +55,26 @@ export function getBlogsByTags(tags: string[]): Blog[] {
 }
 
 export function getBlogBySlug(slug: string): Blog | null {
-  const file = `${slug}.mdx`;
-  const fullPath = path.join(BLOG_PATH, file);
+  for (const extension of BLOG_EXTENSIONS) {
+    const fileName = `${slug}${extension}`;
+    const filePath = path.join(BLOG_PATH, fileName);
 
-  if (!fs.existsSync(fullPath)) {
-    return null;
+    if (fs.existsSync(filePath)) {
+      return readBlog(fileName);
+    }
   }
 
-  return readBlog(file);
+  return null;
 }
 
 export function getAllTags(): string[] {
-  const blogs = getAllBlogs();
-  const tagsSet = new Set<string>();
+  const tags = new Set<string>();
 
-  blogs.forEach((blog) => {
-    if (blog.tags && Array.isArray(blog.tags)) {
-      blog.tags.forEach((tag) => {
-        tagsSet.add(tag.toLowerCase());
-      });
+  for (const blog of getAllBlogs()) {
+    for (const tag of blog.tags) {
+      tags.add(tag.toLowerCase());
     }
-  });
+  }
 
-  return Array.from(tagsSet).sort();
+  return Array.from(tags).sort();
 }
