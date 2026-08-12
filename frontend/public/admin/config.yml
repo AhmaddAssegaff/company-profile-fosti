@@ -23,7 +23,7 @@ collections:
         label: Description
         widget: text
 
-      - name: date
+      - name: datePublish
         label: Date
         widget: datetime
 
