@@ -39,7 +39,6 @@ export function getAllBlogs(): Blog[] {
 
   return files
     .map(readBlog)
-    .filter((blog) => blog.published)
     .sort(
       (a, b) =>
         new Date(b.datePublish).getTime() - new Date(a.datePublish).getTime(),

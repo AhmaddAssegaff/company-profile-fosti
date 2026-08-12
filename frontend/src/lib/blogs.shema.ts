@@ -7,7 +7,6 @@ export const BlogSchema = z.object({
   author: z.string(),
   tags: z.array(z.string()),
   cover: z.string().optional(),
-  published: z.boolean(),
 });
 
 export type BlogFrontmatter = z.infer<typeof BlogSchema>;
