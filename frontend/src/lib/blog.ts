@@ -6,6 +6,7 @@ import { BlogSchema, type BlogFrontmatter } from "./blogs.shema";
 
 const BLOG_EXTENSIONS = [".md", ".mdx"] as const;
 const BLOG_PATH = path.join(process.cwd(), "src/content/blogs");
+const SLUG_REGEX = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 
 export interface Blog extends BlogFrontmatter {
   slug: string;
@@ -54,12 +55,16 @@ export function getBlogsByTags(tags: string[]): Blog[] {
 }
 
 export function getBlogBySlug(slug: string): Blog | null {
-  for (const extension of BLOG_EXTENSIONS) {
-    const fileName = `${slug}${extension}`;
-    const filePath = path.join(BLOG_PATH, fileName);
+  if (!SLUG_REGEX.test(slug)) {
+    return null;
+  }
 
-    if (fs.existsSync(filePath)) {
-      return readBlog(fileName);
+  for (const ext of BLOG_EXTENSIONS) {
+    const file = `${slug}${ext}`;
+    const fullPath = path.join(BLOG_PATH, file);
+
+    if (fs.existsSync(fullPath)) {
+      return readBlog(file);
     }
   }
 

@@ -22,7 +22,7 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
   const { slug } = await params;
   const blog = getBlogBySlug(slug);
 
-  if (!blog || !blog.published) {
+  if (!blog) {
     notFound();
   }
 
