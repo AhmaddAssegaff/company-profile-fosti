@@ -51,7 +51,7 @@ const Keor = () => {
           🔑 Internal Affairs
         </span>
         <span className="hidden rotate-12 rounded-xl border-2 border-black dark:border-gray-400 bg-white px-3 py-1.5 font-mono text-xs font-bold shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] dark:shadow-gray-100 dark:bg-neutral-800 lg:absolute lg:left-12 lg:top-3/4 lg:z-10 lg:block lg:-translate-y-1/2 xl:left-24">
-          // EST. 2008 • FOSTI UMS
+          EST. 2008 • FOSTI UMS
         </span>
         <span className="hidden rotate-12 rounded-full border-2 border-black bg-pink-200 px-4 py-1.5 text-sm font-bold text-neutral-900 shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] dark:shadow-gray-100 lg:absolute lg:right-10 lg:top-1/2 lg:z-10 lg:block xl:right-20">
           📌 Kaderisasi HQ
