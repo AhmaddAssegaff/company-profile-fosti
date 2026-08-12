@@ -3,7 +3,7 @@ import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import remarkGfm from "remark-gfm";
 
-export async function renderMDX(source: string) {
+export async function renderMarkdown(source: string) {
   const { content } = await compileMDX({
     source,
     options: {
