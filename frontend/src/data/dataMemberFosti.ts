@@ -20,7 +20,8 @@ export const dataFostiAllMembers: TeamType[] = [
     role: "Vice Director of FOSTI",
     src: "https://res.cloudinary.com/qjw4yfke/image/upload/v1785736854/RaniAprilia_L200240231_WAKETUM_-_RANI_APRILIA_rjlvnn.webp",
     linkedin: "http://www.linkedin.com/in/raniels",
-    instagram: "https://www.instagram.com/aprlla_rani?igsh=MTF0bWNucGEzMG4xbg%3D%3D&utm_source=qr",
+    instagram:
+      "https://www.instagram.com/aprlla_rani?igsh=MTF0bWNucGEzMG4xbg%3D%3D&utm_source=qr",
   },
   {
     name: "Amanda Yesi Kurniaty",
@@ -30,7 +31,8 @@ export const dataFostiAllMembers: TeamType[] = [
     role: "General Finance 1",
     src: "https://res.cloudinary.com/qjw4yfke/image/upload/v1785652098/AmandaYesiKurniaty_L200240007_BPI_-_AMANDA_YESI_KURNIATY_fkr4eg.webp",
     linkedin: "",
-    instagram: "https://www.instagram.com/amandayesi__?igsh=MWR2aG4wMzhwZTlxeA==",
+    instagram:
+      "https://www.instagram.com/amandayesi__?igsh=MWR2aG4wMzhwZTlxeA==",
   },
   {
     name: "Salsabila Az-Zahra",
@@ -40,27 +42,30 @@ export const dataFostiAllMembers: TeamType[] = [
     role: "General Finance 2",
     src: "https://res.cloudinary.com/qjw4yfke/image/upload/v1785652144/Salsabila_Az-zahra_L200240041_BPI_-_SALSABILA_AZ-ZAHRA_ioiqkz.webp",
     linkedin: "",
-    instagram: "https://www.instagram.com/salsabljhra?igsh=MWtmbmlsbGx3dXg4bw%3D%3D&utm_source=qr",
-  },
-  {
-    name: "Gladiza Fauzura Ristadanty",
-    alt: "Gladiza Fauzura Ristadanty",
-    fostiAngkatan: 24,
-    isBphi: true,
-    role: "General Secretary 1",
-    src: "https://res.cloudinary.com/qjw4yfke/image/upload/v1785652117/Gladiza_L200240037_Sekum2_-_GLADIZA_FAUZURA_RISTADANTY_ftwj2e.webp",
-    linkedin: "https://www.linkedin.com/in/gladiza-fauzura-404b7534b?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
-    instagram: "https://www.instagram.com/gladiza.fauzura?igsh=MTRzcDFodDZmaDBwZg==",
+    instagram:
+      "https://www.instagram.com/salsabljhra?igsh=MWtmbmlsbGx3dXg4bw%3D%3D&utm_source=qr",
   },
   {
     name: "Alya Rusyda Maharistya",
     alt: "Alya Rusyda Maharistya",
     fostiAngkatan: 24,
     isBphi: true,
-    role: "General Secretary 2",
+    role: "General Secretary 1",
     src: "https://res.cloudinary.com/qjw4yfke/image/upload/v1785716780/Alya_Rusyda_Maharistya_L200240290_BPHI__Sekum_1__-_ALYA_RUSYDA_MAHARISTYA-removebg-preview_ph2ngv.png",
     linkedin: "https://linkedin.com/in/alya-rusyda-maharistya",
     instagram: "https://instagram.com/alyarusyda_",
+  },
+  {
+    name: "Gladiza Fauzura Ristadanty",
+    alt: "Gladiza Fauzura Ristadanty",
+    fostiAngkatan: 24,
+    isBphi: true,
+    role: "General Secretary 2",
+    src: "https://res.cloudinary.com/qjw4yfke/image/upload/v1785652117/Gladiza_L200240037_Sekum2_-_GLADIZA_FAUZURA_RISTADANTY_ftwj2e.webp",
+    linkedin:
+      "https://www.linkedin.com/in/gladiza-fauzura-404b7534b?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
+    instagram:
+      "https://www.instagram.com/gladiza.fauzura?igsh=MTRzcDFodDZmaDBwZg==",
   },
   {
     name: "Airlangga Pradana Prakusa",
@@ -90,7 +95,8 @@ export const dataFostiAllMembers: TeamType[] = [
     role: "Head of Keor",
     src: "https://res.cloudinary.com/qjw4yfke/image/upload/v1785652111/Eko_Wahyu_Nugroho_L200240090_BPHI_-_EKO_WAHYU_NUGROHO_qilnpf.webp",
     linkedin: "https://www.linkedin.com/in/eko-wahyu-nugroho-907a75296",
-    instagram: "https://www.instagram.com/ekowahyunugrohooo?igsh=MWtzNXhyeHBqbmFvcA==",
+    instagram:
+      "https://www.instagram.com/ekowahyunugrohooo?igsh=MWtzNXhyeHBqbmFvcA==",
   },
   {
     name: "Sekar Kaltsum Anindita Pratiwi",
@@ -141,7 +147,8 @@ export const dataFostiAllMembers: TeamType[] = [
     fostiAngkatan: 25,
     role: "Member Ristek",
     src: "https://res.cloudinary.com/qjw4yfke/image/upload/v1785652100/ArrikwahNahwanIkhtibar_L200250054_RISTEK_-_ARRIKWAH_NAHWAN_IKHTIBAR_nvorjp.webp",
-    linkedin: "https://www.linkedin.com/in/arrikwah-nahwan-ikhtibar-5657413a0?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+    linkedin:
+      "https://www.linkedin.com/in/arrikwah-nahwan-ikhtibar-5657413a0?utm_source=share_via&utm_content=profile&utm_medium=member_android",
     instagram: "https://www.instagram.com/ikhbarrrr_?igsh=ZDk0aHpuemZ4c2oz",
     divisi: "Ristek",
     isBphi: false,
@@ -164,7 +171,8 @@ export const dataFostiAllMembers: TeamType[] = [
     role: "Member Ristek",
     src: "https://res.cloudinary.com/qjw4yfke/image/upload/v1785652108/DEWI_SETIA_NINGSIH_L300250046_RISTEK_-_DEWI_SETIA_NINGSIH_xqx7gv.webp",
     linkedin: "-",
-    instagram: "https://www.instagram.com/puduwfllsn__?igsh=MXg0ZGMxYW1jOGR3dg%3D%3D&utm_source=qr",
+    instagram:
+      "https://www.instagram.com/puduwfllsn__?igsh=MXg0ZGMxYW1jOGR3dg%3D%3D&utm_source=qr",
     divisi: "Ristek",
     isBphi: false,
   },
@@ -175,7 +183,8 @@ export const dataFostiAllMembers: TeamType[] = [
     role: "Member Ristek",
     src: "https://res.cloudinary.com/qjw4yfke/image/upload/v1785652141/Rasyad_B400250308_Ristek_-_Elgiva_Rasyad_Aditya_Putra_kogdsx.webp",
     linkedin: "https://www.linkedin.com/in/elgiva-rasyad-581b67291",
-    instagram: "https://www.instagram.com/rasyaditya.__?igsh=MW9lZDdmMWM4MmhmaA==.__",
+    instagram:
+      "https://www.instagram.com/rasyaditya.__?igsh=MW9lZDdmMWM4MmhmaA==.__",
     divisi: "Ristek",
     isBphi: false,
   },
@@ -240,8 +249,10 @@ export const dataFostiAllMembers: TeamType[] = [
     fostiAngkatan: 25,
     role: "Member Ristek",
     src: "https://res.cloudinary.com/qjw4yfke/image/upload/v1785652131/MUHAMMAD_Fareil_L200240111_RISTEK_-_MUHAMMAD_FAREIL_YUDI_SAPUTRA_sgfi2q.webp",
-    linkedin: "https://id.linkedin.com/in/muhammad-fareil-yudi-saputra-6750b6409",
-    instagram: "https://www.instagram.com/farill__45?igsh=NDZuMzZmdXg3eWh6&utm_source=qr",
+    linkedin:
+      "https://id.linkedin.com/in/muhammad-fareil-yudi-saputra-6750b6409",
+    instagram:
+      "https://www.instagram.com/farill__45?igsh=NDZuMzZmdXg3eWh6&utm_source=qr",
     divisi: "Ristek",
     isBphi: false,
   },
@@ -252,7 +263,8 @@ export const dataFostiAllMembers: TeamType[] = [
     role: "Member Ristek",
     src: "https://res.cloudinary.com/qjw4yfke/image/upload/v1785652133/Muhammad_Nadhir_Ufairoh_L200250027_Ristek_-_MUHAMMAD_NADHIR_UFAIROH_hqmz7i.webp",
     linkedin: "https://id.linkedin.com/in/muhammad-nadhir-ufairoh-b92363294",
-    instagram: "https://www.instagram.com/nddhrrufirh?igsh=MXVxcGc0NmoxZ2dwNw==",
+    instagram:
+      "https://www.instagram.com/nddhrrufirh?igsh=MXVxcGc0NmoxZ2dwNw==",
     divisi: "Ristek",
     isBphi: false,
   },
@@ -274,7 +286,8 @@ export const dataFostiAllMembers: TeamType[] = [
     role: "Member Ristek",
     src: "https://res.cloudinary.com/qjw4yfke/image/upload/v1785652139/Rafif_Rozzaq_Alana_Putra_L200250152_RISTEK_-_RAFIF_ROZZAQ_ALANA_PUTRA_uptaqt.webp",
     linkedin: "",
-    instagram: "https://www.instagram.com/rafifrozzaq?igsh=MXhkb3JzcHFibTNzOQ==",
+    instagram:
+      "https://www.instagram.com/rafifrozzaq?igsh=MXhkb3JzcHFibTNzOQ==",
     divisi: "Ristek",
     isBphi: false,
   },
@@ -319,7 +332,8 @@ export const dataFostiAllMembers: TeamType[] = [
     fostiAngkatan: 24,
     role: "Member Ristek",
     src: "https://res.cloudinary.com/qjw4yfke/image/upload/v1785652096/Afifah_Nur_Hidayah_L200240222_RISTEK_-_AFIFAH_NUR_HIDAYAH_ijdaax.webp",
-    linkedin: "https://www.linkedin.com/in/afifah-nur-hidayah-61a743366?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+    linkedin:
+      "https://www.linkedin.com/in/afifah-nur-hidayah-61a743366?utm_source=share_via&utm_content=profile&utm_medium=member_android",
     instagram: "https://www.instagram.com/afifhnh?igsh=MW9xNHc1a3BuY2R6Nw==",
     divisi: "Ristek",
     isBphi: false,
@@ -386,7 +400,8 @@ export const dataFostiAllMembers: TeamType[] = [
     role: "Member Ristek",
     src: "https://i.ibb.co.com/5hFrgLn6/candra.png",
     instagram: "",
-    linkedin: "https://www.linkedin.com/in/kurniawan-candra-mahardika-218b12285",
+    linkedin:
+      "https://www.linkedin.com/in/kurniawan-candra-mahardika-218b12285",
     divisi: "Ristek",
     isBphi: false,
   },
@@ -652,7 +667,8 @@ export const dataFostiAllMembers: TeamType[] = [
     role: "Member Keor",
     src: "https://res.cloudinary.com/qjw4yfke/image/upload/v1785652137/NUR_FARIS_AL_MUZAKKI_L300250043_KEORGANISASIAN_-_NUR_FARIS_AL_MUZAKKI_qgfv8c.webp",
     linkedin: "",
-    instagram: "https://www.instagram.com/almuzakiee._?igsh=MTZhNnozMmQydGl6Nw==",
+    instagram:
+      "https://www.instagram.com/almuzakiee._?igsh=MTZhNnozMmQydGl6Nw==",
     divisi: "Keor",
     isBphi: false,
   },
@@ -674,7 +690,8 @@ export const dataFostiAllMembers: TeamType[] = [
     role: "Member Keor",
     src: "https://res.cloudinary.com/qjw4yfke/image/upload/v1785652147/Satria_Adzikri_L200250003_KEOR_-_SATRIA_ADZIKRI_wx4bju.webp",
     linkedin: "",
-    instagram: "https://www.instagram.com/striadzikri?igsh=MWwwZm5hZTdnMm9qOQ==",
+    instagram:
+      "https://www.instagram.com/striadzikri?igsh=MWwwZm5hZTdnMm9qOQ==",
     divisi: "Keor",
     isBphi: false,
   },
@@ -775,7 +792,8 @@ export const dataFostiAllMembers: TeamType[] = [
     role: "Member Keor",
     src: "https://res.cloudinary.com/qjw4yfke/image/upload/v1785652133/Muhammad_Syaiful_Huda_A710240017_KEOR_-_Muhammad_Syaiful_HUDA_zdoh9c.webp",
     linkedin: "",
-    instagram: "https://www.instagram.com/muhammad_hudaa_?igsh=Z3lzYWU1Yzk5cmhm",
+    instagram:
+      "https://www.instagram.com/muhammad_hudaa_?igsh=Z3lzYWU1Yzk5cmhm",
     divisi: "Keor",
     isBphi: false,
   },
@@ -930,7 +948,8 @@ export const dataFostiAllMembers: TeamType[] = [
     fostiAngkatan: 25,
     role: "Member Hubpub",
     src: "https://res.cloudinary.com/qjw4yfke/image/upload/v1785652123/KamilaAuliaPutri_L200250010_HUBPUB_-_KAMILA_AULIA_PUTRI_sepxmr.webp",
-    linkedin: "https://www.linkedin.com/in/kamila-aulia-putri-9187a32a5?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+    linkedin:
+      "https://www.linkedin.com/in/kamila-aulia-putri-9187a32a5?utm_source=share_via&utm_content=profile&utm_medium=member_android",
     instagram: "https://www.instagram.com/z3ninnnn?igsh=M2FhN2ZsOXpwZmx3",
     divisi: "Hubpub",
     isBphi: false,
@@ -942,7 +961,8 @@ export const dataFostiAllMembers: TeamType[] = [
     role: "Member Hubpub",
     src: "https://res.cloudinary.com/qjw4yfke/image/upload/v1785652123/Khayla_Irvine_Steffany_L200250233_Hubungan_Publik_-_KHAYLA_IRVINE_STEFFANY_iellcw.webp",
     linkedin: "",
-    instagram: "https://www.instagram.com/khaylasteffany?igsh=MTc5cjRpMHAwd25kMQ%3D%3D&utm_source=qr",
+    instagram:
+      "https://www.instagram.com/khaylasteffany?igsh=MTc5cjRpMHAwd25kMQ%3D%3D&utm_source=qr",
     divisi: "Hubpub",
     isBphi: false,
   },
@@ -964,7 +984,8 @@ export const dataFostiAllMembers: TeamType[] = [
     role: "Member Hubpub",
     src: "https://res.cloudinary.com/qjw4yfke/image/upload/v1785652130/Muhammad_Alghifari_L200250229_Hubungan_publik_-_MUHAMMAD_ALGHIFARI_cljow2.webp",
     linkedin: "",
-    instagram: "https://www.instagram.com/_aalghifarii?igsh=aDczcnFlaGUzejJt&utm_source=qr",
+    instagram:
+      "https://www.instagram.com/_aalghifarii?igsh=aDczcnFlaGUzejJt&utm_source=qr",
     divisi: "Hubpub",
     isBphi: false,
   },
