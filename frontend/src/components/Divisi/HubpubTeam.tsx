@@ -31,9 +31,6 @@ const HubpubTeam = () => {
       </p>
       <div className="mt-5 grid grid-cols-2 gap-3 xs:gap-4 sm:gap-5 md:mt-2 md:gap-6 lg:grid-cols-3 xl:grid-cols-4">
         {hubpubTeam.map((member, index) => {
-          const hasAnySocial =
-            isValidLink(member.linkedin) || isValidLink(member.instagram);
-
           return (
             <AnimatedContent
               delay={index * 10}
@@ -57,6 +54,7 @@ const HubpubTeam = () => {
                         sizes="(max-width: 640px) 80px, 96px"
                         alt={member.name}
                         className="object-cover object-center"
+                        loading="lazy"
                       />
                     ) : (
                       <div className="flex h-full w-full items-center justify-center bg-amber-100 text-neutral-400 dark:bg-neutral-800 dark:text-neutral-500">
@@ -78,38 +76,54 @@ const HubpubTeam = () => {
                   </p>
 
                   {member.fostiAngkatan && (
-                    <span className="mx-auto my-1 inline-flex items-center justify-center gap-1 rounded-full border border-black bg-amber-300 px-2.5 pt-[3px] pb-[2px] font-mono text-[10px] font-bold uppercase leading-none text-neutral-900 shadow-[1.5px_1.5px_0px_0px_rgba(0,0,0,1)] dark:bg-amber-400 dark:text-neutral-900 sm:my-auto sm:py-1 sm:text-[11px]">
+                    <span className="mx-auto my-1 inline-flex items-center justify-center gap-1 rounded-full border border-black bg-amber-300 px-2.5 pb-[2px] pt-[3px] font-mono text-[10px] font-bold uppercase leading-none text-neutral-900 shadow-[1.5px_1.5px_0px_0px_rgba(0,0,0,1)] dark:bg-amber-400 dark:text-neutral-900 sm:my-auto sm:py-1 sm:text-[11px]">
                       👤 <span>FOSTI &apos;{member.fostiAngkatan}</span>
                     </span>
                   )}
 
-                  {hasAnySocial && (
-                    <div className="mt-2 flex items-center justify-center gap-2 sm:mt-4 sm:gap-2.5 sm:pt-2">
-                      {isValidLink(member.linkedin) && (
-                        <Link
-                          href={member.linkedin}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          aria-label={`${member.name} LinkedIn`}
-                          className="inline-flex items-center justify-center rounded-full border-2 border-black bg-amber-300 p-1.5 text-neutral-900 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all duration-200 hover:bg-blue-600 hover:text-white dark:border-neutral-600 dark:bg-amber-400 dark:text-neutral-900 dark:hover:bg-blue-600 dark:hover:text-white sm:p-2"
-                        >
-                          <AiFillLinkedin className="h-5 w-5" />
-                        </Link>
-                      )}
+                  <div className="mt-2 flex items-center justify-center gap-2 sm:mt-4 sm:gap-2.5 sm:pt-2">
+                    {isValidLink(member.linkedin) ? (
+                      <Link
+                        href={member.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`${member.name} LinkedIn`}
+                        className="inline-flex items-center justify-center rounded-full border-2 border-black bg-amber-300 p-1.5 text-neutral-900 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all duration-200 hover:bg-blue-600 hover:text-white dark:border-neutral-600 dark:bg-amber-400 dark:text-neutral-900 dark:hover:bg-blue-600 dark:hover:text-white sm:p-2"
+                      >
+                        <AiFillLinkedin className="h-5 w-5" />
+                      </Link>
+                    ) : (
+                      <button
+                        type="button"
+                        disabled
+                        aria-label={`${member.name} LinkedIn tidak tersedia`}
+                        className="inline-flex cursor-not-allowed items-center justify-center rounded-full border-2 border-neutral-400 bg-neutral-200 p-1.5 text-neutral-400 opacity-60 shadow-[2px_2px_0px_0px_rgba(0,0,0,0.4)] dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-600 sm:p-2"
+                      >
+                        <AiFillLinkedin className="h-5 w-5" />
+                      </button>
+                    )}
 
-                      {isValidLink(member.instagram) && (
-                        <Link
-                          href={member.instagram}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          aria-label={`${member.name} Instagram`}
-                          className="inline-flex items-center justify-center rounded-full border-2 border-black bg-amber-300 p-1.5 text-neutral-900 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all duration-200 hover:bg-pink-600 hover:text-white dark:border-neutral-600 dark:bg-amber-400 dark:text-neutral-900 dark:hover:bg-pink-600 dark:hover:text-white sm:p-2"
-                        >
-                          <AiFillInstagram className="h-5 w-5" />
-                        </Link>
-                      )}
-                    </div>
-                  )}
+                    {isValidLink(member.instagram) ? (
+                      <Link
+                        href={member.instagram}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`${member.name} Instagram`}
+                        className="inline-flex items-center justify-center rounded-full border-2 border-black bg-amber-300 p-1.5 text-neutral-900 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all duration-200 hover:bg-pink-600 hover:text-white dark:border-neutral-600 dark:bg-amber-400 dark:text-neutral-900 dark:hover:bg-pink-600 dark:hover:text-white sm:p-2"
+                      >
+                        <AiFillInstagram className="h-5 w-5" />
+                      </Link>
+                    ) : (
+                      <button
+                        type="button"
+                        disabled
+                        aria-label={`${member.name} Instagram tidak tersedia`}
+                        className="inline-flex cursor-not-allowed items-center justify-center rounded-full border-2 border-neutral-400 bg-neutral-200 p-1.5 text-neutral-400 opacity-60 shadow-[2px_2px_0px_0px_rgba(0,0,0,0.4)] dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-600 sm:p-2"
+                      >
+                        <AiFillInstagram className="h-5 w-5" />
+                      </button>
+                    )}
+                  </div>
                 </CardContent>
               </Card>
             </AnimatedContent>

@@ -19,7 +19,8 @@ import { type TeamType } from "@/types/image";
 import { AiFillLinkedin, AiFillInstagram } from "react-icons/ai";
 import Image, { type StaticImageData } from "next/image";
 
-const fotbar = "https://res.cloudinary.com/qjw4yfke/image/upload/v1786202665/BPI_gmb4j7.webp";
+const fotbar =
+  "https://res.cloudinary.com/qjw4yfke/image/upload/v1786202665/BPI_gmb4j7.webp";
 
 const isValidLink = (link?: string | null): link is string =>
   !!link && link.trim() !== "" && link.trim() !== "-";
@@ -70,7 +71,8 @@ const Divisi = () => {
             width={600}
             height={400}
             alt="Fostibar"
-            className="h-44 w-80 rounded-xl border-2 border-black object-cover shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:shadow-gray-100 dark:border-gray-500 sm:h-56 sm:w-80 md:h-[18rem] md:w-[28rem] lg:h-[25rem] lg:w-[75rem]"
+            loading="lazy"
+            className="h-44 w-80 rounded-xl border-2 border-black object-cover shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:border-gray-500 dark:shadow-gray-100 sm:h-56 sm:w-80 md:h-[18rem] md:w-[28rem] lg:h-[25rem] lg:w-[75rem]"
           />
         </div>
         <div className="grid w-full grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -95,19 +97,19 @@ const Divisi = () => {
       </div>
       <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
         {divisi.map((feature, index) => (
-            <Link key={index} href={feature.href}>
-              <Card className="gradient-card h-full border-2 border-border/40 transition-colors hover:border-red-500">
-                <CardContent className="pt-6">
-                  {feature.icon}
-                  <h1 className="mb-2 text-xl font-semibold text-red-500">
-                    {feature.title}
-                  </h1>
-                  <p className="font-medium text-muted-foreground">
-                    {feature.description}
-                  </p>
-                </CardContent>
-              </Card>
-            </Link>
+          <Link key={index} href={feature.href}>
+            <Card className="gradient-card h-full border-2 border-border/40 transition-colors hover:border-red-500">
+              <CardContent className="pt-6">
+                {feature.icon}
+                <h1 className="mb-2 text-xl font-semibold text-red-500">
+                  {feature.title}
+                </h1>
+                <p className="font-medium text-muted-foreground">
+                  {feature.description}
+                </p>
+              </CardContent>
+            </Card>
+          </Link>
           // <AnimatedContent
           //   delay={feature.delay}
           //   distance={250}
@@ -128,9 +130,6 @@ const Divisi = () => {
 };
 
 function ExecutiveCard({ executive }: { executive: TeamType }) {
-  const hasAnySocial =
-    isValidLink(executive.linkedin) || isValidLink(executive.instagram);
-
   return (
     <Card className="group mx-auto flex h-full w-full flex-col justify-between overflow-hidden rounded-2xl border-2 border-black bg-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] dark:border-neutral-700 dark:bg-neutral-900 dark:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:hover:border-neutral-500 dark:hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] sm:max-w-xs md:max-w-sm">
       <CardHeader className="flex flex-col items-center space-y-4 pb-2 pt-6 text-center">
@@ -142,7 +141,7 @@ function ExecutiveCard({ executive }: { executive: TeamType }) {
                 : (executive.src as StaticImageData).src
             }
             alt={executive.name}
-            className="aspect-square h-full w-full object-cover object-center bg-white"
+            className="aspect-square h-full w-full bg-white object-cover object-center"
           />
           <AvatarFallback>{executive.name}</AvatarFallback>
         </Avatar>
@@ -157,33 +156,49 @@ function ExecutiveCard({ executive }: { executive: TeamType }) {
         </div>
       </CardHeader>
 
-      {hasAnySocial && (
-        <CardFooter className="flex justify-center gap-3 pb-5 pt-2">
-          {isValidLink(executive.linkedin) && (
-            <Link
-              href={executive.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`${executive.name} LinkedIn`}
-              className="inline-flex items-center justify-center rounded-full border-2 border-black bg-amber-300 p-2.5 text-neutral-900 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all duration-200 hover:bg-blue-600 hover:text-white dark:border-neutral-600 dark:bg-amber-400 dark:text-neutral-900 dark:hover:bg-blue-600 dark:hover:text-white"
-            >
-              <AiFillLinkedin className="h-4 w-4 sm:h-5 sm:w-5" />
-            </Link>
-          )}
+      <CardFooter className="flex justify-center gap-3 pb-5 pt-2">
+        {isValidLink(executive.linkedin) ? (
+          <Link
+            href={executive.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`${executive.name} LinkedIn`}
+            className="inline-flex items-center justify-center rounded-full border-2 border-black bg-amber-300 p-2.5 text-neutral-900 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all duration-200 hover:bg-blue-600 hover:text-white dark:border-neutral-600 dark:bg-amber-400 dark:text-neutral-900 dark:hover:bg-blue-600 dark:hover:text-white"
+          >
+            <AiFillLinkedin className="h-4 w-4 sm:h-5 sm:w-5" />
+          </Link>
+        ) : (
+          <button
+            type="button"
+            disabled
+            aria-label={`${executive.name} LinkedIn tidak tersedia`}
+            className="inline-flex cursor-not-allowed items-center justify-center rounded-full border-2 border-neutral-400 bg-neutral-200 p-1.5 text-neutral-400 opacity-60 shadow-[2px_2px_0px_0px_rgba(0,0,0,0.4)] dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-600 sm:p-2"
+          >
+            <AiFillLinkedin className="h-5 w-5" />
+          </button>
+        )}
 
-          {isValidLink(executive.instagram) && (
-            <Link
-              href={executive.instagram}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`${executive.name} Instagram`}
-              className="inline-flex items-center justify-center rounded-full border-2 border-black bg-amber-300 p-2.5 text-neutral-900 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all duration-200 hover:bg-pink-600 hover:text-white dark:border-neutral-600 dark:bg-amber-400 dark:text-neutral-900 dark:hover:bg-pink-600 dark:hover:text-white"
-            >
-              <AiFillInstagram className="h-4 w-4 sm:h-5 sm:w-5" />
-            </Link>
-          )}
-        </CardFooter>
-      )}
+        {isValidLink(executive.instagram) ? (
+          <Link
+            href={executive.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`${executive.name} Instagram`}
+            className="inline-flex items-center justify-center rounded-full border-2 border-black bg-amber-300 p-2.5 text-neutral-900 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all duration-200 hover:bg-pink-600 hover:text-white dark:border-neutral-600 dark:bg-amber-400 dark:text-neutral-900 dark:hover:bg-pink-600 dark:hover:text-white"
+          >
+            <AiFillInstagram className="h-4 w-4 sm:h-5 sm:w-5" />
+          </Link>
+        ) : (
+          <button
+            type="button"
+            disabled
+            aria-label={`${executive.name} LinkedIn tidak tersedia`}
+            className="inline-flex cursor-not-allowed items-center justify-center rounded-full border-2 border-neutral-400 bg-neutral-200 p-1.5 text-neutral-400 opacity-60 shadow-[2px_2px_0px_0px_rgba(0,0,0,0.4)] dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-600 sm:p-2"
+          >
+            <AiFillLinkedin className="h-5 w-5" />
+          </button>
+        )}
+      </CardFooter>
     </Card>
   );
 }
