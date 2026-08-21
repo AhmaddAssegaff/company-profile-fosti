@@ -15,8 +15,11 @@ const About = () => {
       <section id="about" className="mx-auto max-w-screen-2xl px-5 py-16">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-5 lg:gap-20">
           <div className="order-1 lg:order-2 lg:col-span-2">
-            <h1 className="mb-5 bg-gradient-to-br from-red-500 to-orange-400 bg-clip-text text-3xl font-bold leading-tight text-transparent md:text-4xl lg:text-5xl">
-              Who We Are & What We Do
+            <h1 className="mb-5 text-3xl font-black leading-tight text-neutral-900 dark:text-white md:text-4xl lg:text-5xl">
+              <span className="-rotate-1 inline-block border-2 border-black bg-amber-300 px-2 py-1 text-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] dark:border-white dark:bg-red-500 dark:text-white dark:shadow-[3px_3px_0px_0px_rgba(255,255,255,1)]">
+                Who We Are
+              </span>{" "}
+              &amp; What We Do
             </h1>
 
             <p className="mb-8 text-sm font-medium leading-relaxed text-muted-foreground md:text-base lg:text-lg">
@@ -33,7 +36,7 @@ const About = () => {
                 "Active since 2008 with a growing community",
               ].map((item, i) => (
                 <li className="flex items-start gap-3" key={i}>
-                  <span className="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-red-600/10 text-red-600 dark:text-red-400">
+                  <span className="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-md border-2 border-black bg-amber-300 p-1 text-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] dark:border-white dark:bg-red-500 dark:text-white dark:shadow-[2px_2px_0px_0px_rgba(255,255,255,1)]">
                     <Check className="h-3.5 w-3.5" />
                   </span>
                   <span className="text-sm font-medium text-foreground/80 md:text-base">
@@ -43,30 +46,18 @@ const About = () => {
               ))}
             </ul>
 
-            <div className="mt-8 flex items-center gap-2 border-t border-border/40 pt-6 text-sm text-muted-foreground">
-              <Calendar className="h-4 w-4 text-red-500" />
-              <span>
-                Established in{" "}
-                <strong className="font-semibold text-foreground">2008</strong>
+            <div className="mt-8 pt-6">
+              <span className="inline-flex items-center gap-2 rounded-full border-2 border-black bg-white px-4 py-1.5 text-sm font-bold text-neutral-900 shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] dark:border-white dark:bg-neutral-900 dark:text-white dark:shadow-[3px_3px_0px_0px_rgba(255,255,255,1)]">
+                <Calendar className="h-4 w-4 text-red-500 dark:text-red-400" />
+                Established in <strong className="font-black">2008</strong>
               </span>
             </div>
           </div>
 
-          {/* Video — order-2 di mobile (bawah), order-1 di desktop (kiri, 60%) */}
           <div className="relative order-2 lg:order-1 lg:col-span-3">
-            {/* decorative glow */}
-            <div className="absolute -inset-4 -z-10 rounded-3xl bg-gradient-to-br from-red-500/20 to-orange-400/20 blur-2xl" />
-
-            <div className="relative overflow-hidden rounded-2xl border border-border/40 shadow-xl shadow-red-600/5">
+            <div className="relative overflow-hidden rounded-2xl border-4 border-black bg-white shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] dark:border-gray-700 dark:shadow-[8px_8px_0px_0px_rgba(255,255,255,1)]">
               <HeroVideoDialog
-                className="block dark:hidden"
-                animationStyle="from-center"
-                videoSrc="https://www.youtube.com/embed/DxwXP8rp5qg?si=xMSnKT1btIczpxoI"
-                thumbnailSrc={thumbnail}
-                thumbnailAlt="Hero Video"
-              />
-              <HeroVideoDialog
-                className="hidden dark:block"
+                className="block"
                 animationStyle="from-center"
                 videoSrc="https://www.youtube.com/embed/DxwXP8rp5qg?si=xMSnKT1btIczpxoI"
                 thumbnailSrc={thumbnail}
@@ -117,13 +108,13 @@ function MarqueeItem({
   height: number;
 }) {
   return (
-    <Card className="h-[200px] w-[90%] p-2 sm:h-[250px] sm:w-[25rem]">
+    <Card className="group relative h-[200px] w-[90%] overflow-hidden rounded-xl border-2 border-black bg-white p-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] dark:border-white dark:bg-neutral-800 dark:shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] dark:hover:shadow-[6px_6px_0px_0px_rgba(255,255,255,1)] sm:h-[250px] sm:w-[25rem]">
       <Image
         src={src}
         alt={alt}
         width={width}
         height={height}
-        className="h-full w-full rounded-lg object-cover"
+        className="h-full w-full rounded-lg border-2 border-black object-cover dark:border-neutral-600"
       />
     </Card>
   );

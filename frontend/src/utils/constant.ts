@@ -1,134 +1,120 @@
-const musker1 = "https://res.cloudinary.com/qjw4yfke/image/upload/v1784116099/cld-sample-4.jpg";
-const musker2 = "https://res.cloudinary.com/qjw4yfke/image/upload/v1784116099/cld-sample-4.jpg";
-const musker3 = "https://res.cloudinary.com/qjw4yfke/image/upload/v1784116099/cld-sample-4.jpg";
-const musker4 = "https://res.cloudinary.com/qjw4yfke/image/upload/v1784116099/cld-sample-4.jpg";
-const tot1 = "https://res.cloudinary.com/qjw4yfke/image/upload/v1784116099/cld-sample-4.jpg";
-const tot2 = "https://res.cloudinary.com/qjw4yfke/image/upload/v1784116099/cld-sample-4.jpg";
-const tot4 = "https://res.cloudinary.com/qjw4yfke/image/upload/v1784116099/cld-sample-4.jpg";
-const tot3 = "https://res.cloudinary.com/qjw4yfke/image/upload/v1784116099/cld-sample-4.jpg";
-const about1 = "https://res.cloudinary.com/qjw4yfke/image/upload/v1784116099/cld-sample-4.jpg";
-const about2 = "https://res.cloudinary.com/qjw4yfke/image/upload/v1784116099/cld-sample-4.jpg";
-const about3 = "https://res.cloudinary.com/qjw4yfke/image/upload/v1784116099/cld-sample-4.jpg";
-const about4 = "https://res.cloudinary.com/qjw4yfke/image/upload/v1784116099/cld-sample-4.jpg";
-const about5 = "https://res.cloudinary.com/qjw4yfke/image/upload/v1784116099/cld-sample-4.jpg";
+// const musker = [
+//   {
+//     src: musker1,
+//     alt: "musker1",
+//   },
+//   {
+//     src: musker2,
+//     alt: "musker2",
+//   },
+//   {
+//     src: musker3,
+//     alt: "musker3",
+//   },
+//   {
+//     src: musker4,
+//     alt: "musker4",
+//   },
+// ];
 
-const musker = [
-  {
-    src: musker1,
-    alt: "musker1",
-  },
-  {
-    src: musker2,
-    alt: "musker2",
-  },
-  {
-    src: musker3,
-    alt: "musker3",
-  },
-  {
-    src: musker4,
-    alt: "musker4",
-  },
-];
-
-const tot = [
-  {
-    src: tot1,
-    alt: "tot1",
-  },
-  {
-    src: tot2,
-    alt: "tot2",
-  },
-  {
-    src: tot3,
-    alt: "tot3",
-  },
-  {
-    src: tot4,
-    alt: "tot4",
-  },
-];
+// const tot = [
+//   {
+//     src: tot1,
+//     alt: "tot1",
+//   },
+//   {
+//     src: tot2,
+//     alt: "tot2",
+//   },
+//   {
+//     src: tot3,
+//     alt: "tot3",
+//   },
+//   {
+//     src: tot4,
+//     alt: "tot4",
+//   },
+// ];
 
 const carouselAbout = [
   {
-    src: about1,
-    alt: "about1",
+    src: "https://res.cloudinary.com/qjw4yfke/image/upload/f_auto/q_auto/About_Oprec_ovll9n.webp",
+    alt: "Oprec",
     width: 500,
     height: 500,
   },
   {
-    src: about2,
-    alt: "about2",
+    src: "https://res.cloudinary.com/qjw4yfke/image/upload/f_auto/q_auto/Oprec_2_bzofvq.webp",
+    alt: "Oprec",
     width: 500,
     height: 500,
   },
   {
-    src: about3,
-    alt: "about3",
+    src: "https://res.cloudinary.com/qjw4yfke/image/upload/f_auto/q_auto/Oprec_3_fsf8xt.webp",
+    alt: "Oprec",
     width: 500,
     height: 500,
   },
   {
-    src: about4,
-    alt: "about4",
+    src: "https://res.cloudinary.com/qjw4yfke/image/upload/f_auto/q_auto/Oprec_1_nyjegl.webp",
+    alt: "Oprec",
     width: 500,
     height: 500,
   },
   {
-    src: about5,
-    alt: "about5",
+    src: "https://res.cloudinary.com/qjw4yfke/image/upload/f_auto/q_auto/Fostisida_7_hlz5ib.webp",
+    alt: "Fostisida",
     width: 500,
     height: 500,
   },
   {
-    src: musker1,
-    alt: "musker1",
+    src: "https://res.cloudinary.com/qjw4yfke/image/upload/f_auto/q_auto/Fostisida_4_wsldqm.webp",
+    alt: "Fostisida",
     width: 500,
     height: 500,
   },
   {
-    src: musker2,
-    alt: "musker2",
+    src: "https://res.cloudinary.com/qjw4yfke/image/upload/f_auto/q_auto/About_Fostisida_qgwdxy.webp",
+    alt: "Fostisida",
     width: 500,
     height: 500,
   },
   {
-    src: musker3,
-    alt: "musker3",
+    src: "https://res.cloudinary.com/qjw4yfke/image/upload/f_auto/q_auto/TOT_3_scflex.webp",
+    alt: "TOT",
     width: 500,
     height: 500,
   },
   {
-    src: musker4,
-    alt: "musker4",
+    src: "https://res.cloudinary.com/qjw4yfke/image/upload/f_auto/q_auto/About_Ifosti_fsy1a6.webp",
+    alt: "Ifosti",
     width: 500,
     height: 500,
   },
   {
-    src: tot4,
-    alt: "tot4",
+    src: "https://res.cloudinary.com/qjw4yfke/image/upload/f_auto/q_auto/Ifosti_5_aefndh.webp",
+    alt: "Ifosti",
     width: 500,
     height: 500,
   },
   {
-    src: "https://res.cloudinary.com/dsuyzv7br/image/upload/f_auto,q_35/v1724804642/image2_knqun8.jpg",
-    alt: "web1",
+    src: "https://res.cloudinary.com/qjw4yfke/image/upload/f_auto/q_auto/About_Pleno_bthljc.webp",
+    alt: "Pleno",
     width: 500,
     height: 500,
   },
   {
-    src: "https://res.cloudinary.com/dsuyzv7br/image/upload/f_auto,q_35/v1724804647/image5_cihtnf.jpg",
-    alt: "web2",
+    src: "https://res.cloudinary.com/qjw4yfke/image/upload/f_auto/q_auto/Fostech_1_hhbkyu.webp",
+    alt: "Fostech",
     width: 500,
     height: 500,
   },
   {
-    src: "https://res.cloudinary.com/dsuyzv7br/image/upload/f_auto,q_35/v1724804646/image3_rqn1no.jpg",
-    alt: "web3",
+    src: "https://res.cloudinary.com/qjw4yfke/image/upload/f_auto/q_auto/Fostech_7_h7yp5s.webp",
+    alt: "Fostech",
     width: 500,
     height: 500,
   },
 ];
 
-export default { musker, tot, carouselAbout };
+export default { carouselAbout };

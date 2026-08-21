@@ -20,14 +20,14 @@ import { AiFillLinkedin, AiFillInstagram } from "react-icons/ai";
 import Image, { type StaticImageData } from "next/image";
 
 const fotbar =
-  "https://res.cloudinary.com/qjw4yfke/image/upload/v1786202665/BPI_gmb4j7.webp";
+  "https://res.cloudinary.com/qjw4yfke/image/upload/f_auto/q_auto/BPI_hw78z0.jpg";
 
 const isValidLink = (link?: string | null): link is string =>
   !!link && link.trim() !== "" && link.trim() !== "-";
 
 const divisi = [
   {
-    icon: <IoIosPeople className="mb-4 h-10 w-10 text-primary" />,
+    icon: <IoIosPeople className="h-7 w-7 text-black dark:text-white" />,
     title: "Organizational",
     delay: 100,
     href: "/divisi/keor",
@@ -35,7 +35,7 @@ const divisi = [
       "Fosters relationships among members and prepares new prospective members of FOSTI UMS.",
   },
   {
-    icon: <FaComputer className="mb-4 h-10 w-10 text-primary" />,
+    icon: <FaComputer className="h-7 w-7 text-black dark:text-white" />,
     title: "Research and Technology",
     delay: 250,
     href: "/divisi/ristek",
@@ -43,7 +43,7 @@ const divisi = [
       "Conducts research and development of open-source technology for FOSTI and the community.",
   },
   {
-    icon: <BsCameraReelsFill className="mb-4 h-10 w-10 text-primary" />,
+    icon: <BsCameraReelsFill className="h-7 w-7 text-black dark:text-white" />,
     title: "Public Relations",
     delay: 350,
     href: "/divisi/hubpub",
@@ -56,15 +56,18 @@ const Divisi = () => {
   return (
     <section id="divisi" className="mx-auto max-w-screen-2xl px-5 py-20">
       <div className="mb-12 space-y-3 text-center">
-        <h2 className="mb-4 bg-gradient-to-br from-red-500 to-orange-400 bg-clip-text text-2xl font-bold text-transparent sm:text-3xl">
-          Meet Our Executives
+        <h2 className="mb-4 text-3xl font-black text-neutral-900 dark:text-white sm:text-4xl">
+          Meet Our{" "}
+          <span className="inline-block -rotate-1 border-2 border-black bg-amber-300 px-3 py-1 text-black dark:border-white">
+            Executives
+          </span>
         </h2>
         <p className="mx-auto max-w-xl text-sm font-medium text-muted-foreground sm:text-base md:max-w-3xl">
           Meet the talented executives who drive our vision and lead our
           organization to success.
         </p>
       </div>
-      <div className="relative mb-16 flex flex-col items-center gap-8 rounded-3xl border-2 border-black bg-neutral-100 p-6 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] dark:border-gray-500 dark:bg-neutral-900/80 dark:shadow-gray-100 md:flex-row md:gap-10 md:p-8">
+      <div className="relative mb-16 flex flex-col items-center gap-8 rounded-3xl border-2 border-black bg-neutral-100 p-6 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] dark:border-white dark:bg-neutral-900/80 dark:shadow-[6px_6px_0px_0px_rgba(255,255,255,1)] md:flex-row md:gap-10 md:p-8">
         <div className="mb-4 flex w-full justify-center md:mb-0 md:w-auto">
           <Image
             src={fotbar}
@@ -72,10 +75,10 @@ const Divisi = () => {
             height={400}
             alt="Fostibar"
             loading="lazy"
-            className="h-44 w-80 rounded-xl border-2 border-black object-cover shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:border-gray-500 dark:shadow-gray-100 sm:h-56 sm:w-80 md:h-[18rem] md:w-[28rem] lg:h-[25rem] lg:w-[75rem]"
+            className="h-44 w-80 rounded-xl border-2 border-black object-cover shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:border-white dark:shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] sm:h-56 sm:w-80 md:h-[18rem] md:w-[28rem] lg:h-[25rem] lg:w-[75rem]"
           />
         </div>
-        <div className="grid w-full grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid w-full grid-cols-2 gap-3 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
           {bphiTeam.map((executive, index) => (
             <ExecutiveCard key={index} executive={executive} />
           ))}
@@ -83,8 +86,10 @@ const Divisi = () => {
       </div>
 
       <div className="mb-16 text-center">
-        <h1 className="mb-4 bg-gradient-to-br from-red-500 to-orange-400 bg-clip-text text-3xl font-bold text-transparent md:text-4xl">
-          Divisions
+        <h1 className="mb-4 text-3xl font-black text-neutral-900 dark:text-white sm:text-4xl">
+          <span className="inline-block rotate-1 border-2 border-black bg-red-500 px-3 py-1 text-white dark:border-white">
+            Divisions
+          </span>
         </h1>
         Our members are a part of diverse divisions that work together as one.
         {/* <TextAnimate
@@ -98,10 +103,12 @@ const Divisi = () => {
       <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
         {divisi.map((feature, index) => (
           <Link key={index} href={feature.href}>
-            <Card className="gradient-card h-full border-2 border-border/40 transition-colors hover:border-red-500">
-              <CardContent className="pt-6">
-                {feature.icon}
-                <h1 className="mb-2 text-xl font-semibold text-red-500">
+            <Card className="group block h-full overflow-hidden rounded-2xl border-2 border-black bg-white p-6 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] dark:border-white dark:bg-neutral-900 dark:shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] dark:hover:shadow-[8px_8px_0px_0px_rgba(255,255,255,1)]">
+              <CardContent className="p-0">
+                <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-xl border-2 border-black bg-amber-300 dark:border-white dark:bg-red-500">
+                  {feature.icon}
+                </div>
+                <h1 className="mb-2 text-xl font-black text-neutral-900 transition-colors group-hover:text-red-500 dark:text-white">
                   {feature.title}
                 </h1>
                 <p className="font-medium text-muted-foreground">
@@ -131,9 +138,9 @@ const Divisi = () => {
 
 function ExecutiveCard({ executive }: { executive: TeamType }) {
   return (
-    <Card className="group mx-auto flex h-full w-full flex-col justify-between overflow-hidden rounded-2xl border-2 border-black bg-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] dark:border-neutral-700 dark:bg-neutral-900 dark:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:hover:border-neutral-500 dark:hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] sm:max-w-xs md:max-w-sm">
-      <CardHeader className="flex flex-col items-center space-y-4 pb-2 pt-6 text-center">
-        <Avatar className="h-20 w-20 border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] transition-transform duration-300 group-hover:scale-105 dark:border-neutral-300 sm:h-28 sm:w-28">
+    <Card className="group mx-auto flex h-full w-full flex-col justify-between overflow-hidden rounded-2xl border-2 border-black bg-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] dark:border-white dark:bg-neutral-900 dark:shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] dark:hover:shadow-[6px_6px_0px_0px_rgba(255,255,255,1)]">
+      <CardHeader className="flex flex-col items-center space-y-2 px-2 pb-2 pt-4 text-center sm:space-y-4 sm:px-4 sm:pt-6">
+        <Avatar className="h-16 w-16 border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] transition-transform duration-300 group-hover:scale-105 dark:border-white sm:h-24 sm:w-24">
           <AvatarImage
             src={
               typeof executive.src === "string"
@@ -146,35 +153,35 @@ function ExecutiveCard({ executive }: { executive: TeamType }) {
           <AvatarFallback>{executive.name}</AvatarFallback>
         </Avatar>
 
-        <div className="space-y-1">
-          <CardTitle className="line-clamp-1 text-base font-black uppercase tracking-tight text-neutral-900 transition-colors group-hover:text-red-500 dark:text-white dark:group-hover:text-red-400 sm:text-lg">
+        <div className="space-y-0.5 sm:space-y-1">
+          <CardTitle className="line-clamp-2 text-center text-xs font-black uppercase leading-tight tracking-tight text-neutral-900 transition-colors group-hover:text-red-500 dark:text-white dark:group-hover:text-red-400 sm:text-base">
             {executive.name}
           </CardTitle>
-          <CardDescription className="text-xs font-bold text-neutral-600 dark:text-neutral-400 sm:text-sm">
+          <CardDescription className="text-[10px] font-bold text-neutral-600 dark:text-neutral-400 sm:text-sm">
             {executive.role}
           </CardDescription>
         </div>
       </CardHeader>
 
-      <CardFooter className="flex justify-center gap-3 pb-5 pt-2">
+      <CardFooter className="flex justify-center gap-2 pb-3 pt-2 sm:gap-3 sm:pb-5">
         {isValidLink(executive.linkedin) ? (
           <Link
             href={executive.linkedin}
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`${executive.name} LinkedIn`}
-            className="inline-flex items-center justify-center rounded-full border-2 border-black bg-amber-300 p-2.5 text-neutral-900 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all duration-200 hover:bg-blue-600 hover:text-white dark:border-neutral-600 dark:bg-amber-400 dark:text-neutral-900 dark:hover:bg-blue-600 dark:hover:text-white"
+            className="inline-flex items-center justify-center rounded-full border-2 border-black bg-amber-300 p-1.5 text-neutral-900 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all duration-200 hover:bg-blue-600 hover:text-white dark:border-white dark:bg-amber-400 dark:text-neutral-900 dark:hover:bg-blue-600 dark:hover:text-white sm:p-2.5"
           >
-            <AiFillLinkedin className="h-4 w-4 sm:h-5 sm:w-5" />
+            <AiFillLinkedin className="h-3 w-3 sm:h-5 sm:w-5" />
           </Link>
         ) : (
           <button
             type="button"
             disabled
             aria-label={`${executive.name} LinkedIn tidak tersedia`}
-            className="inline-flex cursor-not-allowed items-center justify-center rounded-full border-2 border-neutral-400 bg-neutral-200 p-1.5 text-neutral-400 opacity-60 shadow-[2px_2px_0px_0px_rgba(0,0,0,0.4)] dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-600 sm:p-2"
+            className="inline-flex cursor-not-allowed items-center justify-center rounded-full border-2 border-neutral-400 bg-neutral-200 p-1.5 text-neutral-400 opacity-60 shadow-[2px_2px_0px_0px_rgba(0,0,0,0.4)] dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-600 sm:p-2.5"
           >
-            <AiFillLinkedin className="h-5 w-5" />
+            <AiFillLinkedin className="h-3 w-3 sm:h-5 sm:w-5" />
           </button>
         )}
 
@@ -184,18 +191,18 @@ function ExecutiveCard({ executive }: { executive: TeamType }) {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`${executive.name} Instagram`}
-            className="inline-flex items-center justify-center rounded-full border-2 border-black bg-amber-300 p-2.5 text-neutral-900 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all duration-200 hover:bg-pink-600 hover:text-white dark:border-neutral-600 dark:bg-amber-400 dark:text-neutral-900 dark:hover:bg-pink-600 dark:hover:text-white"
+            className="inline-flex items-center justify-center rounded-full border-2 border-black bg-amber-300 p-1.5 text-neutral-900 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all duration-200 hover:bg-pink-600 hover:text-white dark:border-white dark:bg-amber-400 dark:text-neutral-900 dark:hover:bg-pink-600 dark:hover:text-white sm:p-2.5"
           >
-            <AiFillInstagram className="h-4 w-4 sm:h-5 sm:w-5" />
+            <AiFillInstagram className="h-3 w-3 sm:h-5 sm:w-5" />
           </Link>
         ) : (
           <button
             type="button"
             disabled
-            aria-label={`${executive.name} LinkedIn tidak tersedia`}
-            className="inline-flex cursor-not-allowed items-center justify-center rounded-full border-2 border-neutral-400 bg-neutral-200 p-1.5 text-neutral-400 opacity-60 shadow-[2px_2px_0px_0px_rgba(0,0,0,0.4)] dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-600 sm:p-2"
+            aria-label={`${executive.name} Instagram tidak tersedia`}
+            className="inline-flex cursor-not-allowed items-center justify-center rounded-full border-2 border-neutral-400 bg-neutral-200 p-1.5 text-neutral-400 opacity-60 shadow-[2px_2px_0px_0px_rgba(0,0,0,0.4)] dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-600 sm:p-2.5"
           >
-            <AiFillLinkedin className="h-5 w-5" />
+            <AiFillInstagram className="h-3 w-3 sm:h-5 sm:w-5" />
           </button>
         )}
       </CardFooter>

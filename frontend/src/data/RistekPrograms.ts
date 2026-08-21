@@ -1,7 +1,8 @@
 import { type ProgramType } from "@/types/image";
-const fostech = "https://res.cloudinary.com/qjw4yfke/image/upload/v1784116099/cld-sample-4.jpg";
-const fostech_uiux = "https://res.cloudinary.com/qjw4yfke/image/upload/v1784116099/cld-sample-4.jpg";
-const sandbox = "https://res.cloudinary.com/qjw4yfke/image/upload/v1784116099/cld-sample-4.jpg";
+const fostech = "https://res.cloudinary.com/qjw4yfke/image/upload/f_auto/q_auto/Fostech_hcfbmr.webp";
+const fostech_uiux = "";
+const sandbox = "https://res.cloudinary.com/qjw4yfke/image/upload/f_auto/q_auto/Sandbox_gehkwg.webp";
+const fostifest = "https://res.cloudinary.com/qjw4yfke/image/upload/f_auto/q_auto/Fostifest_ypvjx1.webp";
 
 export const ristekPrograms: ProgramType[] = [
   {
@@ -34,7 +35,7 @@ export const ristekPrograms: ProgramType[] = [
       "A collaborative playground that allows FOSTI members to build, explore, and work together to create something incredible while developing practical technical skills.",
   },
   {
-    src: "https://fostifest.fostiums.org/_next/image?url=%2F_next%2Fstatic%2Fmedia%2F1.2367bf88.webp&w=3840&q=75",
+    src: fostifest,
     width: 600,
     height: 400,
     alt: "Program 4",
