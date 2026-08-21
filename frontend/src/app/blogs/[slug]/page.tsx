@@ -11,11 +11,47 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import { renderMarkdown } from "@/lib/markdown";
+import type { Metadata } from "next";
 
 interface BlogDetailPageProps {
   params: Promise<{
     slug: string;
   }>;
+}
+
+export async function generateMetadata({
+  params,
+}: BlogDetailPageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const blog = getBlogBySlug(slug);
+
+  if (!blog) {
+    return {};
+  }
+
+  return {
+    title: blog.title,
+    description: blog.description,
+    alternates: {
+      canonical: `/blogs/${slug}`,
+    },
+    openGraph: {
+      title: blog.title,
+      description: blog.description,
+      type: "article",
+      publishedTime: new Date(blog.datePublish).toISOString(),
+      authors: [blog.author],
+      tags: blog.tags,
+      ...(blog.cover && {
+        images: [
+          {
+            url: blog.cover,
+            alt: blog.title,
+          },
+        ],
+      }),
+    },
+  };
 }
 
 export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
