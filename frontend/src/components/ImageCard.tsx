@@ -10,9 +10,8 @@ interface ImageCardProps {
 const ImageCard: React.FC<ImageCardProps> = ({ image, className }) => {
   return (
     <div
-      className={`group relative overflow-hidden rounded-xl transition-all duration-300 ease-out ${className}`}
+      className={`group relative overflow-hidden rounded-xl border-2 border-black bg-neutral-100 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] dark:border-neutral-700 dark:bg-neutral-800 dark:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.75)] dark:hover:shadow-[6px_6px_0px_0px_rgba(255,255,255,0.85)] ${className}`}
     >
-      <div className="absolute inset-0 z-10 bg-black opacity-0 transition-opacity group-hover:opacity-20"></div>
       <div
         className="h-full w-full bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-105"
         style={{ backgroundImage: `url(${image.src})` }}

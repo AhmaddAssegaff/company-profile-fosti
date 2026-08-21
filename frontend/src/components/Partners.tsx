@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { Sparkles } from "lucide-react";
+import { HeartHandshake, Sparkles } from "lucide-react";
 
 const partners = [
   {
@@ -36,10 +36,10 @@ const Partners = () => {
       />
 
       <div className="relative mb-14 text-center">
-        <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-neutral-300/60 bg-neutral-100/60 px-3 py-2 text-sm font-semibold uppercase tracking-wider text-neutral-500 backdrop-blur-sm dark:border-neutral-700/60 dark:bg-neutral-800/40 dark:text-neutral-400">
-          <Sparkles className="h-4.5 w-4.5 text-red-500" />
+        <div className="mb-4 inline-flex items-center gap-2 border-2 border-black bg-amber-300 px-4 py-1.5 text-xs font-black uppercase tracking-widest text-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] dark:border-white dark:bg-amber-400 dark:shadow-[2px_2px_0px_0px_rgba(255,255,255,1)] -rotate-2">
+          <HeartHandshake className="h-4.5 w-4.5" />
           Partners
-        </div>
+        </div>  
         <h2 className="mb-3 text-2xl font-bold tracking-tight text-neutral-900 dark:text-white md:text-3xl lg:text-4xl">
           Supported by
         </h2>

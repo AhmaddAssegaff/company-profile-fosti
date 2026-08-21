@@ -1,10 +1,10 @@
 import { type ProgramType } from "@/types/image";
-const program1 = "https://res.cloudinary.com/qjw4yfke/image/upload/v1784116099/cld-sample-4.jpg";
-const program2 = "https://res.cloudinary.com/qjw4yfke/image/upload/v1784116099/cld-sample-4.jpg";
-const program3 = "https://res.cloudinary.com/qjw4yfke/image/upload/v1784116099/cld-sample-4.jpg";
-const program4 = "https://res.cloudinary.com/qjw4yfke/image/upload/v1784116099/cld-sample-4.jpg";
-const program5 = "https://res.cloudinary.com/qjw4yfke/image/upload/v1784116099/cld-sample-4.jpg";
-const program6 = "https://res.cloudinary.com/qjw4yfke/image/upload/v1784116099/cld-sample-4.jpg";
+const program1 = "https://res.cloudinary.com/qjw4yfke/image/upload/f_auto/q_auto/Oprec_7_hdzxly.webp";
+const program2 = "https://res.cloudinary.com/qjw4yfke/image/upload/f_auto/q_auto/Fostisida_q75ixj.webp";
+const program3 = "https://res.cloudinary.com/qjw4yfke/image/upload/f_auto/q_auto/Musker_juacwp.webp";
+const program4 = "https://res.cloudinary.com/qjw4yfke/image/upload/f_auto/q_auto/TOT_6_k8saqo.webp";
+const program5 = "https://res.cloudinary.com/qjw4yfke/image/upload/f_auto/q_auto/Ifosti_ucvapc.webp";
+const program6 = "https://res.cloudinary.com/qjw4yfke/image/upload/f_auto/q_auto/Pleno1_qfmsdu.webp";
 
 export const keorPrograms: ProgramType[] = [
   {

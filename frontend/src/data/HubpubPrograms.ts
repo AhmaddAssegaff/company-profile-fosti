@@ -1,5 +1,5 @@
 import { type ProgramType } from "@/types/image";
-const compro = "https://res.cloudinary.com/qjw4yfke/image/upload/v1784116099/cld-sample-4.jpg";
+const compro = "https://res.cloudinary.com/qjw4yfke/image/upload/f_auto/q_auto/Foto_Angkatan_Fosti_ppzybc.webp";
 const stuban = "https://res.cloudinary.com/qjw4yfke/image/upload/v1784116099/cld-sample-4.jpg";
 
 export const hubpubPrograms: ProgramType[] = [

@@ -2,7 +2,7 @@ import { type ImageType } from "@/types/image";
 
 export const images: ImageType[] = [
   {
-    src: "https://res.cloudinary.com/qjw4yfke/image/upload/v1786202664/Fostisida_q75ixj.webp",
+    src: "https://res.cloudinary.com/qjw4yfke/image/upload/f_auto/q_auto/About_Fostisida1_tpolm8.webp",
     width: 700,
     height: 700,
     alt: "Large group photo",
@@ -10,7 +10,7 @@ export const images: ImageType[] = [
     description: "Event that brings joyful memories and togetherness",
   },
   {
-    src: "https://res.cloudinary.com/qjw4yfke/image/upload/v1786202663/Foto_Angkatan_Fosti_ppzybc.webp",
+    src: "https://res.cloudinary.com/qjw4yfke/image/upload/f_auto/q_auto/v1786202663/Foto_Angkatan_Fosti_ppzybc.webp",
     width: 400,
     height: 400,
     alt: "Diverse group",
@@ -18,7 +18,7 @@ export const images: ImageType[] = [
     description: "Diverse group of people at tech event",
   },
   {
-    src: "https://res.cloudinary.com/qjw4yfke/image/upload/v1786202664/Fostech_hcfbmr.webp",
+    src: "https://res.cloudinary.com/qjw4yfke/image/upload/f_auto/q_auto/Fostech_6_astopx.webp",
     width: 400,
     height: 400,
     alt: "Small team meeting",
@@ -26,19 +26,17 @@ export const images: ImageType[] = [
     description: "By developers for developers, a journey of growth",
   },
 
-  // Tolong ganti gambarnya
   {
-    src: "https://res.cloudinary.com/qjw4yfke/image/upload/v1784116099/cld-sample-4.jpg",
+    src: "https://res.cloudinary.com/qjw4yfke/image/upload/f_auto/q_auto/Ifosti_ucvapc.webp",
     width: 400,
     height: 400,
-    alt: "Conference presentation",
-    title: "Workshop",
-    description: "Workshop on various topics with hands-on experience",
+    alt: "Team celebration",
+    title: "Ifosti",
+    description: "Bringing members together to share warmth, connection, and Ramadan blessings.",
   },
-  // Terimakasih
 
   {
-    src: "https://res.cloudinary.com/qjw4yfke/image/upload/v1786202659/Pleno1_qfmsdu.webp",
+    src: "https://res.cloudinary.com/qjw4yfke/image/upload/f_auto/q_auto/v1786202659/Pleno1_qfmsdu.webp",
     width: 1000,
     height: 1000,
     alt: "Group photo",
@@ -46,11 +44,11 @@ export const images: ImageType[] = [
     description: "Reviewing organizational achievements and strategizing our shared path forward.",
   },
   {
-    src: "https://res.cloudinary.com/qjw4yfke/image/upload/v1786202671/Ifosti_ucvapc.webp",
+    src: "https://res.cloudinary.com/qjw4yfke/image/upload/f_auto/q_auto/Oprec_7_hdzxly.webp",
     width: 1000,
     height: 1000,
-    alt: "Team celebration",
-    title: "Ifosti",
-    description: "Bringing members together to share warmth, connection, and Ramadan blessings.",
+    alt: "Open Recruitment",
+    title: "Open Recruitment",
+    description: "Welcoming passionate individuals to join our community, grow together, and make a meaningful impact.",
   },
 ];

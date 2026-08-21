@@ -45,7 +45,6 @@ const divisions = [
 
 const mobileLinks = [
   { name: "About Us", href: "/#about", icon: <AiOutlineQuestionCircle /> },
-  { name: "Our Programs", href: "/#proker", icon: <GrCube /> },
   { name: "Blogs", href: "/blogs", icon: <MdOutlineArticle /> },
 ];
 
@@ -59,7 +58,6 @@ const Navbar = () => {
     setMounted(true);
   }, []);
 
-  // lock body scroll while the mobile menu is open
   useEffect(() => {
     document.body.style.overflow = isMenuOpen ? "hidden" : "";
     return () => {
@@ -67,7 +65,6 @@ const Navbar = () => {
     };
   }, [isMenuOpen]);
 
-  // close on Escape
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") setIsMenuOpen(false);
@@ -148,21 +145,6 @@ const Navbar = () => {
             <NavigationMenuItem>
               <NavigationMenuLink asChild>
                 <Link
-                  href="/#proker"
-                  onClick={() => router.push("/#proker")}
-                  className={`${navigationMenuTriggerStyle()} flex items-center gap-1 rounded-lg p-2 transition-colors duration-200 hover:bg-muted-foreground/10`}
-                >
-                  <GrCube />
-                  <span className="text-sm font-semibold hover:text-primary/80">
-                    Our Programs
-                  </span>
-                </Link>
-              </NavigationMenuLink>
-            </NavigationMenuItem>
-
-            <NavigationMenuItem>
-              <NavigationMenuLink asChild>
-                <Link
                   href="/blogs"
                   className={`${navigationMenuTriggerStyle()} flex items-center gap-1 rounded-lg p-2 transition-colors duration-200 hover:bg-muted-foreground/10`}
                 >
@@ -195,7 +177,6 @@ const Navbar = () => {
       {mounted &&
         createPortal(
           <>
-            {/* overlay */}
             <div
               className={`fixed inset-0 z-[60] bg-black/50 backdrop-blur-sm transition-opacity duration-300 md:hidden ${
                 isMenuOpen

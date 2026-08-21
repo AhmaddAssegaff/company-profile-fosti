@@ -51,7 +51,7 @@ export const dataFostiAllMembers: TeamType[] = [
     fostiAngkatan: 24,
     isBphi: true,
     role: "General Secretary 1",
-    src: "https://res.cloudinary.com/qjw4yfke/image/upload/v1785716780/Alya_Rusyda_Maharistya_L200240290_BPHI__Sekum_1__-_ALYA_RUSYDA_MAHARISTYA-removebg-preview_ph2ngv.png",
+    src: "https://res.cloudinary.com/qjw4yfke/image/upload/f_auto/q_auto/Alya_Rusyda_Maharistya_L200240290_BPHI__Sekum_1__-_ALYA_RUSYDA_MAHARISTYA_xnkaij.webp",
     linkedin: "https://linkedin.com/in/alya-rusyda-maharistya",
     instagram: "https://instagram.com/alyarusyda_",
   },

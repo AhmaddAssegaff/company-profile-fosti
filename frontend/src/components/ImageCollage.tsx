@@ -13,7 +13,7 @@ const ImageCollage: React.FC = () => {
       </div>
 
       {/* Desktop: grid collage */}
-      <div className="hidden auto-rows-[200px] grid-cols-12 gap-4 md:grid">
+      <div className="hidden auto-rows-[200px] grid-cols-12 gap-3 sm:gap-4 md:grid">
         {/* Large image on the left */}
         <div className="col-span-6 row-span-2">
           <ImageCard image={images[0]!} className="h-full" />
