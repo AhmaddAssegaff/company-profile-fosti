@@ -1,10 +1,9 @@
 "use client";
 import React from "react";
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "../ui/tabs";
+import { Tabs, TabsList, TabsTrigger, } from "../ui/tabs";
 import RistekPrograms from "./RistekPrograms";
 import RistekTeam from "./RistekTeam";
 import { Cpu, GitBranch, Terminal, X } from "lucide-react";
-import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { Space_Grotesk, JetBrains_Mono } from "next/font/google";
 
@@ -46,9 +45,6 @@ const pillars = [
 const lineCol = ["Ln 14, Col 3", "Ln 27, Col 9", "Ln 08, Col 1"];
 
 const Ristek = () => {
-  const [activeTab, setActiveTab] = React.useState("programs");
-  const router = useRouter();
-
   return (
     <div className="w-full">
       <section className="relative flex min-h-[calc(100vh-5rem)] flex-col justify-center overflow-x-hidden px-4 sm:px-6 lg:px-8">
@@ -159,7 +155,7 @@ const Ristek = () => {
             innovation.
           </p>
         </div>
- 
+
         <div className="mt-12 grid grid-cols-1 gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
           {pillars.map((pillar, idx) => {
             const [titleFirst, ...titleRestWords] = pillar.title.split(" ");
@@ -177,7 +173,7 @@ const Ristek = () => {
                     <X className="h-3 w-3" />
                   </span>
                 </div>
- 
+
                 <div className="flex flex-1 gap-3 p-5">
                   <span
                     className={`${jetbrains.className} select-none text-xs text-neutral-600 sm:text-sm`}
@@ -194,7 +190,7 @@ const Ristek = () => {
                     </p>
                   </div>
                 </div>
- 
+
                 <div
                   className={`${jetbrains.className} border-t-2 border-black bg-neutral-800 px-4 py-1.5 text-[0.65rem] text-neutral-400 sm:text-xs`}
                 >
@@ -210,7 +206,6 @@ const Ristek = () => {
         <Tabs
           defaultValue="programs"
           className="w-full"
-          onValueChange={setActiveTab}
         >
           <div className="mb-8 flex justify-center sm:justify-start">
             <TabsList className="inline-flex gap-1 rounded-full border-2 border-neutral-900 bg-white p-1 dark:border-neutral-100 dark:bg-neutral-900">

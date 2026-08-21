@@ -1,5 +1,5 @@
 import React from "react";
-import { Achievement } from "@/types/achievements";
+import type { Achievement } from "@/types/achievements";
 import { AchievementCardRistek } from "./RistekAchievements";
 
 interface AchievementsGridProps {

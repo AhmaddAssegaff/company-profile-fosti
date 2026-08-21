@@ -4,7 +4,7 @@ import Image, { type StaticImageData } from "next/image";
 import { Card } from "./ui/card";
 import img from "@/utils/constant";
 import HeroVideoDialog from "./magicui/hero-video-dialog";
-import { Sparkles, Check, Calendar } from "lucide-react";
+import { Check, Calendar } from "lucide-react";
 
 const thumbnail = "https://res.cloudinary.com/qjw4yfke/image/upload/v1784116099/cld-sample-4.jpg";
 

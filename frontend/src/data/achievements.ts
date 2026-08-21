@@ -1,4 +1,4 @@
-import { Achievement } from "@/types/achievements";
+import type { Achievement } from "@/types/achievements";
 
 export const achievements: Achievement[] = [
   {
