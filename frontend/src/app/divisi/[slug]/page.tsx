@@ -3,12 +3,13 @@ import Keor from "@/components/Divisi/Keor";
 import Ristek from "@/components/Divisi/Ristek";
 import Squares from "@/components/Squares/Squares";
 import React from "react";
+import type { Metadata } from "next";
 
 export async function generateMetadata({
   params,
 }: {
   params: Promise<{ slug: string }>;
-}) {
+}): Promise<Metadata> {
   const { slug } = await params;
   if (slug === "ristek") {
     return {
@@ -56,6 +57,5 @@ export default async function DivisiPage({
         {slug === "keor" && <Keor />}
       </div>
     </div>
-    
   );
 }

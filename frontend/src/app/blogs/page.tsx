@@ -9,6 +9,16 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Blog",
+  description:
+    "Artikel dan dokumentasi kegiatan seputar open source dan teknologi dari FOSTI UMS.",
+  alternates: {
+    canonical: "/blogs",
+  },
+};
 
 export default function BlogsPage() {
   const allBlogs = getAllBlogs();

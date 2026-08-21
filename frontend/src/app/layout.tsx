@@ -6,13 +6,25 @@ import { AntdRegistry } from "@ant-design/nextjs-registry";
 import Footer from "@/components/Footer";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { env } from "@/env";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(env.SITE_URL),
   title: {
-    template: "%s | FOSTI UMS",
     default: "FOSTI UMS",
+    template: "%s | FOSTI UMS",
   },
-  description: "Company Profile FOSTI UMS",
+  description:
+    "Forum Open Source Teknik Informatika Universitas Muhammadiyah Surakarta.",
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    type: "website",
+    siteName: "FOSTI UMS",
+    locale: "id_ID",
+  },
 };
 
 export default function RootLayout({
