@@ -1,11 +1,9 @@
 "use client";
 import React, { useState } from "react";
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "../ui/tabs";
+import { Tabs, TabsList, TabsTrigger } from "../ui/tabs";
 import HubpubPrograms from "./HubpubPrograms";
 import HubpubTeam from "./HubpubTeam";
-import { Button } from "../ui/button";
 import {
-  ArrowLeft,
   Bookmark,
   Camera,
   CheckCircle2,
@@ -19,7 +17,6 @@ import {
   Sparkles,
   Star,
 } from "lucide-react";
-import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { Syne } from "next/font/google";
 
@@ -55,7 +52,6 @@ const pillars = [
 ];
 
 const Hubpub = () => {
-  const router = useRouter();
   const [liked, setLiked] = useState(false);
 
   return (
@@ -147,11 +143,10 @@ const Hubpub = () => {
                   <div className="flex items-center gap-4">
                     <Heart
                       onClick={() => setLiked((prev) => !prev)}
-                      className={`h-6 w-6 cursor-pointer transition-colors active:scale-90 ${
-                        liked
-                          ? "fill-red-500 text-red-500"
-                          : "text-neutral-900 dark:text-white"
-                      }`}
+                      className={`h-6 w-6 cursor-pointer transition-colors active:scale-90 ${liked
+                        ? "fill-red-500 text-red-500"
+                        : "text-neutral-900 dark:text-white"
+                        }`}
                     />
                     <MessageCircle className="h-6 w-6 text-neutral-900 dark:text-white" />
                     <Send className="h-6 w-6 text-neutral-900 dark:text-white" />

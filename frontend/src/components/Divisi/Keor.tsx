@@ -1,31 +1,34 @@
 "use client";
 import React from "react";
 import { Pin, QrCode, Sparkles, Star } from "lucide-react";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
-import { useRouter } from "next/navigation";
+import { Tabs, TabsList, TabsTrigger } from "../ui/tabs";
 import KeorProgram from "./KeorProgram";
 import KeorTeam from "./KeorTeam";
 import Image from "next/image";
 
-const fotbar = "https://res.cloudinary.com/qjw4yfke/image/upload/v1786202664/Keor_ohubsl.webp";
+const fotbar =
+  "https://res.cloudinary.com/qjw4yfke/image/upload/v1786202664/Keor_ohubsl.webp";
 
 const pillars = [
   {
-    color: "bg-amber-100 dark:bg-amber-950/40 dark:border-amber-500/60 dark:text-amber-100 dark:shadow-amber-400/20",
+    color:
+      "bg-amber-100 dark:bg-amber-950/40 dark:border-amber-500/60 dark:text-amber-100 dark:shadow-amber-400/20",
     rotate: "-rotate-1",
     title: "Kaderisasi",
     description:
       "Recruiting, onboarding, and mentoring new members so every generation of FOSTI UMS grows stronger than the last.",
   },
   {
-    color: "bg-pink-100 dark:bg-rose-950/40 dark:border-red-500 dark:text-rose-100 dark:shadow-rose-400/20",
+    color:
+      "bg-pink-100 dark:bg-rose-950/40 dark:border-red-500 dark:text-rose-100 dark:shadow-rose-400/20",
     rotate: "rotate-1",
     title: "Leadership Training",
     description:
       "Equipping board members and coordinators with the skills to lead teams, run programs, and make sound decisions.",
   },
   {
-    color: "bg-blue-100 dark:bg-blue-950/40 dark:border-blue-500/60 dark:text-blue-100 dark:shadow-blue-400/20",
+    color:
+      "bg-blue-100 dark:bg-blue-950/40 dark:border-blue-500/60 dark:text-blue-100 dark:shadow-blue-400/20",
     rotate: "-rotate-1",
     title: "Internal Bonding",
     description:
@@ -34,13 +37,9 @@ const pillars = [
 ];
 
 const Keor = () => {
-  const [activeTab, setActiveTab] = React.useState("programs");
-  const router = useRouter();
-
   return (
     <div className="w-full">
       <section className="relative flex min-h-[calc(100vh-5rem)] flex-col items-center justify-center overflow-x-hidden px-4 py-16 sm:px-6 lg:px-8">
-
         <Star
           className="pointer-events-none absolute right-6 top-6 z-10 h-8 w-8 rotate-12 scale-75 text-amber-400 sm:right-16 sm:top-16 sm:scale-100"
           fill="currentColor"
@@ -50,7 +49,7 @@ const Keor = () => {
         <span className="hidden -rotate-12 rounded-full border-2 border-black bg-purple-200 px-4 py-1.5 text-sm font-bold text-neutral-900 shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] dark:shadow-gray-100 lg:absolute lg:left-10 lg:top-32 lg:z-10 lg:block xl:left-20">
           🔑 Internal Affairs
         </span>
-        <span className="hidden rotate-12 rounded-xl border-2 border-black dark:border-gray-400 bg-white px-3 py-1.5 font-mono text-xs font-bold shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] dark:shadow-gray-100 dark:bg-neutral-800 lg:absolute lg:left-12 lg:top-3/4 lg:z-10 lg:block lg:-translate-y-1/2 xl:left-24">
+        <span className="hidden rotate-12 rounded-xl border-2 border-black bg-white px-3 py-1.5 font-mono text-xs font-bold shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] dark:border-gray-400 dark:bg-neutral-800 dark:shadow-gray-100 lg:absolute lg:left-12 lg:top-3/4 lg:z-10 lg:block lg:-translate-y-1/2 xl:left-24">
           EST. 2008 • FOSTI UMS
         </span>
         <span className="hidden rotate-12 rounded-full border-2 border-black bg-pink-200 px-4 py-1.5 text-sm font-bold text-neutral-900 shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] dark:shadow-gray-100 lg:absolute lg:right-10 lg:top-1/2 lg:z-10 lg:block xl:right-20">
@@ -121,16 +120,16 @@ const Keor = () => {
         </div>
       </section>
 
-      <section className="mx-auto max-w-screen-2xl px-4 pb-20 pt-12 sm:px-6 lg:px-8 lg:pt-20 lg:pb-32">
+      <section className="mx-auto max-w-screen-2xl px-4 pb-20 pt-12 sm:px-6 lg:px-8 lg:pb-32 lg:pt-20">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="mb-4 text-2xl font-black uppercase tracking-tight text-neutral-900 dark:text-white sm:text-3xl">
             About the Division
           </h2>
           <p className="text-sm font-semibold leading-relaxed text-neutral-600 dark:text-neutral-400 sm:text-base">
             The Organizational division is responsible for fostering strong
-            relationships among members, ensuring effective communication,
-            and preparing new prospective members to contribute actively to
-            FOSTI UMS.
+            relationships among members, ensuring effective communication, and
+            preparing new prospective members to contribute actively to FOSTI
+            UMS.
           </p>
         </div>
 
@@ -138,7 +137,7 @@ const Keor = () => {
           {pillars.map((pillar) => (
             <div
               key={pillar.title}
-              className={`relative flex flex-col gap-3 rounded-xl border-2 border-black ${pillar.color} ${pillar.rotate} p-6 pt-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-transform duration-300 hover:rotate-0 hover:-translate-y-1 dark:border-neutral-100`}
+              className={`relative flex flex-col gap-3 rounded-xl border-2 border-black ${pillar.color} ${pillar.rotate} p-6 pt-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-transform duration-300 hover:-translate-y-1 hover:rotate-0 dark:border-neutral-100`}
             >
               <Pin
                 className="absolute -top-3 left-1/2 h-6 w-6 -translate-x-1/2 -rotate-45 text-red-700 dark:text-yellow-300"
@@ -156,11 +155,7 @@ const Keor = () => {
       </section>
 
       <section className="mx-auto max-w-screen-2xl px-4 pb-20 sm:px-6 lg:px-8">
-        <Tabs
-          defaultValue="programs"
-          className="w-full"
-          onValueChange={setActiveTab}
-        >
+        <Tabs defaultValue="programs" className="w-full">
           <div className="mb-8 flex justify-center sm:justify-start">
             <TabsList className="inline-flex gap-1 rounded-full border-2 border-neutral-900 bg-white p-1 dark:border-neutral-100 dark:bg-neutral-900">
               <TabsTrigger

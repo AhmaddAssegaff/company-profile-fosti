@@ -1,18 +1,16 @@
 "use client";
 import { achievements } from "@/data/achievements";
-import { Achievement, AchievementCategory } from "@/types/achievements";
+import type { Achievement, AchievementCategory } from "@/types/achievements";
 import React, { useEffect, useState } from "react";
 import CategoryFilter from "./CategoryFilter";
 import { Trophy } from "lucide-react";
 import {
   Card,
-  CardContent,
   CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
 } from "./ui/card";
-import Image from "next/image";
 import AchievementsGrid from "./AchievementsGrid";
 
 const categories: AchievementCategory[] = [

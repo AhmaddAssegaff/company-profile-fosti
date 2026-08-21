@@ -1,7 +1,6 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 import { type ImageType } from "@/types/image";
 
 interface ImageCarouselProps {
@@ -110,11 +109,10 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({
             onClick={() => handleManualNav(() => goTo(index))}
             aria-label={`Go to slide ${index + 1}`}
             aria-current={current === index}
-            className={`h-2 rounded-full transition-all duration-300 ${
-              current === index
-                ? "w-6 bg-red-600"
-                : "w-2 bg-muted-foreground/30"
-            }`}
+            className={`h-2 rounded-full transition-all duration-300 ${current === index
+              ? "w-6 bg-red-600"
+              : "w-2 bg-muted-foreground/30"
+              }`}
           />
         ))}
       </div>

@@ -7,8 +7,6 @@ import {
   CardHeader,
   CardTitle,
 } from "./ui/card";
-import { TextAnimate } from "./magicui/text-animate";
-import AnimatedContent from "./AnimatedContent/AnimatedContent";
 import Link from "next/link";
 import { FaComputer } from "react-icons/fa6";
 import { IoIosPeople } from "react-icons/io";

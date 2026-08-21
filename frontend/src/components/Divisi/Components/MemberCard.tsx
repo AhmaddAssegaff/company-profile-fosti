@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import Image, { type StaticImageData } from "next/image";
 import Link from "next/link";
 import { AiFillInstagram, AiFillLinkedin } from "react-icons/ai";
+import type { TeamType } from "@/types/image";
 
 const isValidLink = (link?: string | null): link is string =>
   !!link && link.trim() !== "" && link.trim() !== "-";
@@ -20,10 +21,12 @@ const getInitials = (name: string) => {
   const words = name.trim().split(/\s+/).filter(Boolean);
   if (words.length === 0) return "?";
   if (words.length === 1) return words[0]!.slice(0, 2).toUpperCase();
-  return (words[0]!.charAt(0) + words[words.length - 1]!.charAt(0)).toUpperCase();
+  return (
+    words[0]!.charAt(0) + words[words.length - 1]!.charAt(0)
+  ).toUpperCase();
 };
 
-export const MemberCard = ({ member }: { member: any }) => {
+export const MemberCard = ({ member }: { member: TeamType }) => {
   const [imgError, setImgError] = useState(false);
   const showImage = isValidSrc(member.src) && !imgError;
 
@@ -55,9 +58,7 @@ export const MemberCard = ({ member }: { member: any }) => {
         </div>
 
         <p className="line-clamp-1 text-center text-[11px] font-bold text-neutral-600 dark:text-neutral-400 sm:text-sm">
-          {member.divisi === "Keor"
-            ? "Member of Organizational"
-            : member.role}
+          {member.divisi === "Keor" ? "Member of Organizational" : member.role}
         </p>
 
         {member.fostiAngkatan && (

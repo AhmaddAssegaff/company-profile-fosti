@@ -1,14 +1,13 @@
 import Link from "next/link";
-import { ArrowRight, Sparkles, Users } from "lucide-react";
-import { env } from "@/env";
+import { ArrowRight, Users } from "lucide-react";
 
 const CallToAction = () => {
   return (
     <section
       id="join"
-      className="relative mx-auto max-w-screen-2xl px-5 pt-6 md:pt-28 pb-32"
+      className="relative mx-auto max-w-screen-2xl px-5 pb-32 pt-6 md:pt-28"
     >
-      <div className="group/card relative mx-auto flex max-w-8xl flex-col items-center gap-4 overflow-hidden rounded-[1.5em] border-2 border-red-500/50 bg-gradient-to-br from-red-900 via-red-700 to-orange-600 px-6 py-16 text-center font-nunito text-white shadow-xl transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl hover:shadow-red-500/30 sm:px-12 sm:py-20">
+      <div className="group/card max-w-8xl font-nunito relative mx-auto flex flex-col items-center gap-4 overflow-hidden rounded-[1.5em] border-2 border-red-500/50 bg-gradient-to-br from-red-900 via-red-700 to-orange-600 px-6 py-16 text-center text-white shadow-xl transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl hover:shadow-red-500/30 sm:px-12 sm:py-20">
         <div className="pointer-events-none absolute inset-0 rounded-[1.5em] bg-gradient-to-br from-red-600/30 via-orange-500/20 to-transparent opacity-0 transition-opacity duration-500 group-hover/card:opacity-100" />
 
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(239,68,68,0.15),transparent_60%)] group-hover/card:animate-pulse" />
@@ -31,15 +30,15 @@ const CallToAction = () => {
           </h2>
 
           <p className="mb-8 text-sm font-light leading-relaxed text-red-50/90 md:text-base lg:text-lg">
-            Be part of a community that grows, builds, and shapes the future
-            of technology together. Registration only takes a few minutes.
+            Be part of a community that grows, builds, and shapes the future of
+            technology together. Registration only takes a few minutes.
           </p>
 
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link
               href="https://example.com/join"
               target="_blank"
-              className="group/btn relative flex h-fit w-fit items-center justify-center gap-2 overflow-hidden rounded-full border border-black/50 bg-neutral-950 px-6 py-3.5 text-sm font-semibold tracking-wide text-white shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:border-black/70 hover:shadow-lg hover:shadow-black/30 active:scale-95 active:translate-y-0"
+              className="group/btn relative flex h-fit w-fit items-center justify-center gap-2 overflow-hidden rounded-full border border-black/50 bg-neutral-950 px-6 py-3.5 text-sm font-semibold tracking-wide text-white shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:border-black/70 hover:shadow-lg hover:shadow-black/30 active:translate-y-0 active:scale-95"
             >
               <div className="absolute inset-0 translate-x-[-100%] bg-gradient-to-r from-gray-600/50 via-white/50 to-gray-600/50 transition-transform duration-700 group-hover/btn:translate-x-[100%]" />
               <p className="relative z-10">Join Now!</p>

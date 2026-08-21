@@ -7,7 +7,6 @@ import Link from "next/link";
 import { useTheme } from "next-themes";
 import { FaCubes } from "react-icons/fa";
 import { AiOutlineQuestionCircle } from "react-icons/ai";
-import { GrCube } from "react-icons/gr";
 import { Menu, X, ChevronRight } from "lucide-react";
 import {
   NavigationMenu,
@@ -83,114 +82,112 @@ const Navbar = () => {
   return (
     <>
       <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background py-3 drop-shadow-lg backdrop-blur-xl">
-      <div className="mx-auto flex h-12 max-w-screen-2xl items-center justify-between px-5">
-        <div className="flex items-center gap-2">
-          <Link href={"/"}>
-            {mounted ? (
-              <Image
-                src={
-                  theme === "dark"
-                    ? "https://res.cloudinary.com/airlanggapradana/image/upload/v1755442684/LOGO_FOSTI_PUTIH_imvkxw.png"
-                    : "https://res.cloudinary.com/airlanggapradana/image/upload/v1755442684/logo_ch57ma.png"
-                }
-                alt="Logo"
-                width={70}
-                height={70}
-              />
-            ) : (
-              <div className="h-[70px] w-[70px]" />
-            )}
-          </Link>
-        </div>
+        <div className="mx-auto flex h-12 max-w-screen-2xl items-center justify-between px-5">
+          <div className="flex items-center gap-2">
+            <Link href={"/"}>
+              {mounted ? (
+                <Image
+                  src={
+                    theme === "dark"
+                      ? "https://res.cloudinary.com/airlanggapradana/image/upload/v1755442684/LOGO_FOSTI_PUTIH_imvkxw.png"
+                      : "https://res.cloudinary.com/airlanggapradana/image/upload/v1755442684/logo_ch57ma.png"
+                  }
+                  alt="Logo"
+                  width={70}
+                  height={70}
+                />
+              ) : (
+                <div className="h-[70px] w-[70px]" />
+              )}
+            </Link>
+          </div>
 
-        <NavigationMenu className="hidden items-center gap-5 md:flex">
-          <NavigationMenuList>
-            <NavigationMenuItem>
-              <NavigationMenuTrigger className="flex items-center gap-1">
-                <FaCubes />
-                <span className="text-sm font-semibold hover:text-primary/80">
-                  Our Divisions
-                </span>
-              </NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                  {divisions.map((division) => (
-                    <ListItem
-                      key={division.name}
-                      title={division.name}
-                      href={division.link}
-                    >
-                      {division.desc}
-                    </ListItem>
-                  ))}
-                </ul>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
-
-            <NavigationMenuItem>
-              <NavigationMenuLink asChild>
-                <Link
-                  href="/#about"
-                  onClick={() => router.push("/#about")}
-                  className={`${navigationMenuTriggerStyle()} flex items-center gap-1 rounded-lg p-2 transition-colors duration-200 hover:bg-muted-foreground/10`}
-                >
-                  <AiOutlineQuestionCircle />
+          <NavigationMenu className="hidden items-center gap-5 md:flex">
+            <NavigationMenuList>
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className="flex items-center gap-1">
+                  <FaCubes />
                   <span className="text-sm font-semibold hover:text-primary/80">
-                    About Us
+                    Our Divisions
                   </span>
-                </Link>
-              </NavigationMenuLink>
-            </NavigationMenuItem>
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                    {divisions.map((division) => (
+                      <ListItem
+                        key={division.name}
+                        title={division.name}
+                        href={division.link}
+                      >
+                        {division.desc}
+                      </ListItem>
+                    ))}
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
 
-            <NavigationMenuItem>
-              <NavigationMenuLink asChild>
-                <Link
-                  href="/blogs"
-                  className={`${navigationMenuTriggerStyle()} flex items-center gap-1 rounded-lg p-2 transition-colors duration-200 hover:bg-muted-foreground/10`}
-                >
-                  <MdOutlineArticle />
-                  <span className="text-sm font-semibold hover:text-primary/80">
-                    Blogs
-                  </span>
-                </Link>
-              </NavigationMenuLink>
-            </NavigationMenuItem>
-          </NavigationMenuList>
-        </NavigationMenu>
+              <NavigationMenuItem>
+                <NavigationMenuLink asChild>
+                  <Link
+                    href="/#about"
+                    onClick={() => router.push("/#about")}
+                    className={`${navigationMenuTriggerStyle()} flex items-center gap-1 rounded-lg p-2 transition-colors duration-200 hover:bg-muted-foreground/10`}
+                  >
+                    <AiOutlineQuestionCircle />
+                    <span className="text-sm font-semibold hover:text-primary/80">
+                      About Us
+                    </span>
+                  </Link>
+                </NavigationMenuLink>
+              </NavigationMenuItem>
 
-        <div className="flex items-center gap-2">
-          <ThemeToggle />
+              <NavigationMenuItem>
+                <NavigationMenuLink asChild>
+                  <Link
+                    href="/blogs"
+                    className={`${navigationMenuTriggerStyle()} flex items-center gap-1 rounded-lg p-2 transition-colors duration-200 hover:bg-muted-foreground/10`}
+                  >
+                    <MdOutlineArticle />
+                    <span className="text-sm font-semibold hover:text-primary/80">
+                      Blogs
+                    </span>
+                  </Link>
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
 
-          <button
-            type="button"
-            onClick={() => setIsMenuOpen(true)}
-            aria-label="Open menu"
-            aria-expanded={isMenuOpen}
-            className="flex h-9 w-9 items-center justify-center rounded-lg border border-border/60 text-foreground transition-colors hover:bg-muted-foreground/10 md:hidden"
-          >
-            <Menu className="h-5 w-5" />
-          </button>
+          <div className="flex items-center gap-2">
+            <ThemeToggle />
+
+            <button
+              type="button"
+              onClick={() => setIsMenuOpen(true)}
+              aria-label="Open menu"
+              aria-expanded={isMenuOpen}
+              className="flex h-9 w-9 items-center justify-center rounded-lg border border-border/60 text-foreground transition-colors hover:bg-muted-foreground/10 md:hidden"
+            >
+              <Menu className="h-5 w-5" />
+            </button>
+          </div>
         </div>
-      </div>
       </header>
 
       {mounted &&
         createPortal(
           <>
             <div
-              className={`fixed inset-0 z-[60] bg-black/50 backdrop-blur-sm transition-opacity duration-300 md:hidden ${
-                isMenuOpen
-                  ? "pointer-events-auto opacity-100"
-                  : "pointer-events-none opacity-0"
-              }`}
+              className={`fixed inset-0 z-[60] bg-black/50 backdrop-blur-sm transition-opacity duration-300 md:hidden ${isMenuOpen
+                ? "pointer-events-auto opacity-100"
+                : "pointer-events-none opacity-0"
+                }`}
               onClick={closeMenu}
               aria-hidden="true"
             />
 
             <div
-              className={`fixed inset-y-0 right-0 z-[70] flex h-dvh w-[280px] max-w-[85vw] flex-col border-l border-border/40 bg-background shadow-2xl transition-transform duration-300 ease-out md:hidden ${
-                isMenuOpen ? "translate-x-0" : "translate-x-full"
-              }`}
+              className={`fixed inset-y-0 right-0 z-[70] flex h-dvh w-[280px] max-w-[85vw] flex-col border-l border-border/40 bg-background shadow-2xl transition-transform duration-300 ease-out md:hidden ${isMenuOpen ? "translate-x-0" : "translate-x-full"
+                }`}
               role="dialog"
               aria-modal="true"
               aria-label="Mobile navigation menu"

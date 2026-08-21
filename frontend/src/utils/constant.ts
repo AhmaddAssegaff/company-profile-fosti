@@ -117,4 +117,6 @@ const carouselAbout = [
   },
 ];
 
-export default { carouselAbout };
+const constants = { carouselAbout };
+
+export default constants;
