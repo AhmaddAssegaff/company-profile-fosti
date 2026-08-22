@@ -32,20 +32,27 @@ function readBlog(fileName: string): Blog {
   };
 }
 
-const getCachedBlogs = unstable_cache(async (): Promise<Blog[]> => {
-  const files = fs
-    .readdirSync(BLOG_PATH)
-    .filter((file) =>
-      BLOG_EXTENSIONS.some((extension) => file.endsWith(extension)),
-    );
+const getCachedBlogs = unstable_cache(
+  async (): Promise<Blog[]> => {
+    const files = fs
+      .readdirSync(BLOG_PATH)
+      .filter((file) =>
+        BLOG_EXTENSIONS.some((extension) => file.endsWith(extension)),
+      );
 
-  return files
-    .map(readBlog)
-    .sort(
-      (a, b) =>
-        new Date(b.datePublish).getTime() - new Date(a.datePublish).getTime(),
-    );
-}, ["blogs"]);
+    return files
+      .map(readBlog)
+      .sort(
+        (a, b) =>
+          new Date(b.datePublish).getTime() - new Date(a.datePublish).getTime(),
+      );
+  },
+  ["blogs"],
+  {
+    revalidate: 3600,
+    tags: ["blogs"],
+  },
+);
 
 export async function getAllBlogs(): Promise<Blog[]> {
   return getCachedBlogs();
