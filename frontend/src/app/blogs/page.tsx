@@ -69,9 +69,7 @@ export default function BlogsPage() {
           </BreadcrumbList>
         </Breadcrumb>
 
-        {/* --- DESKTOP: 2-COLUMN GRID (sidebar + content) / MOBILE: stacked --- */}
         <div className="lg:grid lg:grid-cols-12 lg:gap-10 xl:gap-14">
-          {/* --- LEFT COLUMN: header, sticky on desktop --- */}
           <div className="lg:col-span-4">
             <header className="mb-10 max-w-2xl space-y-4 lg:sticky lg:top-16 lg:mb-0 lg:space-y-6 lg:pt-8">
               <span className="inline-flex items-center gap-2 rounded-full border-2 border-black bg-yellow-300 px-3 py-1 text-xs font-bold uppercase tracking-wide text-black shadow-[3px_3px_0_0_#000] dark:border-white dark:bg-yellow-400 dark:shadow-[3px_3px_0_0_#fff] sm:text-sm">
@@ -93,7 +91,6 @@ export default function BlogsPage() {
             </header>
           </div>
 
-          {/* --- RIGHT COLUMN: search, filter, article list --- */}
           <div className="lg:col-span-8">
             <Suspense fallback={<BlogListFallback />}>
               <BlogListWithFilter allBlogs={allBlogs} allTags={allTags} />

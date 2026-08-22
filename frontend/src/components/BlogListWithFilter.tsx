@@ -19,7 +19,6 @@ export default function BlogListWithFilter({
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
-  // --- Source of truth: parsed directly from URL, validated against allTags ---
   const selectedTags = useMemo(() => {
     const raw = searchParams.get("tag");
     if (!raw) return [];
@@ -29,7 +28,6 @@ export default function BlogListWithFilter({
       .map((t) => t.trim().toLowerCase())
       .filter(Boolean);
 
-    // Only allow tags that actually exist in allTags (prevents garbage/invalid query values)
     return requested.filter((t) => allTags.includes(t));
   }, [searchParams, allTags]);
 
@@ -73,7 +71,6 @@ export default function BlogListWithFilter({
 
   return (
     <>
-      {/* --- SECTION SEARCH BAR (UI ONLY — no state/logic wired up yet) --- */}
       <div className="group relative mb-4 sm:mb-6">
         <Search className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-black/40 transition-colors duration-150 group-focus-within:text-red-500 dark:text-neutral-500 dark:group-focus-within:text-red-400 sm:left-5 sm:h-6 sm:w-6" />
         <input
@@ -83,7 +80,6 @@ export default function BlogListWithFilter({
         />
       </div>
 
-      {/* --- SECTION FILTER TAGS --- */}
       <section className="mb-8 rounded-2xl border-2 border-black bg-white p-3.5 shadow-[4px_4px_0_0_#000] dark:border-white dark:bg-neutral-900 dark:shadow-[4px_4px_0_0_#fff] sm:mb-14 sm:p-6 md:border-4 md:shadow-[6px_6px_0_0_#000] dark:md:shadow-[6px_6px_0_0_#fff]">
         <div className="mb-3 flex flex-wrap items-center justify-between gap-3 sm:mb-4">
           <h3 className="text-xs font-extrabold uppercase tracking-wide text-black dark:text-white sm:text-base">
@@ -100,9 +96,6 @@ export default function BlogListWithFilter({
           )}
         </div>
 
-        {/* Mobile: horizontal swipe (flex-nowrap + overflow-x-auto), scrollbar hidden.
-            Extra -mx/px pair gives the edge buttons room so their shadow isn't clipped
-            by the section's own padding. Desktop (md+): reverts to normal wrap. */}
         <div className="-mx-3.5 flex flex-nowrap gap-2 overflow-x-auto px-3.5 py-2 [-ms-overflow-style:none] [scrollbar-width:none] sm:gap-3 md:mx-0 md:flex-wrap md:overflow-visible md:px-0 md:pb-0 [&::-webkit-scrollbar]:hidden">
           {allTags.map((tag) => {
             const isSelected = selectedTags.includes(tag);
@@ -128,7 +121,6 @@ export default function BlogListWithFilter({
         </div>
       </section>
 
-      {/* --- SECTION BLOG LIST --- */}
       <div className="flex flex-col gap-4 sm:gap-7">
         {filteredBlogs.length === 0 ? (
           <div className="rounded-2xl border-2 border-dashed border-black/30 bg-white/60 px-5 py-12 text-center dark:border-white/30 dark:bg-neutral-900/60 sm:border-4 sm:px-6 sm:py-16">
@@ -155,7 +147,6 @@ export default function BlogListWithFilter({
                   href={`/blogs/${blog.slug}`}
                   className="flex flex-col gap-3.5 p-4 focus:outline-none focus-visible:ring-4 focus-visible:ring-yellow-400 sm:flex-row sm:items-start sm:gap-7 sm:p-7 lg:gap-9 lg:p-8"
                 >
-                  {/* Meta column */}
                   <div className="flex shrink-0 flex-row flex-wrap items-center gap-x-4 gap-y-2 text-xs font-semibold text-black/60 dark:text-neutral-400 sm:w-32 sm:flex-col sm:items-start md:w-36 lg:w-40">
                     <div className="flex items-center gap-1.5">
                       <Calendar className="h-4 w-4 shrink-0 text-red-500" />
@@ -169,7 +160,6 @@ export default function BlogListWithFilter({
                     </div>
                   </div>
 
-                  {/* Content column */}
                   <div className="min-w-0 flex-1 space-y-2.5 sm:space-y-3">
                     <h2 className="flex items-center gap-2 text-lg font-extrabold leading-snug tracking-tight text-black dark:text-white sm:text-2xl">
                       <span className="flex-1">{blog.title}</span>
