@@ -6,14 +6,10 @@ import { getBlogsByTags } from "@/lib/blog";
 const ACHIEVEMENT_TAGS = ["prestasi", "achievement"];
 const MAX_ACHIEVEMENTS = 3;
 
-const NUMBER_COLORS = [
-  "bg-blue-500",
-  "bg-emerald-500",
-  "bg-orange-500",
-];
+const NUMBER_COLORS = ["bg-blue-500", "bg-emerald-500", "bg-orange-500"];
 
-const Achievements = () => {
-  const achievements = getBlogsByTags(ACHIEVEMENT_TAGS).slice(
+const Achievements = async () => {
+  const achievements = (await getBlogsByTags(ACHIEVEMENT_TAGS)).slice(
     0,
     MAX_ACHIEVEMENTS,
   );
@@ -32,8 +28,8 @@ const Achievements = () => {
           </span>
         </h2>
         <p className="mx-auto max-w-2xl text-sm font-medium leading-relaxed text-muted-foreground md:text-lg">
-          A track record built through years of dedication, collaboration,
-          and a shared passion for technology.
+          A track record built through years of dedication, collaboration, and a
+          shared passion for technology.
         </p>
       </div>
 
@@ -47,8 +43,7 @@ const Achievements = () => {
         <div className="mx-6 max-w-4xl md:mx-auto">
           {achievements.map((blog, index) => {
             const year = new Date(blog.datePublish).getFullYear();
-            const numberColor =
-              NUMBER_COLORS[index % NUMBER_COLORS.length];
+            const numberColor = NUMBER_COLORS[index % NUMBER_COLORS.length];
 
             return (
               <Link

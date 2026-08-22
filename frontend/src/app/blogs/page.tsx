@@ -32,9 +32,9 @@ function BlogListFallback() {
   );
 }
 
-export default function BlogsPage() {
-  const allBlogs = getAllBlogs();
-  const allTags = getAllTags();
+export default async function BlogsPage() {
+  const allBlogs = await getAllBlogs();
+  const allTags = await getAllTags();
 
   return (
     <main className="relative min-h-screen overflow-hidden bg-[#F4F4F0] text-black transition-colors duration-200 dark:bg-neutral-950 dark:text-white">

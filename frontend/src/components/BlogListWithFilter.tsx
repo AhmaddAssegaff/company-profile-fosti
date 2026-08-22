@@ -71,12 +71,12 @@ export default function BlogListWithFilter({
 
   return (
     <>
-      <div className="group relative mb-4 sm:mb-6">
-        <Search className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-black/40 transition-colors duration-150 group-focus-within:text-red-500 dark:text-neutral-500 dark:group-focus-within:text-red-400 sm:left-5 sm:h-6 sm:w-6" />
+      <div className="group relative mb-4 transition-transform duration-150 focus-within:-translate-x-1 focus-within:-translate-y-1 sm:mb-6">
+        <Search className="pointer-events-none absolute left-3.5 top-1/2 z-10 h-4 w-4 -translate-y-1/2 text-black/40 transition-colors duration-150 group-focus-within:text-red-500 dark:text-neutral-500 dark:group-focus-within:text-red-400 sm:left-5 sm:h-6 sm:w-6" />
         <input
           type="text"
           placeholder="Search articles…"
-          className="w-full rounded-none border-2 border-black bg-white py-3 pl-10 pr-4 text-sm font-semibold text-black shadow-[4px_4px_0_0_#000] outline-none transition-all duration-150 placeholder:font-normal placeholder:text-black/40 focus:-translate-x-1 focus:-translate-y-1 focus:shadow-[7px_7px_0_0_#000] dark:border-white dark:bg-neutral-900 dark:text-white dark:shadow-[4px_4px_0_0_#fff] dark:placeholder:text-neutral-500 dark:focus:shadow-[7px_7px_0_0_#fff] sm:py-4 sm:pl-14 sm:text-base md:border-4 md:shadow-[6px_6px_0_0_#000] md:focus:shadow-[10px_10px_0_0_#000] md:text-lg dark:md:shadow-[6px_6px_0_0_#fff] dark:md:focus:shadow-[10px_10px_0_0_#fff]"
+          className="w-full rounded-none border-2 border-black bg-white py-3 pl-10 pr-4 text-sm font-semibold text-black shadow-[4px_4px_0_0_#000] outline-none transition-all duration-150 placeholder:font-normal placeholder:text-black/40 dark:border-white dark:bg-neutral-900 dark:text-white dark:shadow-[4px_4px_0_0_#fff] dark:placeholder:text-neutral-500 sm:py-4 sm:pl-14 sm:text-base md:border-4 md:shadow-[6px_6px_0_0_#000] md:text-lg dark:md:shadow-[6px_6px_0_0_#fff]"
         />
       </div>
 
@@ -103,11 +103,10 @@ export default function BlogListWithFilter({
               <button
                 key={tag}
                 onClick={() => toggleTag(tag)}
-                className={`inline-flex min-h-[38px] shrink-0 cursor-pointer items-center gap-1.5 whitespace-nowrap rounded-full border-2 border-black px-3.5 py-1.5 text-xs font-bold transition-all duration-150 sm:min-h-[42px] sm:gap-2 sm:px-4 sm:py-2 sm:text-sm ${
-                  isSelected
-                    ? "-translate-y-0.5 bg-red-500 text-white shadow-[4px_4px_0_0_#000] dark:border-white dark:shadow-[4px_4px_0_0_#fff]"
-                    : "bg-white text-black shadow-[3px_3px_0_0_#000] hover:-translate-y-0.5 hover:shadow-[4px_4px_0_0_#000] dark:border-white dark:bg-neutral-900 dark:text-white dark:shadow-[3px_3px_0_0_#fff] dark:hover:shadow-[4px_4px_0_0_#fff]"
-                }`}
+                className={`inline-flex min-h-[38px] shrink-0 cursor-pointer items-center gap-1.5 whitespace-nowrap rounded-full border-2 border-black px-3.5 py-1.5 text-xs font-bold transition-all duration-150 sm:min-h-[42px] sm:gap-2 sm:px-4 sm:py-2 sm:text-sm ${isSelected
+                  ? "-translate-y-0.5 bg-red-500 text-white shadow-[4px_4px_0_0_#000] dark:border-white dark:shadow-[4px_4px_0_0_#fff]"
+                  : "bg-white text-black shadow-[3px_3px_0_0_#000] hover:-translate-y-0.5 hover:shadow-[4px_4px_0_0_#000] dark:border-white dark:bg-neutral-900 dark:text-white dark:shadow-[3px_3px_0_0_#fff] dark:hover:shadow-[4px_4px_0_0_#fff]"
+                  }`}
               >
                 {isSelected && (
                   <span className="flex h-3.5 w-3.5 shrink-0 items-center justify-center rounded-full bg-white text-red-500 sm:h-4 sm:w-4">

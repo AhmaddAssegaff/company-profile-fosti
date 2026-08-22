@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
+import { unstable_cache } from "next/cache";
 
 import { BlogSchema, type BlogFrontmatter } from "./blogs.shema";
 
@@ -31,7 +32,7 @@ function readBlog(fileName: string): Blog {
   };
 }
 
-export function getAllBlogs(): Blog[] {
+const getCachedBlogs = unstable_cache(async (): Promise<Blog[]> => {
   const files = fs
     .readdirSync(BLOG_PATH)
     .filter((file) =>
@@ -44,12 +45,17 @@ export function getAllBlogs(): Blog[] {
       (a, b) =>
         new Date(b.datePublish).getTime() - new Date(a.datePublish).getTime(),
     );
+}, ["blogs"]);
+
+export async function getAllBlogs(): Promise<Blog[]> {
+  return getCachedBlogs();
 }
 
-export function getBlogsByTags(tags: string[]): Blog[] {
+export async function getBlogsByTags(tags: string[]): Promise<Blog[]> {
   const normalizedTags = tags.map((tag) => tag.toLowerCase());
+  const blogs = await getAllBlogs();
 
-  return getAllBlogs().filter((blog) =>
+  return blogs.filter((blog) =>
     blog.tags.some((tag) => normalizedTags.includes(tag.toLowerCase())),
   );
 }
@@ -71,14 +77,38 @@ export function getBlogBySlug(slug: string): Blog | null {
   return null;
 }
 
-export function getAllTags(): string[] {
+export async function getAllTags(): Promise<string[]> {
   const tags = new Set<string>();
+  const blogs = await getAllBlogs();
 
-  for (const blog of getAllBlogs()) {
+  for (const blog of blogs) {
     for (const tag of blog.tags) {
       tags.add(tag.toLowerCase());
     }
   }
 
   return Array.from(tags).sort();
+}
+
+export async function getBlogsBySearch(query: string): Promise<Blog[]> {
+  const normalizedQuery = query.trim().toLowerCase();
+
+  const blogs = await getAllBlogs();
+
+  if (!normalizedQuery) {
+    return blogs;
+  }
+
+  return blogs.filter((blog) => {
+    const searchableContent = [
+      blog.title,
+      blog.description,
+      blog.content,
+      ...blog.tags,
+    ]
+      .join(" ")
+      .toLowerCase();
+
+    return searchableContent.includes(normalizedQuery);
+  });
 }
