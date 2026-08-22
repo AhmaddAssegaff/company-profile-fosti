@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import Link from "next/link";
 import { getAllBlogs, getAllTags } from "@/lib/blog";
 import BlogListWithFilter from "@/components/BlogListWithFilter";
@@ -10,6 +11,7 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import type { Metadata } from "next";
+import Squares from "@/components/Squares/Squares";
 
 export const metadata: Metadata = {
   title: "Blog",
@@ -20,48 +22,81 @@ export const metadata: Metadata = {
   },
 };
 
+function BlogListFallback() {
+  return (
+    <div className="rounded-2xl border-2 border-dashed border-black/30 bg-white/60 px-6 py-16 text-center dark:border-white/30 dark:bg-neutral-900/60 sm:border-4">
+      <p className="text-base font-bold text-black dark:text-white">
+        Loading articles…
+      </p>
+    </div>
+  );
+}
+
 export default function BlogsPage() {
   const allBlogs = getAllBlogs();
   const allTags = getAllTags();
 
   return (
-    <main className="min-h-screen bg-background px-6 py-16 text-foreground transition-colors duration-200 sm:px-8 lg:px-12 lg:py-24">
-      <div className="mx-auto max-w-3xl lg:max-w-5xl">
-        <Breadcrumb className="mb-10 lg:mb-14">
-          <BreadcrumbList className="font-mono text-xs lg:text-sm">
+    <main className="relative min-h-screen overflow-hidden bg-[#F4F4F0] text-black transition-colors duration-200 dark:bg-neutral-950 dark:text-white">
+      <div className="absolute inset-0 z-0 opacity-40 dark:opacity-[0.15]">
+        <Squares
+          speed={0.25}
+          squareSize={30}
+          direction="down"
+          borderColor={"#bababa"}
+        />
+      </div>
+
+      <div className="relative z-10 mx-auto max-w-screen px-5 py-10 sm:px-8 sm:py-14 lg:px-10 lg:py-20 xl:px-16">
+        <Breadcrumb className="mb-6 lg:mb-0">
+          <BreadcrumbList className="inline-flex items-center gap-1.5 rounded-full border-2 border-black bg-white px-3.5 py-1.5 text-xs font-semibold shadow-[3px_3px_0_0_#000] dark:border-white dark:bg-neutral-900 dark:shadow-[3px_3px_0_0_#fff] sm:text-sm">
             <BreadcrumbItem>
               <BreadcrumbLink asChild>
-                <Link href="/">Home</Link>
+                <Link
+                  href="/"
+                  className="text-black/60 hover:text-red-500 dark:text-neutral-400 dark:hover:text-red-400"
+                >
+                  Home
+                </Link>
               </BreadcrumbLink>
             </BreadcrumbItem>
-            <BreadcrumbSeparator />
+            <BreadcrumbSeparator className="text-black/30 dark:text-neutral-600" />
             <BreadcrumbItem>
-              <BreadcrumbPage className="font-medium text-foreground">
+              <BreadcrumbPage className="font-bold text-black dark:text-white">
                 Blogs
               </BreadcrumbPage>
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
 
-        <header className="mb-16 max-w-2xl space-y-4 lg:mb-24 lg:space-y-5">
-          <div className="inline-flex items-center gap-2">
-            <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-red-500 dark:bg-red-600" />
-            <span className="font-mono text-xs uppercase tracking-wider text-muted-foreground lg:text-sm">
-              FOSTI UMS Journal
-            </span>
+        <div className="lg:grid lg:grid-cols-12 lg:gap-10 xl:gap-14">
+          <div className="lg:col-span-4">
+            <header className="mb-10 max-w-2xl space-y-4 lg:sticky lg:top-16 lg:mb-0 lg:space-y-6 lg:pt-8">
+              <span className="inline-flex items-center gap-2 rounded-full border-2 border-black bg-yellow-300 px-3 py-1 text-xs font-bold uppercase tracking-wide text-black shadow-[3px_3px_0_0_#000] dark:border-white dark:bg-yellow-400 dark:shadow-[3px_3px_0_0_#fff] sm:text-sm">
+                <span className="h-2 w-2 rounded-full bg-red-500" />
+                FOSTI UMS Journal
+              </span>
+
+              <h1 className="text-4xl font-black leading-[0.95] tracking-tight text-black dark:text-white sm:text-5xl lg:text-6xl xl:text-7xl">
+                FOSTI Blog
+                <span className="text-red-500">.</span>
+              </h1>
+
+              <p className="line-clamp-3 text-sm leading-relaxed text-black/70 dark:text-neutral-400 sm:text-base md:line-clamp-none lg:text-lg">
+                Articles, and activity documentation regarding the world of
+                open source and technology, presented by the Informatics
+                Engineering Open Source Forum at Universitas Muhammadiyah
+                Surakarta.
+              </p>
+            </header>
           </div>
 
-          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
-            FOSTI Blog<span className="text-red-500 dark:text-red-600">.</span>
-          </h1>
-          <p className="text-base leading-relaxed text-muted-foreground lg:text-lg">
-            Articles, and activity documentation regarding the world of open
-            source and technology, presented by the Informatics Engineering Open
-            Source Forum at Universitas Muhammadiyah Surakarta.
-          </p>
-        </header>
-
-        <BlogListWithFilter allBlogs={allBlogs} allTags={allTags} />
+          <div className="lg:col-span-8">
+            <Suspense fallback={<BlogListFallback />}>
+              <BlogListWithFilter allBlogs={allBlogs} allTags={allTags} />
+            </Suspense>
+          </div>
+        </div>
       </div>
     </main>
   );
