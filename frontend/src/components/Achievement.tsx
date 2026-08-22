@@ -99,7 +99,7 @@ const Achievements = () => {
 
       <div className="mt-8 flex justify-center">
         <Link
-          href="/blogs"
+          href="/blogs?tag=achievement"
           className="group inline-flex items-center gap-2 rounded-xl border-2 border-black bg-white px-6 py-3 font-black uppercase text-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all duration-300 hover:-translate-y-1 hover:bg-red-500 hover:text-white hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] dark:border-white dark:bg-neutral-800 dark:text-white dark:shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] dark:hover:bg-red-600 dark:hover:shadow-[6px_6px_0px_0px_rgba(255,255,255,1)]"
         >
           See more achievements

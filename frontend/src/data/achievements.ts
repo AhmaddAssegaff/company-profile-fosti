@@ -1,6 +1,4 @@
-import type { Achievement } from "@/types/achievements";
-
-export const achievements: Achievement[] = [
+export const achievements = [
   {
     id: "1",
     title: "The Global Top 100 teams by Google Solutions Challenge",
