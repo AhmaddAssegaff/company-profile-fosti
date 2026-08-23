@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { ArrowRight, Calendar, Check, Search, User, X } from "lucide-react";
@@ -42,33 +42,36 @@ export default function BlogListWithFilter({
       .filter((tag) => tag && availableTags.has(tag));
   }, [searchParams, allTags]);
 
-  const updateParams = (updates: { q?: string | null; tags?: string[] }) => {
-    const params = new URLSearchParams(searchParams);
+  const updateParams = useCallback(
+    (updates: { q?: string | null; tags?: string[] }) => {
+      const params = new URLSearchParams(searchParams);
 
-    if (updates.q !== undefined) {
-      const query = updates.q?.trim() ?? "";
+      if (updates.q !== undefined) {
+        const query = updates.q?.trim() ?? "";
 
-      if (query) {
-        params.set("q", query);
-      } else {
-        params.delete("q");
+        if (query) {
+          params.set("q", query);
+        } else {
+          params.delete("q");
+        }
       }
-    }
 
-    if (updates.tags !== undefined) {
-      if (updates.tags.length > 0) {
-        params.set("tag", updates.tags.join(","));
-      } else {
-        params.delete("tag");
+      if (updates.tags !== undefined) {
+        if (updates.tags.length > 0) {
+          params.set("tag", updates.tags.join(","));
+        } else {
+          params.delete("tag");
+        }
       }
-    }
 
-    const queryString = params.toString();
+      const queryString = params.toString();
 
-    router.replace(`${pathname}${queryString ? `?${queryString}` : ""}`, {
-      scroll: false,
-    });
-  };
+      router.replace(`${pathname}${queryString ? `?${queryString}` : ""}`, {
+        scroll: false,
+      });
+    },
+    [searchParams, router, pathname],
+  );
 
   useEffect(() => {
     if (searchInput === searchQuery) {
@@ -84,7 +87,7 @@ export default function BlogListWithFilter({
     return () => {
       clearTimeout(timer);
     };
-  }, [searchInput, searchQuery]);
+  }, [searchInput, searchQuery, updateParams]);
 
   const filteredBlogs = useMemo(() => {
     const normalizedQuery = searchQuery.trim().toLowerCase();
@@ -181,11 +184,10 @@ export default function BlogListWithFilter({
                 key={tag}
                 type="button"
                 onClick={() => toggleTag(tag)}
-                className={`inline-flex min-h-[38px] shrink-0 cursor-pointer items-center gap-1.5 whitespace-nowrap rounded-full border-2 border-black px-3.5 py-1.5 text-xs font-bold transition-all duration-150 sm:min-h-[42px] sm:gap-2 sm:px-4 sm:py-2 sm:text-sm ${
-                  isSelected
-                    ? "-translate-y-0.5 bg-red-500 text-white shadow-[4px_4px_0_0_#000] dark:border-white dark:shadow-[4px_4px_0_0_#fff]"
-                    : "bg-white text-black shadow-[3px_3px_0_0_#000] hover:-translate-y-0.5 hover:shadow-[4px_4px_0_0_#000] dark:border-white dark:bg-neutral-900 dark:text-white dark:shadow-[3px_3px_0_0_#fff] dark:hover:shadow-[4px_4px_0_0_#fff]"
-                }`}
+                className={`inline-flex min-h-[38px] shrink-0 cursor-pointer items-center gap-1.5 whitespace-nowrap rounded-full border-2 border-black px-3.5 py-1.5 text-xs font-bold transition-all duration-150 sm:min-h-[42px] sm:gap-2 sm:px-4 sm:py-2 sm:text-sm ${isSelected
+                  ? "-translate-y-0.5 bg-red-500 text-white shadow-[4px_4px_0_0_#000] dark:border-white dark:shadow-[4px_4px_0_0_#fff]"
+                  : "bg-white text-black shadow-[3px_3px_0_0_#000] hover:-translate-y-0.5 hover:shadow-[4px_4px_0_0_#000] dark:border-white dark:bg-neutral-900 dark:text-white dark:shadow-[3px_3px_0_0_#fff] dark:hover:shadow-[4px_4px_0_0_#fff]"
+                  }`}
               >
                 {isSelected && (
                   <span className="flex h-3.5 w-3.5 shrink-0 items-center justify-center rounded-full bg-white text-red-500 sm:h-4 sm:w-4">

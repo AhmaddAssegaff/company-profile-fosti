@@ -6,7 +6,8 @@ import img from "@/utils/constant";
 import HeroVideoDialog from "./magicui/hero-video-dialog";
 import { Check, Calendar } from "lucide-react";
 
-const thumbnail = "https://res.cloudinary.com/qjw4yfke/image/upload/v1784116099/cld-sample-4.jpg";
+const thumbnail =
+  "https://res.cloudinary.com/qjw4yfke/image/upload/v1787466879/thumbnail_compro_fosti_2025_fst1ol.webp";
 
 const About = () => {
   const about = img.carouselAbout;
@@ -16,7 +17,7 @@ const About = () => {
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-5 lg:gap-20">
           <div className="order-1 lg:order-2 lg:col-span-2">
             <h1 className="mb-5 text-3xl font-black leading-tight text-neutral-900 dark:text-white md:text-4xl lg:text-5xl">
-              <span className="-rotate-1 inline-block border-2 border-black bg-amber-300 px-2 py-1 text-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] dark:border-white dark:bg-red-500 dark:text-white dark:shadow-[3px_3px_0px_0px_rgba(255,255,255,1)]">
+              <span className="inline-block -rotate-1 border-2 border-black bg-amber-300 px-2 py-1 text-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] dark:border-white dark:bg-red-500 dark:text-white dark:shadow-[3px_3px_0px_0px_rgba(255,255,255,1)]">
                 Who We Are
               </span>{" "}
               &amp; What We Do
@@ -24,9 +25,9 @@ const About = () => {
 
             <p className="mb-8 text-sm font-medium leading-relaxed text-muted-foreground md:text-base lg:text-lg">
               FOSTI is an independent non-profit organization operated by the
-              students of the Faculty of Communication and Informatics Universitas
-              Muhammadiyah Surakarta that aims to cultivate students&apos; interests
-              in the fields of science and technology.
+              students of the Faculty of Communication and Informatics
+              Universitas Muhammadiyah Surakarta that aims to cultivate
+              students&apos; interests in the fields of science and technology.
             </p>
 
             <ul className="space-y-3">
