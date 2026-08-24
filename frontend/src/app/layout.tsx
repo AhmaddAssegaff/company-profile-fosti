@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { env } from "@/env";
+import AOSProvider from "../lib/aos";
 
 export const metadata: Metadata = {
   metadataBase: new URL(env.SITE_URL),
@@ -33,6 +34,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`scroll-smooth`} suppressHydrationWarning>
       <body>
+        <AOSProvider />
         <ThemeProvider attribute={"class"} defaultTheme="light">
           <AntdRegistry>
             <main className="gradient-bg-main min-h-screen">
