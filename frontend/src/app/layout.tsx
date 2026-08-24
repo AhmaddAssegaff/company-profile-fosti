@@ -2,7 +2,6 @@ import Navbar from "@/components/Navbar";
 import "@/styles/globals.css";
 import { ThemeProvider } from "@/utils/theme-provider";
 import { type Metadata } from "next";
-import { AntdRegistry } from "@ant-design/nextjs-registry";
 import Footer from "@/components/Footer";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -36,15 +35,13 @@ export default function RootLayout({
       <body>
         <AOSProvider />
         <ThemeProvider attribute={"class"} defaultTheme="light">
-          <AntdRegistry>
-            <main className="gradient-bg-main min-h-screen">
-              <Navbar />
-              {children}
-              <Analytics />
-              <SpeedInsights />
-              <Footer />
-            </main>
-          </AntdRegistry>
+          <main className="gradient-bg-main min-h-screen">
+            <Navbar />
+            {children}
+            <Analytics />
+            <SpeedInsights />
+            <Footer />
+          </main>
         </ThemeProvider>
       </body>
     </html>
