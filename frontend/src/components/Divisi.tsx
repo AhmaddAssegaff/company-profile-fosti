@@ -53,7 +53,7 @@ const divisi = [
 const Divisi = () => {
   return (
     <section id="divisi" className="mx-auto max-w-screen-2xl px-5 py-20">
-      <div className="mb-12 space-y-3 text-center">
+      <div data-aos="fade-up" className="mb-12 space-y-3 text-center">
         <h2 className="mb-4 text-3xl font-black text-neutral-900 dark:text-white sm:text-4xl">
           Meet Our{" "}
           <span className="inline-block -rotate-1 border-2 border-black bg-amber-300 px-3 py-1 text-black dark:border-white">
@@ -66,7 +66,7 @@ const Divisi = () => {
         </p>
       </div>
       <div className="relative mb-16 flex flex-col items-center gap-8 rounded-3xl border-2 border-black bg-neutral-100 p-6 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] dark:border-white dark:bg-neutral-900/80 dark:shadow-[6px_6px_0px_0px_rgba(255,255,255,1)] md:flex-row md:gap-10 md:p-8">
-        <div className="mb-4 flex w-full justify-center md:mb-0 md:w-auto">
+        <div data-aos="zoom-in" className="mb-4 flex w-full justify-center md:mb-0 md:w-auto">
           <Image
             src={fotbar}
             width={600}
@@ -78,12 +78,14 @@ const Divisi = () => {
         </div>
         <div className="grid w-full grid-cols-2 gap-3 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
           {bphiTeam.map((executive, index) => (
-            <ExecutiveCard key={index} executive={executive} />
+            <div key={index} data-aos="zoom-in">
+              <ExecutiveCard executive={executive} />
+            </div>
           ))}
         </div>
       </div>
 
-      <div className="mb-16 text-center">
+      <div data-aos="fade-up" className="mb-16 text-center">
         <h1 className="mb-4 text-3xl font-black text-neutral-900 dark:text-white sm:text-4xl">
           <span className="inline-block rotate-1 border-2 border-black bg-red-500 px-3 py-1 text-white dark:border-white">
             Divisions
@@ -100,34 +102,28 @@ const Divisi = () => {
       </div>
       <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
         {divisi.map((feature, index) => (
-          <Link key={index} href={feature.href}>
-            <Card className="group block h-full overflow-hidden rounded-2xl border-2 border-black bg-white p-6 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] dark:border-white dark:bg-neutral-900 dark:shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] dark:hover:shadow-[8px_8px_0px_0px_rgba(255,255,255,1)]">
-              <CardContent className="p-0">
-                <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-xl border-2 border-black bg-amber-300 dark:border-white dark:bg-red-500">
-                  {feature.icon}
-                </div>
-                <h1 className="mb-2 text-xl font-black text-neutral-900 transition-colors group-hover:text-red-500 dark:text-white">
-                  {feature.title}
-                </h1>
-                <p className="font-medium text-muted-foreground">
-                  {feature.description}
-                </p>
-              </CardContent>
-            </Card>
-          </Link>
-          // <AnimatedContent
-          //   delay={feature.delay}
-          //   distance={250}
-          //   direction="vertical"
-          //   reverse={false}
-          //   config={{ tension: 80, friction: 20 }}
-          //   initialOpacity={0}
-          //   animateOpacity
-          //   scale={1}
-          //   threshold={0.2}
-          //   key={index}
-          // >
-          // </AnimatedContent>
+          <div 
+            key={index} 
+            data-aos="fade-up" 
+            data-aos-delay={feature.delay} 
+            className="h-full"
+          >
+            <Link href={feature.href} className="block h-full">
+              <Card className="group block h-full overflow-hidden rounded-2xl border-2 border-black bg-white p-6 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] dark:border-white dark:bg-neutral-900 dark:shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] dark:hover:shadow-[8px_8px_0px_0px_rgba(255,255,255,1)]">
+                <CardContent className="p-0">
+                  <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-xl border-2 border-black bg-amber-300 dark:border-white dark:bg-red-500">
+                    {feature.icon}
+                  </div>
+                  <h1 className="mb-2 text-xl font-black text-neutral-900 transition-colors group-hover:text-red-500 dark:text-white">
+                    {feature.title}
+                  </h1>
+                  <p className="font-medium text-muted-foreground">
+                    {feature.description}
+                  </p>
+                </CardContent>
+              </Card>
+            </Link>
+          </div>
         ))}
       </div>
     </section>

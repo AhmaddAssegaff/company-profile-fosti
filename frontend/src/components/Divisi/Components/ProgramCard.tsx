@@ -25,7 +25,7 @@ export const ProgramCard = ({
   const isImageMissing = !isComingSoon && (isInvalidSrc || imgError);
 
   return (
-    <div className="group flex flex-col justify-between overflow-hidden rounded-2xl border-2 border-black bg-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] dark:border-neutral-700 dark:bg-neutral-900 dark:shadow-gray-300 dark:hover:border-gray-500 dark:hover:shadow-gray-300">
+    <div className="h-full group flex flex-col justify-between overflow-hidden rounded-2xl border-2 border-black bg-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] dark:border-neutral-700 dark:bg-neutral-900 dark:shadow-gray-300 dark:hover:border-gray-500 dark:hover:shadow-gray-300">
       <div className="relative aspect-video w-full overflow-hidden border-b-2 border-black bg-neutral-100 dark:border-neutral-700 dark:bg-neutral-800">
         {isComingSoon ? (
           <div className="relative flex h-full w-full flex-col items-center justify-center overflow-hidden bg-neutral-950 dark:bg-black">
@@ -94,11 +94,11 @@ export const ProgramCard = ({
           </p>
         </div>
 
-        <div className="mt-4 flex items-center justify-between border-t-2 border-dashed border-black/15 pt-4 text-xs font-bold uppercase dark:border-neutral-700">
-          <span className="font-mono text-neutral-400 dark:text-neutral-500">
+        <div className="mt-4 flex items-start justify-between gap-6 border-t-2 border-dashed border-black/15 pt-4 text-xs font-bold uppercase dark:border-neutral-700">
+          <span className="shrink-0 pt-0.5 font-mono text-neutral-400 dark:text-neutral-500">
             #FOSTI_PROGRAM
           </span>
-          <span className="inline-flex items-center gap-1 text-neutral-900 transition-transform group-hover:translate-x-0.5 dark:text-white">
+          <span className="inline-flex items-center justify-end text-right leading-relaxed text-neutral-900 transition-transform group-hover:translate-x-0.5 dark:text-white">
             {program.date}
           </span>
         </div>

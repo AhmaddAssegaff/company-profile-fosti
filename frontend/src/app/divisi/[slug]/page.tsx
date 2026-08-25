@@ -57,7 +57,7 @@ export default async function DivisiPage({
 
   return (
     <div className="relative w-full">
-      <div className="absolute inset-0 z-0 opacity-15">
+      <div className="absolute inset-0 z-0 opacity-30 dark:opacity-[0.15]">
         <Squares
           speed={0.25}
           squareSize={30}

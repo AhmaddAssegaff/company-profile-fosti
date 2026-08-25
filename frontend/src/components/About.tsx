@@ -15,7 +15,7 @@ const About = () => {
     <div className="relative overflow-hidden">
       <section id="about" className="mx-auto max-w-screen-2xl px-5 py-16">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-5 lg:gap-20">
-          <div className="order-1 lg:order-2 lg:col-span-2">
+          <div data-aos="fade-up" className="order-1 lg:order-2 lg:col-span-2">
             <h1 className="mb-5 text-3xl font-black leading-tight text-neutral-900 dark:text-white md:text-4xl lg:text-5xl">
               <span className="inline-block -rotate-1 border-2 border-black bg-amber-300 px-2 py-1 text-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] dark:border-white dark:bg-red-500 dark:text-white dark:shadow-[3px_3px_0px_0px_rgba(255,255,255,1)]">
                 Who We Are
@@ -69,7 +69,7 @@ const About = () => {
         </div>
       </section>
 
-      <div className="flex w-full flex-col items-center justify-center overflow-hidden">
+      <div data-aos="fade-up" className="flex w-full flex-col items-center justify-center overflow-hidden">
         <Marquee pauseOnHover className="z-30">
           {about.map((item, i) => (
             <MarqueeItem

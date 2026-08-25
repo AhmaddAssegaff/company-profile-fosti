@@ -5,6 +5,7 @@ const CallToAction = () => {
   return (
     <section
       id="join"
+      data-aos="zoom-in-up"
       className="relative mx-auto max-w-screen-2xl px-5 pb-32 pt-6 md:pt-28"
     >
       <div className="group/card max-w-8xl font-nunito relative mx-auto flex flex-col items-center gap-4 overflow-hidden rounded-[1.5em] border-2 border-red-500/50 bg-gradient-to-br from-red-900 via-red-700 to-orange-600 px-6 py-16 text-center text-white shadow-xl transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl hover:shadow-red-500/30 sm:px-12 sm:py-20">

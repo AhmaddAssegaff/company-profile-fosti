@@ -1,7 +1,6 @@
 import React from "react";
 import { TabsContent } from "../ui/tabs";
 import { ristekTeam } from "@/data/RistekTeam";
-import AnimatedContent from "../AnimatedContent/AnimatedContent";
 import { MemberCard } from "@/components/Divisi/Components/MemberCard";
 
 const RistekTeam = () => {
@@ -16,20 +15,12 @@ const RistekTeam = () => {
       </p>
       <div className="mt-5 grid grid-cols-2 gap-3 xs:gap-4 sm:gap-5 md:mt-2 md:gap-6 lg:grid-cols-3 xl:grid-cols-4">
         {ristekTeam.map((member, index) => (
-          <AnimatedContent
-            delay={index * 10}
-            distance={250}
-            direction="vertical"
-            reverse={false}
-            config={{ tension: 80, friction: 20 }}
-            initialOpacity={0}
-            animateOpacity
-            scale={1}
-            threshold={0.2}
-            key={index}
+          <div 
+            key={index} 
+            data-aos="zoom-in-up"
           >
-            <MemberCard member={member} />
-          </AnimatedContent>
+            <MemberCard member={member} priority={index < 8} />
+          </div>
         ))}
       </div>
     </TabsContent>

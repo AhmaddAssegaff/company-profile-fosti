@@ -35,7 +35,7 @@ const Partners = () => {
         }}
       />
 
-      <div className="relative mb-14 text-center">
+      <div data-aos="fade-up" className="relative mb-14 text-center">
         <div className="mb-4 inline-flex items-center gap-2 border-2 border-black bg-amber-300 px-4 py-1.5 text-xs font-black uppercase tracking-widest text-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] dark:border-white dark:bg-amber-400 dark:shadow-[2px_2px_0px_0px_rgba(255,255,255,1)] -rotate-2">
           <HeartHandshake className="h-4.5 w-4.5" />
           Partners
@@ -51,26 +51,28 @@ const Partners = () => {
 
       <div className="relative mx-auto flex max-w-4xl flex-col items-center justify-center gap-10 sm:flex-row sm:gap-16">
         {partners.map((partner, index) => (
-          <Link
-            key={index}
-            href={partner.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={`Visit ${partner.name} website`}
-            className={`group flex items-center justify-center transition-all duration-300 ${partner.mono
-              ? "opacity-60 grayscale hover:opacity-100 hover:grayscale-0"
-              : "opacity-60 grayscale hover:opacity-100 hover:grayscale-0 dark:opacity-70 dark:grayscale-0 dark:brightness-150 dark:hover:brightness-100"
-              }`}
-          >
-            <Image
-              src={partner.logo}
-              alt={partner.name}
-              width={partner.width}
-              height={partner.width}
-              className={`h-auto w-full max-w-[500px] object-contain sm:max-w-[520px] ${partner.mono ? "invert dark:invert-0" : ""
+          <div key={index} data-aos="fade-up" data-aos-delay={index * 150}>
+            <Link
+              key={index}
+              href={partner.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Visit ${partner.name} website`}
+              className={`group flex items-center justify-center transition-all duration-300 ${partner.mono
+                ? "opacity-60 grayscale hover:opacity-100 hover:grayscale-0"
+                : "opacity-60 grayscale hover:opacity-100 hover:grayscale-0 dark:opacity-70 dark:grayscale-0 dark:brightness-150 dark:hover:brightness-100"
                 }`}
-            />
-          </Link>
+            >
+              <Image
+                src={partner.logo}
+                alt={partner.name}
+                width={partner.width}
+                height={partner.width}
+                className={`h-auto w-full max-w-[500px] object-contain sm:max-w-[520px] ${partner.mono ? "invert dark:invert-0" : ""
+                  }`}
+              />
+            </Link>
+          </div>
         ))}
       </div>
     </section>

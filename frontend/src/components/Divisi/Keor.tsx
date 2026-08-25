@@ -56,7 +56,7 @@ const Keor = () => {
           📌 Kaderisasi HQ
         </span>
 
-        <div className="mx-auto flex max-w-4xl flex-col items-center text-center">
+        <div data-aos="fade-up" className="mx-auto flex max-w-4xl flex-col items-center text-center">
           <span className="mb-6 inline-flex -rotate-2 items-center gap-1.5 rounded-lg border-2 border-black bg-amber-300 px-3 py-1.5 text-xs font-black uppercase tracking-tight text-neutral-900 shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] dark:shadow-gray-100 sm:text-sm">
             📌 #1 People &amp; Leadership HQ
           </span>
@@ -73,7 +73,7 @@ const Keor = () => {
           </p>
         </div>
 
-        <div className="relative mx-auto mt-12 w-full max-w-2xl">
+        <div data-aos="zoom-in" data-aos-delay="200" className="relative mx-auto mt-12 w-full max-w-2xl">
           <span className="absolute -left-3 -top-6 z-20 -rotate-6 rounded-lg border-2 border-black bg-gray-300 px-3 py-1.5 text-xs font-black uppercase tracking-tight text-neutral-900 shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] dark:shadow-gray-300 sm:-left-6 sm:text-sm">
             👥 Build Talents, Grow Leaders
           </span>
@@ -82,7 +82,7 @@ const Keor = () => {
             🤝 Solid, Adaptive, Progressive
           </span>
 
-          <div className="overflow-hidden rounded-3xl border-2 border-black bg-white shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] dark:border-neutral-100 dark:bg-neutral-900 dark:shadow-[8px_8px_0px_0px_rgba(255,255,255,0.9)]">
+          <div className="overflow-hidden rounded-3xl border-2 border-black bg-white shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] dark:border-neutral-100 dark:bg-neutral-900 dark:shadow-[8px_8px_0px_0px_rgba(255,255,255,0.9)] dark:hover:shadow-[12px_12px_0px_0px_rgba(255,255,255,0.9)]">
             <div className="relative border-b-2 border-black bg-neutral-900 px-5 pb-3 pt-6 dark:border-neutral-100">
               <div className="absolute left-1/2 top-2.5 h-3 w-3 -translate-x-1/2 rounded-full border-2 border-black bg-neutral-100" />
               <div className="mt-1 flex items-center justify-between gap-3">
@@ -121,7 +121,7 @@ const Keor = () => {
       </section>
 
       <section className="mx-auto max-w-screen-2xl px-4 pb-20 pt-12 sm:px-6 lg:px-8 lg:pb-32 lg:pt-20">
-        <div className="mx-auto max-w-3xl text-center">
+        <div data-aos="fade-up" className="mx-auto max-w-3xl text-center">
           <h2 className="mb-4 text-2xl font-black uppercase tracking-tight text-neutral-900 dark:text-white sm:text-3xl">
             About the Division
           </h2>
@@ -135,20 +135,19 @@ const Keor = () => {
 
         <div className="mt-14 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {pillars.map((pillar) => (
-            <div
-              key={pillar.title}
-              className={`relative flex flex-col gap-3 rounded-xl border-2 border-black ${pillar.color} ${pillar.rotate} p-6 pt-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-transform duration-300 hover:-translate-y-1 hover:rotate-0 dark:border-neutral-100`}
-            >
-              <Pin
-                className="absolute -top-3 left-1/2 h-6 w-6 -translate-x-1/2 -rotate-45 text-red-700 dark:text-yellow-300"
-                fill="currentColor"
-              />
-              <h3 className="text-center text-lg font-black uppercase tracking-tight text-neutral-900 dark:text-white">
-                {pillar.title}
-              </h3>
-              <p className="text-center text-sm font-medium leading-relaxed text-neutral-700 dark:text-neutral-300">
-                {pillar.description}
-              </p>
+            <div key={pillar.title} data-aos="fade-up">
+              <div className={`relative flex flex-col gap-3 rounded-xl border-2 border-black ${pillar.color} ${pillar.rotate} p-6 pt-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-transform duration-300 hover:-translate-y-1 hover:rotate-0 dark:border-neutral-100`}>
+                <Pin
+                  className="absolute -top-3 left-1/2 h-6 w-6 -translate-x-1/2 -rotate-45 text-red-700 dark:text-yellow-300"
+                  fill="currentColor"
+                />
+                <h3 className="text-center text-lg font-black uppercase tracking-tight text-neutral-900 dark:text-white">
+                  {pillar.title}
+                </h3>
+                <p className="text-center text-sm font-medium leading-relaxed text-neutral-700 dark:text-neutral-300">
+                  {pillar.description}
+                </p>
+              </div>
             </div>
           ))}
         </div>
@@ -156,7 +155,7 @@ const Keor = () => {
 
       <section className="mx-auto max-w-screen-2xl px-4 pb-20 sm:px-6 lg:px-8">
         <Tabs defaultValue="programs" className="w-full">
-          <div className="mb-8 flex justify-center sm:justify-start">
+          <div data-aos="fade-up" className="mb-8 flex justify-center sm:justify-start">
             <TabsList className="inline-flex gap-1 rounded-full border-2 border-neutral-900 bg-white p-1 dark:border-neutral-100 dark:bg-neutral-900">
               <TabsTrigger
                 value="programs"

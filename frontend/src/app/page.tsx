@@ -4,9 +4,9 @@ import Wrapper from "@/components/Wrapper";
 export default function HomePage() {
   return (
     <div className="relative w-full">
-      <div className="absolute inset-0 z-0 opacity-15">
+      <div className="absolute inset-0 z-0 opacity-30 dark:opacity-[0.15]">
         <Squares
-          speed={0.25}
+          speed={0.35}
           squareSize={30}
           direction="down" // up, down, left, right, diagonal
           borderColor={"#bababa"}
