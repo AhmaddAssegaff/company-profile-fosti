@@ -64,7 +64,7 @@ const Hubpub = () => {
         <Sparkles className="pointer-events-none absolute bottom-6 left-4 z-10 h-7 w-7 -rotate-12 scale-75 text-red-400 sm:bottom-24 sm:left-12 sm:scale-100" />
 
         <div className="relative mx-auto flex w-full max-w-screen-2xl flex-col items-center gap-12 py-16 md:py-0 lg:flex-row lg:items-center lg:gap-10">
-          <div className="relative flex-1 text-center lg:text-left">
+          <div data-aos="fade-up" className="relative flex-1 text-center lg:text-left">
             <span className="mb-6 inline-flex -rotate-3 items-center gap-1.5 rounded-lg border-2 border-black dark:border-gray-700 bg-amber-300 px-3 py-1.5 text-xs font-black uppercase tracking-tight text-neutral-900 shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] dark:shadow-gray-100 sm:text-sm">
               <Camera className="mr-1 inline h-4 w-4" />
               #1 Media &amp; Relations
@@ -93,7 +93,7 @@ const Hubpub = () => {
               </span>
             </div>
           </div>
-          <div className="flex w-full flex-1 items-center justify-center py-6 px-6 md:px-0">
+          <div data-aos="zoom-in" data-aos-delay="200" className="flex w-full flex-1 items-center justify-center py-6 px-6 md:px-0">
             <div className="group relative w-full max-w-md rotate-2 transition-transform duration-300 hover:rotate-0 sm:max-w-lg lg:max-w-md">
               <div className="relative z-10 overflow-hidden rounded-2xl border-2 border-black bg-white shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] dark:border-neutral-100 dark:bg-neutral-900 dark:shadow-[6px_6px_0px_0px_rgba(255,255,255,0.9)]">
 
@@ -175,7 +175,7 @@ const Hubpub = () => {
       </section>
 
       <section className="mx-auto max-w-screen-2xl px-4 pb-20 pt-12 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-3xl text-center">
+        <div data-aos="fade-up" className="mx-auto max-w-3xl text-center">
           <span className="inline-block font-mono text-xs uppercase tracking-widest text-neutral-500 dark:text-neutral-400">
             [ Official Division Briefing ]
           </span>
@@ -194,33 +194,32 @@ const Hubpub = () => {
           {pillars.map((pillar) => {
             const Icon = pillar.icon;
             return (
-              <div
-                key={pillar.headline}
-                className="flex flex-col justify-between rounded-2xl border-2 border-black bg-amber-50/40 p-6 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] dark:border-neutral-100 dark:bg-neutral-900 dark:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.9)] sm:p-7"
-              >
-                <div>
-                  <div className="flex items-center justify-between">
-                    <span className="font-mono text-[0.65rem] uppercase tracking-wider text-neutral-500 dark:text-neutral-400 sm:text-xs">
-                      {pillar.issueTag}
-                    </span>
-                    <Icon className="h-4 w-4 shrink-0 text-neutral-500 dark:text-neutral-400" />
+              <div key={pillar.headline} data-aos="fade-up">
+                <div className="flex flex-col justify-between rounded-2xl border-2 border-black bg-amber-50/40 p-6 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] dark:border-neutral-100 dark:bg-neutral-900 dark:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.9)] sm:p-7">
+                  <div>
+                    <div className="flex items-center justify-between">
+                      <span className="font-mono text-[0.65rem] uppercase tracking-wider text-neutral-500 dark:text-neutral-400 sm:text-xs">
+                        {pillar.issueTag}
+                      </span>
+                      <Icon className="h-4 w-4 shrink-0 text-neutral-500 dark:text-neutral-400" />
+                    </div>
+
+                    <h3 className="mt-3 text-xl font-black uppercase leading-snug tracking-tight text-neutral-900 dark:text-white sm:text-2xl">
+                      {pillar.headline}
+                    </h3>
+
+                    <div className="my-4 border-b-2 border-dashed border-black/20 dark:border-white/20" />
+
+                    <p className="text-sm font-medium leading-relaxed text-muted-foreground sm:text-base">
+                      {pillar.description}
+                    </p>
                   </div>
 
-                  <h3 className="mt-3 text-xl font-black uppercase leading-snug tracking-tight text-neutral-900 dark:text-white sm:text-2xl">
-                    {pillar.headline}
-                  </h3>
-
-                  <div className="my-4 border-b-2 border-dashed border-black/20 dark:border-white/20" />
-
-                  <p className="text-sm font-medium leading-relaxed text-muted-foreground sm:text-base">
-                    {pillar.description}
-                  </p>
-                </div>
-
-                <div className="mt-6 flex justify-start">
-                  <span className="inline-flex items-center rounded-md border-2 border-black bg-white px-2.5 py-1 font-mono text-[0.65rem] font-bold uppercase tracking-wide text-neutral-900 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] dark:border-neutral-100 dark:bg-neutral-800 dark:text-white sm:text-xs">
-                    {pillar.footerBadge}
-                  </span>
+                  <div className="mt-6 flex justify-start">
+                    <span className="inline-flex items-center rounded-md border-2 border-black bg-white px-2.5 py-1 font-mono text-[0.65rem] font-bold uppercase tracking-wide text-neutral-900 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] dark:border-neutral-100 dark:bg-neutral-800 dark:text-white sm:text-xs">
+                      {pillar.footerBadge}
+                    </span>
+                  </div>
                 </div>
               </div>
             );
@@ -230,7 +229,7 @@ const Hubpub = () => {
 
       <section className="mx-auto max-w-screen-2xl px-4 pb-20 sm:px-6 lg:px-8">
         <Tabs defaultValue="programs" className="w-full">
-          <div className="mb-8 flex justify-center sm:justify-start">
+          <div data-aos="fade-up" className="mb-8 flex justify-center sm:justify-start">
             <TabsList className="inline-flex gap-1 rounded-full border-2 border-neutral-900 bg-white p-1 dark:border-neutral-100 dark:bg-neutral-900">
               <TabsTrigger
                 value="programs"

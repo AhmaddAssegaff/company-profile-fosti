@@ -54,7 +54,7 @@ const Ristek = () => {
         <GitBranch className="pointer-events-none absolute bottom-10 right-6 z-10 h-7 w-7 -rotate-6 text-neutral-800 dark:text-neutral-300 lg:block" />
 
         <div className="mx-auto flex w-full max-w-screen-2xl flex-col-reverse items-center gap-14 pb-16 pt-16 md:pb-0 lg:flex-row lg:items-center lg:gap-14">
-          <div className="flex w-full flex-1 items-center justify-center py-6 px-2 md:px-0">
+          <div data-aos="zoom-in" className="flex w-full flex-1 items-center justify-center py-6 px-2 md:px-0">
             <div className="relative w-full max-w-xl -rotate-1 transition-transform duration-300 hover:rotate-0 lg:max-w-2xl">
               <span
                 className={`${jetbrains.className} absolute -left-3 -top-7 z-20 -rotate-3 rounded-lg border-2 border-black dark:border-gray-500 bg-neutral-900 px-3 py-1.5 text-xs font-bold text-green-400 shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] dark:shadow-gray-300 sm:-left-6 sm:text-sm`}
@@ -110,7 +110,11 @@ const Ristek = () => {
             </div>
           </div>
 
-          <div className="relative flex-1 text-center lg:text-left">
+          <div 
+            data-aos="fade-up" 
+            data-aos-delay="200" 
+            className="relative flex-1 text-center lg:text-left"
+          >
             <span
               className={`${jetbrains.className} absolute -top-8 right-2 z-20 rotate-6 rounded-lg border-2 border-black bg-amber-300 px-3 py-1.5 text-xs font-black uppercase tracking-tight text-neutral-900 shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] dark:shadow-gray-300 sm:-top-10 sm:right-0 sm:text-sm lg:right-4`}
             >
@@ -142,7 +146,7 @@ const Ristek = () => {
       </section>
 
       <section className="mx-auto max-w-screen-2xl px-4 pb-20 pt-12 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-3xl text-center">
+        <div data-aos="fade-up" className="mx-auto max-w-3xl text-center">
           <h2
             className={`${spaceGrotesk.className} mb-4 text-2xl uppercase tracking-tight text-neutral-900 dark:text-white sm:text-3xl`}
           >
@@ -161,40 +165,39 @@ const Ristek = () => {
             const [titleFirst, ...titleRestWords] = pillar.title.split(" ");
             const titleRest = titleRestWords.join(" ");
             return (
-              <div
-                key={pillar.fileTab}
-                className="flex flex-col overflow-hidden rounded-2xl border-2 border-black dark:border-gray-500 bg-neutral-900 shadow-[4px_4px_0px_0px_rgba(0,0,0,0.5)] dark:shadow-gray-100 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,0.5)] dark:hover:shadow-gray-100"
-              >
-                <div
-                  className={`${jetbrains.className} flex items-center justify-between border-b-2 border-black bg-neutral-800 px-4 py-2 text-xs text-neutral-200 sm:text-sm`}
-                >
-                  <span className="truncate">📄 {pillar.fileTab}</span>
-                  <span className="ml-2 flex h-4 w-4 shrink-0 items-center justify-center rounded text-neutral-500 hover:text-white">
-                    <X className="h-3 w-3" />
-                  </span>
-                </div>
-
-                <div className="flex flex-1 gap-3 p-5">
-                  <span
-                    className={`${jetbrains.className} select-none text-xs text-neutral-600 sm:text-sm`}
+              <div key={pillar.fileTab} data-aos="fade-up">
+                <div className="flex flex-col overflow-hidden rounded-2xl border-2 border-black dark:border-gray-500 bg-neutral-900 shadow-[4px_4px_0px_0px_rgba(0,0,0,0.5)] dark:shadow-gray-100 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,0.5)] dark:hover:shadow-gray-100">
+                  <div
+                    className={`${jetbrains.className} flex items-center justify-between border-b-2 border-black bg-neutral-800 px-4 py-2 text-xs text-neutral-200 sm:text-sm`}
                   >
-                    {String(idx + 1).padStart(2, "0")}
-                  </span>
-                  <div>
-                    <h3 className="text-lg font-black uppercase tracking-tight">
-                      <span className="text-yellow-300">{titleFirst}</span>{" "}
-                      <span className="text-green-300">{titleRest}</span>
-                    </h3>
-                    <p className="mt-2 text-sm font-medium leading-relaxed text-neutral-300">
-                      {pillar.description}
-                    </p>
+                    <span className="truncate">📄 {pillar.fileTab}</span>
+                    <span className="ml-2 flex h-4 w-4 shrink-0 items-center justify-center rounded text-neutral-500 hover:text-white">
+                      <X className="h-3 w-3" />
+                    </span>
                   </div>
-                </div>
 
-                <div
-                  className={`${jetbrains.className} border-t-2 border-black bg-neutral-800 px-4 py-1.5 text-[0.65rem] text-neutral-400 sm:text-xs`}
-                >
-                  {lineCol[idx]} • UTF-8 • {pillar.lang}
+                  <div className="flex flex-1 gap-3 p-5">
+                    <span
+                      className={`${jetbrains.className} select-none text-xs text-neutral-600 sm:text-sm`}
+                    >
+                      {String(idx + 1).padStart(2, "0")}
+                    </span>
+                    <div>
+                      <h3 className="text-lg font-black uppercase tracking-tight">
+                        <span className="text-yellow-300">{titleFirst}</span>{" "}
+                        <span className="text-green-300">{titleRest}</span>
+                      </h3>
+                      <p className="mt-2 text-sm font-medium leading-relaxed text-neutral-300">
+                        {pillar.description}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div
+                    className={`${jetbrains.className} border-t-2 border-black bg-neutral-800 px-4 py-1.5 text-[0.65rem] text-neutral-400 sm:text-xs`}
+                  >
+                    {lineCol[idx]} • UTF-8 • {pillar.lang}
+                  </div>
                 </div>
               </div>
             );
@@ -207,7 +210,7 @@ const Ristek = () => {
           defaultValue="programs"
           className="w-full"
         >
-          <div className="mb-8 flex justify-center sm:justify-start">
+          <div data-aos="fade-up" className="mb-8 flex justify-center sm:justify-start">
             <TabsList className="inline-flex gap-1 rounded-full border-2 border-neutral-900 bg-white p-1 dark:border-neutral-100 dark:bg-neutral-900">
               <TabsTrigger
                 value="programs"

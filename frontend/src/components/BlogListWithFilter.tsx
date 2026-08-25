@@ -132,17 +132,9 @@ export default function BlogListWithFilter({
     });
   };
 
-  const resetFilters = () => {
-    setSearchInput("");
-    updateParams({
-      q: "",
-      tags: [],
-    });
-  };
-
   return (
     <>
-      <div className="group relative mb-4 transition-transform duration-150 focus-within:-translate-x-1 focus-within:-translate-y-1 sm:mb-6">
+      <div data-aos="fade-up" suppressHydrationWarning className="group relative mb-4 transition-transform duration-150 focus-within:-translate-x-1 focus-within:-translate-y-1 sm:mb-6">
         <Search className="pointer-events-none absolute left-3.5 top-1/2 z-10 h-4 w-4 -translate-y-1/2 text-black/40 transition-colors duration-150 group-focus-within:text-red-500 dark:text-neutral-500 dark:group-focus-within:text-red-400 sm:left-5 sm:h-6 sm:w-6" />
 
         <input
@@ -156,7 +148,7 @@ export default function BlogListWithFilter({
         />
       </div>
 
-      <section className="mb-8 rounded-2xl border-2 border-black bg-white p-3.5 shadow-[4px_4px_0_0_#000] dark:border-white dark:bg-neutral-900 dark:shadow-[4px_4px_0_0_#fff] sm:mb-14 sm:p-6 md:border-4 md:shadow-[6px_6px_0_0_#000] dark:md:shadow-[6px_6px_0_0_#fff]">
+      <section data-aos="fade-up" data-aos-delay="150" suppressHydrationWarning className="mb-8 rounded-2xl border-2 border-black bg-white p-3.5 shadow-[4px_4px_0_0_#000] dark:border-white dark:bg-neutral-900 dark:shadow-[4px_4px_0_0_#fff] sm:mb-14 sm:p-6 md:border-4 md:shadow-[6px_6px_0_0_#000] dark:md:shadow-[6px_6px_0_0_#fff]">
         <div className="mb-3 flex flex-wrap items-center justify-between gap-3 sm:mb-4">
           <h3 className="text-xs font-extrabold uppercase tracking-wide text-black dark:text-white sm:text-base">
             Filter by tag
@@ -210,14 +202,6 @@ export default function BlogListWithFilter({
             </span>{" "}
             {filteredBlogs.length === 1 ? "article" : "articles"}
           </p>
-
-          <button
-            type="button"
-            onClick={resetFilters}
-            className="font-bold text-red-500 underline-offset-4 hover:underline dark:text-red-400"
-          >
-            Clear filters
-          </button>
         </div>
       )}
 
@@ -245,52 +229,51 @@ export default function BlogListWithFilter({
             );
 
             return (
-              <article
-                key={blog.slug}
-                className="group relative rounded-2xl border-2 border-black bg-white shadow-[4px_4px_0_0_#000] transition-all duration-200 ease-out hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[8px_8px_0_0_#000] dark:border-white dark:bg-neutral-900 dark:shadow-[4px_4px_0_0_#fff] dark:hover:shadow-[8px_8px_0_0_#fff] sm:border-4 sm:shadow-[6px_6px_0_0_#000] sm:hover:shadow-[10px_10px_0_0_#000] dark:sm:shadow-[6px_6px_0_0_#fff] dark:sm:hover:shadow-[10px_10px_0_0_#fff]"
-              >
-                <Link
-                  href={`/blogs/${blog.slug}`}
-                  className="flex flex-col gap-3.5 p-4 focus:outline-none focus-visible:ring-4 focus-visible:ring-yellow-400 sm:flex-row sm:items-start sm:gap-7 sm:p-7 lg:gap-9 lg:p-8"
-                >
-                  <div className="flex shrink-0 flex-row flex-wrap items-center gap-x-4 gap-y-2 text-xs font-semibold text-black/60 dark:text-neutral-400 sm:w-32 sm:flex-col sm:items-start md:w-36 lg:w-40">
-                    <div className="flex items-center gap-1.5">
-                      <Calendar className="h-4 w-4 shrink-0 text-red-500" />
-                      <span>{formattedDate}</span>
-                    </div>
+              <div key={blog.slug} data-aos="fade-up" suppressHydrationWarning>
+                <article className="group relative rounded-2xl border-2 border-black bg-white shadow-[4px_4px_0_0_#000] transition-all duration-200 ease-out hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[8px_8px_0_0_#000] dark:border-white dark:bg-neutral-900 dark:shadow-[4px_4px_0_0_#fff] dark:hover:shadow-[8px_8px_0_0_#fff] sm:border-4 sm:shadow-[6px_6px_0_0_#000] sm:hover:shadow-[10px_10px_0_0_#000] dark:sm:shadow-[6px_6px_0_0_#fff] dark:sm:hover:shadow-[10px_10px_0_0_#fff]">
+                  <Link
+                    href={`/blogs/${blog.slug}`}
+                    className="flex flex-col gap-3.5 p-4 focus:outline-none focus-visible:ring-4 focus-visible:ring-yellow-400 sm:flex-row sm:items-start sm:gap-7 sm:p-7 lg:gap-9 lg:p-8"
+                  >
+                    <div className="flex shrink-0 flex-row flex-wrap items-center gap-x-4 gap-y-2 text-xs font-semibold text-black/60 dark:text-neutral-400 sm:w-32 sm:flex-col sm:items-start md:w-36 lg:w-40">
+                      <div className="flex items-center gap-1.5">
+                        <Calendar className="h-4 w-4 shrink-0 text-red-500" />
+                        <span>{formattedDate}</span>
+                      </div>
 
-                    <div className="flex items-center gap-1.5">
-                      <User className="h-4 w-4 shrink-0 text-red-500" />
-                      <span className="max-w-[140px] truncate">
-                        {blog.author}
-                      </span>
-                    </div>
-                  </div>
-
-                  <div className="min-w-0 flex-1 space-y-2.5 sm:space-y-3">
-                    <h2 className="flex items-center gap-2 text-lg font-extrabold leading-snug tracking-tight text-black dark:text-white sm:text-2xl">
-                      <span className="flex-1">{blog.title}</span>
-
-                      <ArrowRight className="h-5 w-5 shrink-0 -translate-x-2 text-black opacity-0 transition-all duration-200 group-hover:translate-x-0 group-hover:opacity-100 dark:text-white" />
-                    </h2>
-
-                    <p className="line-clamp-3 text-sm leading-relaxed text-black/65 dark:text-neutral-400 md:line-clamp-none lg:text-base">
-                      {blog.description}
-                    </p>
-
-                    <div className="flex flex-wrap gap-2 pt-1">
-                      {blog.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="inline-flex items-center rounded-full border-2 border-black bg-yellow-300 px-2.5 py-0.5 text-[11px] font-bold text-black dark:border-white dark:bg-yellow-400 lg:text-xs"
-                        >
-                          #{tag}
+                      <div className="flex items-center gap-1.5">
+                        <User className="h-4 w-4 shrink-0 text-red-500" />
+                        <span className="max-w-[140px] truncate">
+                          {blog.author}
                         </span>
-                      ))}
+                      </div>
                     </div>
-                  </div>
-                </Link>
-              </article>
+
+                    <div className="min-w-0 flex-1 space-y-2.5 sm:space-y-3">
+                      <h2 className="flex items-center gap-2 text-lg font-extrabold leading-snug tracking-tight text-black dark:text-white sm:text-2xl">
+                        <span className="flex-1">{blog.title}</span>
+
+                        <ArrowRight className="h-5 w-5 shrink-0 -translate-x-2 text-black opacity-0 transition-all duration-200 group-hover:translate-x-0 group-hover:opacity-100 dark:text-white" />
+                      </h2>
+
+                      <p className="line-clamp-3 text-sm leading-relaxed text-black/65 dark:text-neutral-400 md:line-clamp-none lg:text-base">
+                        {blog.description}
+                      </p>
+
+                      <div className="flex flex-wrap gap-2 pt-1">
+                        {blog.tags.map((tag) => (
+                          <span
+                            key={tag}
+                            className="inline-flex items-center rounded-full border-2 border-black bg-yellow-300 px-2.5 py-0.5 text-[11px] font-bold text-black dark:border-white dark:bg-yellow-400 lg:text-xs"
+                          >
+                            #{tag}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </Link>
+                </article>
+              </div>
             );
           })
         )}

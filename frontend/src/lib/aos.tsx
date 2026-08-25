@@ -12,6 +12,17 @@ export default function AOSProvider() {
       easing: "ease-out",
       offset: 80,
     });
+
+    const timeoutId = setTimeout(() => {
+      AOS.refresh();
+    }, 500);
+
+    window.addEventListener("load", AOS.refresh);
+
+    return () => {
+      clearTimeout(timeoutId);
+      window.removeEventListener("load", AOS.refresh);
+    };
   }, []);
 
   return null;

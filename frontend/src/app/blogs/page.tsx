@@ -38,9 +38,9 @@ export default async function BlogsPage() {
 
   return (
     <main className="relative min-h-screen overflow-hidden bg-[#F4F4F0] text-black transition-colors duration-200 dark:bg-neutral-950 dark:text-white">
-      <div className="absolute inset-0 z-0 opacity-40 dark:opacity-[0.15]">
+      <div className="absolute inset-0 z-0 opacity-30 dark:opacity-[0.15]">
         <Squares
-          speed={0.25}
+          speed={0.35}
           squareSize={30}
           direction="down"
           borderColor={"#bababa"}
@@ -48,29 +48,31 @@ export default async function BlogsPage() {
       </div>
 
       <div className="relative z-10 mx-auto max-w-screen px-5 py-10 sm:px-8 sm:py-14 lg:px-10 lg:py-20 xl:px-16">
-        <Breadcrumb className="mb-6 lg:mb-0">
-          <BreadcrumbList className="inline-flex items-center gap-1.5 rounded-full border-2 border-black bg-white px-3.5 py-1.5 text-xs font-semibold shadow-[3px_3px_0_0_#000] dark:border-white dark:bg-neutral-900 dark:shadow-[3px_3px_0_0_#fff] sm:text-sm">
-            <BreadcrumbItem>
-              <BreadcrumbLink asChild>
-                <Link
-                  href="/"
-                  className="text-black/60 hover:text-red-500 dark:text-neutral-400 dark:hover:text-red-400"
-                >
-                  Home
-                </Link>
-              </BreadcrumbLink>
-            </BreadcrumbItem>
-            <BreadcrumbSeparator className="text-black/30 dark:text-neutral-600" />
-            <BreadcrumbItem>
-              <BreadcrumbPage className="font-bold text-black dark:text-white">
-                Blogs
-              </BreadcrumbPage>
-            </BreadcrumbItem>
-          </BreadcrumbList>
-        </Breadcrumb>
+        <div data-aos="fade-down">
+          <Breadcrumb className="mb-6 lg:mb-0">
+            <BreadcrumbList className="inline-flex items-center gap-1.5 rounded-full border-2 border-black bg-white px-3.5 py-1.5 text-xs font-semibold shadow-[3px_3px_0_0_#000] dark:border-white dark:bg-neutral-900 dark:shadow-[3px_3px_0_0_#fff] sm:text-sm">
+              <BreadcrumbItem>
+                <BreadcrumbLink asChild>
+                  <Link
+                    href="/"
+                    className="text-black/60 hover:text-red-500 dark:text-neutral-400 dark:hover:text-red-400"
+                  >
+                    Home
+                  </Link>
+                </BreadcrumbLink>
+              </BreadcrumbItem>
+              <BreadcrumbSeparator className="text-black/30 dark:text-neutral-600" />
+              <BreadcrumbItem>
+                <BreadcrumbPage className="font-bold text-black dark:text-white">
+                  Blogs
+                </BreadcrumbPage>
+              </BreadcrumbItem>
+            </BreadcrumbList>
+          </Breadcrumb>
+        </div>
 
         <div className="lg:grid lg:grid-cols-12 lg:gap-10 xl:gap-14">
-          <div className="lg:col-span-4">
+          <div data-aos="fade-right" className="lg:col-span-4">
             <header className="mb-10 max-w-2xl space-y-4 lg:sticky lg:top-16 lg:mb-0 lg:space-y-6 lg:pt-8">
               <span className="inline-flex items-center gap-2 rounded-full border-2 border-black bg-yellow-300 px-3 py-1 text-xs font-bold uppercase tracking-wide text-black shadow-[3px_3px_0_0_#000] dark:border-white dark:bg-yellow-400 dark:shadow-[3px_3px_0_0_#fff] sm:text-sm">
                 <span className="h-2 w-2 rounded-full bg-red-500" />

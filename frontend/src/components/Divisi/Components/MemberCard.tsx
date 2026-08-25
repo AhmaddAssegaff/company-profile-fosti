@@ -26,8 +26,15 @@ const getInitials = (name: string) => {
   ).toUpperCase();
 };
 
-export const MemberCard = ({ member }: { member: TeamType }) => {
+export const MemberCard = ({
+  member,
+  priority = false,
+}: {
+  member: TeamType;
+  priority?: boolean;
+}) => {
   const [imgError, setImgError] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
   const showImage = isValidSrc(member.src) && !imgError;
 
   return (
@@ -35,15 +42,25 @@ export const MemberCard = ({ member }: { member: TeamType }) => {
       <CardContent className="flex flex-col items-center gap-1.5 p-0 xs:gap-2">
         <div className="relative mx-auto mb-2 h-20 w-20 overflow-hidden rounded-full border-2 border-black bg-white shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] transition-transform duration-300 group-hover:scale-105 dark:border-neutral-300 sm:mb-3 sm:h-24 sm:w-24">
           {showImage ? (
-            <Image
-              src={member.src}
-              fill
-              sizes="(max-width: 640px) 80px, 96px"
-              alt={member.name}
-              className="object-cover object-center"
-              loading="lazy"
-              onError={() => setImgError(true)}
-            />
+            <>
+              {!isLoaded && (
+                <div className="absolute inset-0 animate-pulse bg-neutral-200 dark:bg-neutral-700" />
+              )}
+              <Image
+                src={member.src}
+                fill
+                sizes="(max-width: 640px) 80px, 96px"
+                alt={member.name}
+                quality={75}
+                className={`object-cover object-center transition-opacity duration-300 ${
+                  isLoaded ? "opacity-100" : "opacity-0"
+                }`}
+                priority={priority}
+                loading={priority ? undefined : "lazy"}
+                onLoad={() => setIsLoaded(true)}
+                onError={() => setImgError(true)}
+              />
+            </>
           ) : (
             <div className="flex h-full w-full items-center justify-center bg-amber-100 font-bold uppercase text-black dark:bg-neutral-800 dark:text-neutral-200">
               <span className="text-2xl">{getInitials(member.name)}</span>
