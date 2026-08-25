@@ -1,5 +1,3 @@
-"use client";
-import React from "react";
 import { Pin, QrCode, Sparkles, Star } from "lucide-react";
 import { Tabs, TabsList, TabsTrigger } from "../ui/tabs";
 import KeorProgram from "./KeorProgram";
@@ -56,7 +54,10 @@ const Keor = () => {
           📌 Kaderisasi HQ
         </span>
 
-        <div data-aos="fade-up" className="mx-auto flex max-w-4xl flex-col items-center text-center">
+        <div
+          data-aos="fade-up"
+          className="mx-auto flex max-w-4xl flex-col items-center text-center"
+        >
           <span className="mb-6 inline-flex -rotate-2 items-center gap-1.5 rounded-lg border-2 border-black bg-amber-300 px-3 py-1.5 text-xs font-black uppercase tracking-tight text-neutral-900 shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] dark:shadow-gray-100 sm:text-sm">
             📌 #1 People &amp; Leadership HQ
           </span>
@@ -73,7 +74,11 @@ const Keor = () => {
           </p>
         </div>
 
-        <div data-aos="zoom-in" data-aos-delay="200" className="relative mx-auto mt-12 w-full max-w-2xl">
+        <div
+          data-aos="zoom-in"
+          data-aos-delay="200"
+          className="relative mx-auto mt-12 w-full max-w-2xl"
+        >
           <span className="absolute -left-3 -top-6 z-20 -rotate-6 rounded-lg border-2 border-black bg-gray-300 px-3 py-1.5 text-xs font-black uppercase tracking-tight text-neutral-900 shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] dark:shadow-gray-300 sm:-left-6 sm:text-sm">
             👥 Build Talents, Grow Leaders
           </span>
@@ -136,7 +141,9 @@ const Keor = () => {
         <div className="mt-14 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {pillars.map((pillar) => (
             <div key={pillar.title} data-aos="fade-up">
-              <div className={`relative flex flex-col gap-3 rounded-xl border-2 border-black ${pillar.color} ${pillar.rotate} p-6 pt-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-transform duration-300 hover:-translate-y-1 hover:rotate-0 dark:border-neutral-100`}>
+              <div
+                className={`relative flex flex-col gap-3 rounded-xl border-2 border-black ${pillar.color} ${pillar.rotate} p-6 pt-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-transform duration-300 hover:-translate-y-1 hover:rotate-0 dark:border-neutral-100`}
+              >
                 <Pin
                   className="absolute -top-3 left-1/2 h-6 w-6 -translate-x-1/2 -rotate-45 text-red-700 dark:text-yellow-300"
                   fill="currentColor"
@@ -155,7 +162,10 @@ const Keor = () => {
 
       <section className="mx-auto max-w-screen-2xl px-4 pb-20 sm:px-6 lg:px-8">
         <Tabs defaultValue="programs" className="w-full">
-          <div data-aos="fade-up" className="mb-8 flex justify-center sm:justify-start">
+          <div
+            data-aos="fade-up"
+            className="mb-8 flex justify-center sm:justify-start"
+          >
             <TabsList className="inline-flex gap-1 rounded-full border-2 border-neutral-900 bg-white p-1 dark:border-neutral-100 dark:bg-neutral-900">
               <TabsTrigger
                 value="programs"

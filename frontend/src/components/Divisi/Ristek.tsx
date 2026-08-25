@@ -1,5 +1,3 @@
-"use client";
-import React from "react";
 import { Tabs, TabsList, TabsTrigger, } from "../ui/tabs";
 import RistekPrograms from "./RistekPrograms";
 import RistekTeam from "./RistekTeam";
@@ -110,9 +108,9 @@ const Ristek = () => {
             </div>
           </div>
 
-          <div 
-            data-aos="fade-up" 
-            data-aos-delay="200" 
+          <div
+            data-aos="fade-up"
+            data-aos-delay="200"
             className="relative flex-1 text-center lg:text-left"
           >
             <span

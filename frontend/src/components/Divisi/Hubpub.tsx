@@ -1,5 +1,3 @@
-"use client";
-import React, { useState } from "react";
 import { Tabs, TabsList, TabsTrigger } from "../ui/tabs";
 import HubpubPrograms from "./HubpubPrograms";
 import HubpubTeam from "./HubpubTeam";
@@ -52,8 +50,6 @@ const pillars = [
 ];
 
 const Hubpub = () => {
-  const [liked, setLiked] = useState(false);
-
   return (
     <div className="w-full">
       <section className="relative flex min-h-[calc(100vh-5rem)] flex-col justify-center overflow-x-hidden overflow-y-hidden px-4 sm:px-6 lg:px-8">
@@ -142,11 +138,7 @@ const Hubpub = () => {
                 <div className="flex items-center justify-between px-4 pt-3">
                   <div className="flex items-center gap-4">
                     <Heart
-                      onClick={() => setLiked((prev) => !prev)}
-                      className={`h-6 w-6 cursor-pointer transition-colors active:scale-90 ${liked
-                        ? "fill-red-500 text-red-500"
-                        : "text-neutral-900 dark:text-white"
-                        }`}
+                      className="h-6 w-6 cursor-pointer transition-colors active:scale-90 fill-red-500 text-red-500"
                     />
                     <MessageCircle className="h-6 w-6 text-neutral-900 dark:text-white" />
                     <Send className="h-6 w-6 text-neutral-900 dark:text-white" />
