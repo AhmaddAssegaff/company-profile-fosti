@@ -1,5 +1,3 @@
-"use client";
-import React, { useState } from "react";
 import Image from "next/image";
 import { ImageOff } from "lucide-react";
 import { type ProgramType } from "@/types/image";
@@ -11,10 +9,8 @@ export const ProgramCard = ({
   program: ProgramType;
   index: number;
 }) => {
-  const [imgError, setImgError] = useState(false);
-
   const isComingSoon = program.date === "Coming Soon";
-  
+
   const isInvalidSrc =
     !program.src ||
     (typeof program.src === "string" && program.src.trim() === "") ||
@@ -22,10 +18,10 @@ export const ProgramCard = ({
       !program.src.startsWith("http") &&
       !program.src.startsWith("/"));
 
-  const isImageMissing = !isComingSoon && (isInvalidSrc || imgError);
+  const isImageMissing = !isComingSoon && isInvalidSrc;
 
   return (
-    <div className="h-full group flex flex-col justify-between overflow-hidden rounded-2xl border-2 border-black bg-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] dark:border-neutral-700 dark:bg-neutral-900 dark:shadow-gray-300 dark:hover:border-gray-500 dark:hover:shadow-gray-300">
+    <div className="group flex h-full flex-col justify-between overflow-hidden rounded-2xl border-2 border-black bg-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] dark:border-neutral-700 dark:bg-neutral-900 dark:shadow-gray-300 dark:hover:border-gray-500 dark:hover:shadow-gray-300">
       <div className="relative aspect-video w-full overflow-hidden border-b-2 border-black bg-neutral-100 dark:border-neutral-700 dark:bg-neutral-800">
         {isComingSoon ? (
           <div className="relative flex h-full w-full flex-col items-center justify-center overflow-hidden bg-neutral-950 dark:bg-black">
@@ -48,14 +44,14 @@ export const ProgramCard = ({
             </div>
             <div className="absolute bottom-[-5%] left-[-30%] z-20 flex w-[140%] rotate-[22deg] items-center justify-center border-y-4 border-black bg-yellow-400 py-1 shadow-[0px_4px_0px_0px_rgba(0,0,0,1)] transition-transform duration-300 group-hover:rotate-[16deg] sm:py-1.5">
               <span className="whitespace-nowrap text-[10px] font-black uppercase tracking-[0.2em] text-black sm:text-xs">
-                STAY TUNED | STAY TUNED | STAY TUNED | STAY TUNED | STAY
-                TUNED | STAY TUNED
+                STAY TUNED | STAY TUNED | STAY TUNED | STAY TUNED | STAY TUNED |
+                STAY TUNED
               </span>
             </div>
             <div className="absolute bottom-[-5%] left-[-10%] z-10 flex w-[140%] -rotate-[22deg] items-center justify-center border-y-4 border-black bg-yellow-500 py-1 shadow-[0px_4px_0px_0px_rgba(0,0,0,0.5)] transition-transform duration-300 group-hover:-rotate-[16deg] sm:py-1.5">
               <span className="whitespace-nowrap text-[10px] font-black uppercase tracking-[0.2em] text-black opacity-80 sm:text-xs">
-                STAY TUNED | STAY TUNED | STAY TUNED | STAY TUNED | STAY
-                TUNED | STAY TUNED
+                STAY TUNED | STAY TUNED | STAY TUNED | STAY TUNED | STAY TUNED |
+                STAY TUNED
               </span>
             </div>
           </div>
@@ -75,7 +71,6 @@ export const ProgramCard = ({
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
             className="object-cover transition-transform duration-500 group-hover:scale-105"
-            onError={() => setImgError(true)}
           />
         )}
 
@@ -105,4 +100,4 @@ export const ProgramCard = ({
       </div>
     </div>
   );
-}
+};

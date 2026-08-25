@@ -1,5 +1,3 @@
-"use client";
-import React from "react";
 import { TabsContent } from "../ui/tabs";
 import { hubpubPrograms } from "@/data/HubpubPrograms";
 import { ProgramCard } from "@/components/Divisi/Components/ProgramCard";
