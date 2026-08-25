@@ -15,11 +15,8 @@ const RistekTeam = () => {
       </p>
       <div className="mt-5 grid grid-cols-2 gap-3 xs:gap-4 sm:gap-5 md:mt-2 md:gap-6 lg:grid-cols-3 xl:grid-cols-4">
         {ristekTeam.map((member, index) => (
-          <div 
-            key={index} 
-            data-aos="zoom-in-up"
-          >
-            <MemberCard member={member} priority={index < 8} />
+          <div key={index} data-aos="zoom-in-up">
+            <MemberCard member={member} />
           </div>
         ))}
       </div>

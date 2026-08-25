@@ -1,5 +1,4 @@
 "use client";
-import React, { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import Image, { type StaticImageData } from "next/image";
 import Link from "next/link";
@@ -26,16 +25,8 @@ const getInitials = (name: string) => {
   ).toUpperCase();
 };
 
-export const MemberCard = ({
-  member,
-  priority = false,
-}: {
-  member: TeamType;
-  priority?: boolean;
-}) => {
-  const [imgError, setImgError] = useState(false);
-  const [isLoaded, setIsLoaded] = useState(false);
-  const showImage = isValidSrc(member.src) && !imgError;
+export const MemberCard = ({ member }: { member: TeamType }) => {
+  const showImage = isValidSrc(member.src);
 
   return (
     <Card className="group relative flex h-full flex-col justify-between overflow-hidden rounded-2xl border-2 border-black bg-white p-3.5 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] dark:border-neutral-500 dark:bg-neutral-900 dark:shadow-gray-300 dark:hover:border-neutral-100 dark:hover:shadow-gray-300 sm:p-4">
@@ -43,22 +34,14 @@ export const MemberCard = ({
         <div className="relative mx-auto mb-2 h-20 w-20 overflow-hidden rounded-full border-2 border-black bg-white shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] transition-transform duration-300 group-hover:scale-105 dark:border-neutral-300 sm:mb-3 sm:h-24 sm:w-24">
           {showImage ? (
             <>
-              {!isLoaded && (
-                <div className="absolute inset-0 animate-pulse bg-neutral-200 dark:bg-neutral-700" />
-              )}
               <Image
                 src={member.src}
                 fill
                 sizes="(max-width: 640px) 80px, 96px"
                 alt={member.name}
                 quality={75}
-                className={`object-cover object-center transition-opacity duration-300 ${
-                  isLoaded ? "opacity-100" : "opacity-0"
-                }`}
-                priority={priority}
-                loading={priority ? undefined : "lazy"}
-                onLoad={() => setIsLoaded(true)}
-                onError={() => setImgError(true)}
+                className="object-cover object-center transition-opacity duration-300"
+                loading="lazy"
               />
             </>
           ) : (
