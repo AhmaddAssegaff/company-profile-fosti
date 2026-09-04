@@ -18,7 +18,8 @@ import {
 import Image from "next/image";
 import { Syne } from "next/font/google";
 
-const fotbar = "https://res.cloudinary.com/qjw4yfke/image/upload/v1786202662/Hubpub_ggc5ur.webp";
+const fotbar =
+  "https://res.cloudinary.com/qjw4yfke/image/upload/v1786202662/Hubpub_ggc5ur.webp";
 
 const syne = Syne({ subsets: ["latin"], weight: ["700", "800"] });
 
@@ -52,30 +53,32 @@ const pillars = [
 const Hubpub = () => {
   return (
     <div className="w-full">
-      <section className="relative flex min-h-[calc(100vh-5rem)] flex-col justify-center overflow-x-hidden overflow-y-hidden px-4 sm:px-6 lg:px-8">
+      <section className="relative flex min-h-[calc(100svh-5rem)] flex-col justify-center overflow-hidden px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-0">
         <Star
           className="pointer-events-none absolute right-6 top-6 z-10 h-8 w-8 rotate-12 scale-75 text-amber-400 sm:right-16 sm:top-16 sm:scale-100"
           fill="currentColor"
         />
         <Sparkles className="pointer-events-none absolute bottom-6 left-4 z-10 h-7 w-7 -rotate-12 scale-75 text-red-400 sm:bottom-24 sm:left-12 sm:scale-100" />
 
-        <div className="relative mx-auto flex w-full max-w-screen-2xl flex-col items-center gap-12 py-16 md:py-0 lg:flex-row lg:items-center lg:gap-10">
-          <div data-aos="fade-up" className="relative flex-1 text-center lg:text-left">
-            <span className="mb-6 inline-flex -rotate-3 items-center gap-1.5 rounded-lg border-2 border-black dark:border-gray-700 bg-amber-300 px-3 py-1.5 text-xs font-black uppercase tracking-tight text-neutral-900 shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] dark:shadow-gray-100 sm:text-sm">
+        <div className="relative mx-auto flex w-full max-w-screen-2xl flex-col items-center gap-8 py-8 sm:gap-10 sm:py-12 md:py-16 lg:flex-row lg:gap-12 lg:py-0">
+          <div
+            data-aos="fade-up"
+            className="relative flex-1 text-center lg:text-left"
+          >
+            <span className="mb-6 inline-flex -rotate-3 items-center gap-1.5 rounded-lg border-2 border-black bg-amber-300 px-3 py-1.5 text-xs font-black uppercase tracking-tight text-neutral-900 shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] dark:border-gray-700 dark:shadow-gray-100 sm:text-sm">
               <Camera className="mr-1 inline h-4 w-4" />
               #1 Media &amp; Relations
             </span>
 
             <h1
-              className={`${syne.className} text-[2.75rem] font-black uppercase leading-[0.9] tracking-tighter text-neutral-900 dark:text-white sm:text-7xl lg:text-[6.5rem] xl:text-[7.5rem] `}
+              className={`${syne.className} text-[2.75rem] font-black uppercase leading-[0.9] tracking-tighter text-neutral-900 dark:text-white sm:text-6xl lg:text-[5rem] xl:text-[6rem]`}
             >
-              Public<br />
+              Public
+              <br />
               <span className="bg-gradient-to-br from-red-500 to-orange-500 bg-clip-text text-transparent">
                 Relations
               </span>
-            </h1>
-
-            <p className="mx-auto mt-6 max-w-xl text-base font-medium text-neutral-700 dark:text-neutral-300 sm:text-lg lg:mx-0 lg:text-xl">
+            </h1>            <p className="mx-auto mt-6 max-w-xl text-base font-medium text-neutral-700 dark:text-neutral-300 sm:text-lg lg:mx-0 lg:text-xl">
               Builds relationships and collaborations with various parties to
               expand FOSTI UMS&apos;s network.
             </p>
@@ -84,15 +87,18 @@ const Hubpub = () => {
               <span className="inline-flex rotate-2 items-center gap-1.5 rounded-full border-2 border-black bg-purple-200 px-3 py-1 text-xs font-bold text-neutral-900 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] dark:shadow-gray-100 sm:text-sm">
                 📢 Amplifying Fosti&apos;s Voice
               </span>
-              <span className="inline-flex -rotate-2 items-center gap-1.5 rounded-full border-2 border-black bg-white px-3 py-1 text-xs font-bold text-neutral-900 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] dark:shadow-gray-100 dark:border-gray-500 dark:bg-neutral-900 dark:text-white sm:text-sm">
+              <span className="inline-flex -rotate-2 items-center gap-1.5 rounded-full border-2 border-black bg-white px-3 py-1 text-xs font-bold text-neutral-900 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] dark:border-gray-500 dark:bg-neutral-900 dark:text-white dark:shadow-gray-100 sm:text-sm">
                 🤝 Ext. Network &amp; Media
               </span>
             </div>
           </div>
-          <div data-aos="zoom-in" data-aos-delay="200" className="flex w-full flex-1 items-center justify-center py-6 px-6 md:px-0">
-            <div className="group relative w-full max-w-md rotate-2 transition-transform duration-300 hover:rotate-0 sm:max-w-lg lg:max-w-md">
+          <div
+            data-aos="zoom-in"
+            data-aos-delay="200"
+            className="flex min-w-0 flex-1 items-center justify-center px-0 py-6"
+          >
+            <div className="group relative w-full max-w-[380px] rotate-2 transition-transform duration-300 hover:rotate-0">
               <div className="relative z-10 overflow-hidden rounded-2xl border-2 border-black bg-white shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] dark:border-neutral-100 dark:bg-neutral-900 dark:shadow-[6px_6px_0px_0px_rgba(255,255,255,0.9)]">
-
                 <div className="flex items-center gap-3 px-4 py-3">
                   <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border-2 border-black bg-white text-xs font-black text-white dark:border-neutral-100">
                     <Image
@@ -137,9 +143,7 @@ const Hubpub = () => {
                 </div>
                 <div className="flex items-center justify-between px-4 pt-3">
                   <div className="flex items-center gap-4">
-                    <Heart
-                      className="h-6 w-6 cursor-pointer transition-colors active:scale-90 fill-red-500 text-red-500"
-                    />
+                    <Heart className="h-6 w-6 cursor-pointer fill-red-500 text-red-500 transition-colors active:scale-90" />
                     <MessageCircle className="h-6 w-6 text-neutral-900 dark:text-white" />
                     <Send className="h-6 w-6 text-neutral-900 dark:text-white" />
                   </div>
@@ -221,7 +225,10 @@ const Hubpub = () => {
 
       <section className="mx-auto max-w-screen-2xl px-4 pb-20 sm:px-6 lg:px-8">
         <Tabs defaultValue="programs" className="w-full">
-          <div data-aos="fade-up" className="mb-8 flex justify-center sm:justify-start">
+          <div
+            data-aos="fade-up"
+            className="mb-8 flex justify-center sm:justify-start"
+          >
             <TabsList className="inline-flex gap-1 rounded-full border-2 border-neutral-900 bg-white p-1 dark:border-neutral-100 dark:bg-neutral-900">
               <TabsTrigger
                 value="programs"
