@@ -5,14 +5,14 @@ import { HeartHandshake } from "lucide-react";
 const partners = [
   {
     name: "Universitas Muhammadiyah Surakarta",
-    logo: "../../public/ums-logo.png",
+    logo: "/ums-logo.png",
     url: "https://ums.ac.id",
     width: 200,
     mono: false,
   },
   {
     name: "Program Studi Teknik Informatika",
-    logo: "../../public/infor-logo.png",
+    logo: "/infor-logo.svg",
     url: "https://teknikinformatika.ums.ac.id",
     width: 200,
     mono: true,
@@ -57,18 +57,20 @@ const Partners = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`Visit ${partner.name} website`}
-              className={`group flex items-center justify-center transition-all duration-300 ${partner.mono
-                ? "opacity-60 grayscale hover:opacity-100 hover:grayscale-0"
-                : "opacity-60 grayscale hover:opacity-100 hover:grayscale-0 dark:opacity-70 dark:brightness-150 dark:grayscale-0 dark:hover:brightness-100"
-                }`}
+              className={`group flex items-center justify-center transition-all duration-300 ${
+                partner.mono
+                  ? "opacity-60 grayscale hover:opacity-100 hover:grayscale-0"
+                  : "opacity-60 grayscale hover:opacity-100 hover:grayscale-0 dark:opacity-70 dark:brightness-150 dark:grayscale-0 dark:hover:brightness-100"
+              }`}
             >
               <Image
                 src={partner.logo}
                 alt={partner.name}
                 width={partner.width}
                 height={partner.width}
-                className={`h-auto w-full max-w-[500px] object-contain sm:max-w-[520px] ${partner.mono ? "invert dark:invert-0" : ""
-                  }`}
+                className={`h-auto w-full max-w-[500px] object-contain sm:max-w-[520px] ${
+                  partner.mono ? "invert dark:invert-0" : ""
+                }`}
               />
             </Link>
           </div>
