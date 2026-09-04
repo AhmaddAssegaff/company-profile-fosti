@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, Users } from "lucide-react";
+import { env } from "@/env";
 
 const CallToAction = () => {
   return (
@@ -37,7 +38,7 @@ const CallToAction = () => {
 
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link
-              href="https://example.com/join"
+              href={env.NEXT_PUBLIC_OPREC_URL}
               target="_blank"
               className="group/btn relative flex h-fit w-fit items-center justify-center gap-2 overflow-hidden rounded-full border border-black/50 bg-neutral-950 px-6 py-3.5 text-sm font-semibold tracking-wide text-white shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:border-black/70 hover:shadow-lg hover:shadow-black/30 active:translate-y-0 active:scale-95"
             >

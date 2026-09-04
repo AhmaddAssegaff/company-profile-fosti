@@ -1,7 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import { NumberTicker } from "./magicui/number-ticker";
 import Link from "next/link";
-import React from "react";
 import { TextAnimate } from "./magicui/text-animate";
 import ImageCollage from "./ImageCollage";
 import RotatingText from "../components/RotatingText/RotatingText";
