@@ -1,4 +1,3 @@
-import React from "react";
 import { Marquee } from "./magicui/marquee";
 import Image, { type StaticImageData } from "next/image";
 import { Card } from "./ui/card";
@@ -6,8 +5,7 @@ import img from "@/utils/constant";
 import HeroVideoDialog from "./magicui/hero-video-dialog";
 import { Check, Calendar } from "lucide-react";
 
-const thumbnail =
-  "https://res.cloudinary.com/qjw4yfke/image/upload/v1787466879/thumbnail_compro_fosti_2025_fst1ol.webp";
+const thumbnail = "https://res.cloudinary.com/qjw4yfke/image/upload/v1789051475/thumbnail-compro_fa4ft0.jpg";
 
 const About = () => {
   const about = img.carouselAbout;
@@ -60,7 +58,7 @@ const About = () => {
               <HeroVideoDialog
                 className="block"
                 animationStyle="from-center"
-                videoSrc="https://www.youtube.com/embed/DxwXP8rp5qg?si=xMSnKT1btIczpxoI"
+                videoSrc="https://www.youtube.com/embed/epDtoyYMPCc"
                 thumbnailSrc={thumbnail}
                 thumbnailAlt="Hero Video"
               />
@@ -69,7 +67,10 @@ const About = () => {
         </div>
       </section>
 
-      <div data-aos="fade-up" className="flex w-full flex-col items-center justify-center overflow-hidden">
+      <div
+        data-aos="fade-up"
+        className="flex w-full flex-col items-center justify-center overflow-hidden"
+      >
         <Marquee pauseOnHover className="z-30">
           {about.map((item, i) => (
             <MarqueeItem
