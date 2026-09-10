@@ -5,7 +5,7 @@ import img from "@/utils/constant";
 import HeroVideoDialog from "./magicui/hero-video-dialog";
 import { Check, Calendar } from "lucide-react";
 
-const thumbnail = "https://res.cloudinary.com/qjw4yfke/image/upload/v1789051475/thumbnail-compro_fa4ft0.jpg";
+const thumbnail = "https://res.cloudinary.com/qjw4yfke/image/upload/v1789064877/thumbnail-compro_yielqx.jpg";
 
 const About = () => {
   const about = img.carouselAbout;
